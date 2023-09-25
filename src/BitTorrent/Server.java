@@ -1,14 +1,32 @@
 package BitTorrent;
 import java.net.*;
 import java.io.*;
+import java.util.Properties;
 
 public class Server {
 
 	private static final int sPort = 8000;   //The server will be listening on this port number
+	private static int numberOfPreferredNeighbors;
+	private static int unchokingInterval;
+	private static int optimisticUnchokingInterval;
+	private static String fileName;
+	private static int fileSize;
+	private static int pieceSize;
 
 	public static void main(String[] args) throws Exception {
-		System.out.println("The server is running."); 
-        	ServerSocket listener = new ServerSocket(sPort);
+		// Read common.cfg file
+		FileInputStream common = new FileInputStream("src/BitTorrent/Common.cfg");
+		Properties properties = new Properties();
+		properties.load(common);
+		numberOfPreferredNeighbors = Integer.parseInt(properties.getProperty("NumberOfPreferredNeighbors"));
+		unchokingInterval = Integer.parseInt(properties.getProperty("UnchokingInterval"));
+		optimisticUnchokingInterval = Integer.parseInt(properties.getProperty("OptimisticUnchokingInterval"));
+		fileName = properties.getProperty("FileName", null);
+		fileSize = Integer.parseInt(properties.getProperty("FileSize"));
+		pieceSize = Integer.parseInt(properties.getProperty("PieceSize"));
+
+		System.out.println("The server is running.");
+		ServerSocket listener = new ServerSocket(sPort);
 		int clientNum = 1;
         	try {
             		while(true) {
