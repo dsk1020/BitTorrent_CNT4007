@@ -48,12 +48,12 @@ public class Server {
     	private static class Handler extends Thread {
 		private String message;    //message received from the client
 		private String MESSAGE;    //uppercase message send to the client
-		private Socket connection;
+		private final Socket connection;
 		private ObjectInputStream in;    //stream read from the socket
 		private ObjectOutputStream out;    //stream write to the socket
 		private PrintWriter log; //stream write to log
-		private int no;        //The index number of the client
-		private DateFormat forTime = new SimpleDateFormat("hh:mm:ss");
+		private final int no;        //The index number of the client
+		private final DateFormat forTime = new SimpleDateFormat("hh:mm:ss");
 
 		public Handler(Socket connection, int no) {
 			this.connection = connection;
@@ -66,7 +66,7 @@ public class Server {
 				out = new ObjectOutputStream(connection.getOutputStream());
 				out.flush();
 				in = new ObjectInputStream(connection.getInputStream());
-				log = new PrintWriter("src/BitTorrent/log_peer_100" + no);
+				log = new PrintWriter("src/BitTorrent/log_peer_100" + no + ".log");
 				try {
 					while (true) {
 						//receive the message sent from the client
@@ -77,6 +77,9 @@ public class Server {
 						MESSAGE = message.toUpperCase();
 						//send MESSAGE back to the client
 						sendMessage(MESSAGE);
+
+						// Every time a messsage is received from a peer,
+						// a test log message is written to the corresponding peer log file
 						logMessage( "test", 1001, 1002);
 					}
 				} catch (ClassNotFoundException classnot) {
@@ -108,7 +111,7 @@ public class Server {
 			}
 		}
 
-		public void logMessage(String msgType, int id1, int id2) throws FileNotFoundException {
+		public void logMessage(String msgType, int id1, int id2) {
 			try {
 				Date getDate = new Date();
 				String time = forTime.format(getDate);
