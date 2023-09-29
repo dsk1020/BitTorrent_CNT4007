@@ -32,7 +32,6 @@ public class Server {
         	try {
             		while(true) {
                 		new Handler(listener.accept(),clientNum).start();
-				System.out.println("Client "  + clientNum + " is connected!");
 				clientNum++;
             			}
         	} finally {
@@ -41,6 +40,7 @@ public class Server {
  
     	}
 
+		public static ArrayList<Handler> processList = new ArrayList<>();
 	/**
      	* A handler thread class.  Handlers are spawned from the listening
      	* loop and are responsible for dealing with a single client's requests.
@@ -55,9 +55,13 @@ public class Server {
 		private final int no;        //The index number of the client
 		private final DateFormat forTime = new SimpleDateFormat("hh:mm:ss");
 
+		private final int pos; // stores position in array
+
 		public Handler(Socket connection, int no) {
 			this.connection = connection;
 			this.no = no;
+			pos = processList.size();
+			processList.add(this);
 		}
 
 		public void run() {
@@ -67,16 +71,29 @@ public class Server {
 				out.flush();
 				in = new ObjectInputStream(connection.getInputStream());
 				log = new PrintWriter("src/BitTorrent/log_peer_100" + no + ".log");
+
+				System.out.println("CLIENT AMOUNT =" + processList.size());
+
 				try {
 					while (true) {
 						//receive the message sent from the client
 						message = (String) in.readObject();
 						//show the message to the user
+
 						System.out.println("Receive message: " + message + " from client " + no);
 						//Capitalize all letters in the message
 						MESSAGE = message.toUpperCase();
+						//message = (String)in.readObject();
+
 						//send MESSAGE back to the client
-						sendMessage(MESSAGE);
+						for(int i = processList.size(); i > 0; i--)
+						{
+							if(i == (no))
+							{
+								continue;
+							}
+							sendMessage(MESSAGE, i - 1);
+						}
 
 						// Every time a messsage is received from a peer,
 						// a test log message is written to the corresponding peer log file
@@ -101,11 +118,11 @@ public class Server {
 		}
 
 		//send a message to the output stream
-		public void sendMessage(String msg) {
+		public void sendMessage(String msg, int target) {
 			try {
-				out.writeObject(msg);
-				out.flush();
-				System.out.println("Send message: " + msg + " to Client " + no);
+				processList.get(target).out.writeObject(msg);
+				processList.get(target).out.flush();
+				System.out.println("Send message: " + msg + " to Client " + target);
 			} catch (IOException ioException) {
 				ioException.printStackTrace();
 			}

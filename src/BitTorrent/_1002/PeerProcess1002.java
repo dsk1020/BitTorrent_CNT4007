@@ -17,6 +17,7 @@ public class PeerProcess1002 {
     void run()
     {
         try{
+            String handshakeMSG = "P2PFILESHARINGPROJ00000000001002";
             //create a socket to connect to the server
             requestSocket = new Socket("localhost", 8000);
             System.out.println("Connected to localhost in port 8000");
@@ -25,17 +26,32 @@ public class PeerProcess1002 {
             out.flush();
             in = new ObjectInputStream(requestSocket.getInputStream());
 
+            sendMessage(handshakeMSG);
+
             //get Input from standard input
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
             while(true)
             {
-                System.out.print("Hello, please input a sentence: ");
+                //System.out.print("Hello, please input a sentence: ");
                 //read a sentence from the standard input
-                message = bufferedReader.readLine();
+                //message = bufferedReader.readLine();
                 //Send the sentence to the server
-                sendMessage(message);
+                //sendMessage(message);
                 //Receive the upperCase sentence from the server
                 MESSAGE = (String)in.readObject();
+                /*
+                if(MESSAGE.length() == 32)
+                {
+                    if(MESSAGE.substring(0,18).equals("P2PFILESHARINGPROJ"))
+                    {
+                        if(handshake(MESSAGE, 1002))
+                        {
+                            System.out.println("Handshake:" + 1002);
+                        }
+                    }
+                }
+
+                 */
                 //show the message to the user
                 System.out.println("Receive message: " + MESSAGE);
             }
@@ -81,6 +97,16 @@ public class PeerProcess1002 {
     {
         PeerProcess1002 client = new PeerProcess1002();
         client.run();
+    }
+
+    boolean handshake(String handsahkeMSG, int target)
+    {
+        // compare incoming handshake with designated target peer
+        if(Integer.parseInt(handsahkeMSG.substring(28,32)) == target)
+        {
+            return true;
+        }
+        return false;
     }
 
 }

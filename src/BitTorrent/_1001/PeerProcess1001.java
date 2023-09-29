@@ -17,6 +17,8 @@ public class PeerProcess1001 {
     void run()
     {
         try{
+            String handshakeMSG = "P2PFILESHARINGPROJ00000000001001";
+
             //create a socket to connect to the server
             requestSocket = new Socket("localhost", 8000);
             System.out.println("Connected to localhost in port 8000");
@@ -27,16 +29,22 @@ public class PeerProcess1001 {
 
             //get Input from standard input
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+            sendMessage(handshakeMSG);
+
             while(true)
             {
-                System.out.print("Hello, please input a sentence: ");
+                //System.out.print("Hello, please input a sentence: ");
                 //read a sentence from the standard input
-                message = bufferedReader.readLine();
+                //message = bufferedReader.readLine();
                 //Send the sentence to the server
-                sendMessage(message);
+                //sendMessage(message);
                 //Receive the upperCase sentence from the server
                 MESSAGE = (String)in.readObject();
                 //show the message to the user
+
+                //
+
                 System.out.println("Receive message: " + MESSAGE);
             }
         }
