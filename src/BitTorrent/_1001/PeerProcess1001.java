@@ -1,11 +1,20 @@
 package BitTorrent._1001;
 
+import BitTorrent.PeerProcess;
+
 import java.io.*;
 import java.net.ConnectException;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Properties;
 
 public class PeerProcess1001 {
+    private static int numberOfPreferredNeighbors;
+    private static int unchokingInterval;
+    private static int optimisticUnchokingInterval;
+    private static String fileName;
+    private static int fileSize;
+    private static int pieceSize;
     Socket requestSocket;           //socket connect to the server
     ObjectOutputStream out;         //stream write to the socket
     ObjectInputStream in;          //stream read from the socket
@@ -85,10 +94,26 @@ public class PeerProcess1001 {
         }
     }
     //main method
-    public static void main(String args[])
+    public static void main(String args[]) throws Exception
     {
-        BitTorrent._1001.PeerProcess1001 client = new BitTorrent._1001.PeerProcess1001();
-        client.run();
+        // Read common.cfg file
+        FileInputStream common = new FileInputStream("src/BitTorrent/Common.cfg");
+        Properties properties = new Properties();
+        properties.load(common);
+        numberOfPreferredNeighbors = Integer.parseInt(properties.getProperty("NumberOfPreferredNeighbors"));
+        unchokingInterval = Integer.parseInt(properties.getProperty("UnchokingInterval"));
+        optimisticUnchokingInterval = Integer.parseInt(properties.getProperty("OptimisticUnchokingInterval"));
+        fileName = properties.getProperty("FileName", null);
+        fileSize = Integer.parseInt(properties.getProperty("FileSize"));
+        pieceSize = Integer.parseInt(properties.getProperty("PieceSize"));
+        PeerProcess peerProcess = new PeerProcess(1001, numberOfPreferredNeighbors, unchokingInterval, optimisticUnchokingInterval, fileName, fileSize, pieceSize);
+        peerProcess.connect(1002);
+        peerProcess.connect(1003);
+
+        peerProcess.serverThread = new Thread(peerProcess::startServer);
+        peerProcess.serverThread.start();
+        //BitTorrent._1001.PeerProcess1001 client = new BitTorrent._1001.PeerProcess1001();
+        //client.run();
     }
 
 }

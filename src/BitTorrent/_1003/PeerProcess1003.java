@@ -1,57 +1,119 @@
 package BitTorrent._1003;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.net.InetAddress;
+import BitTorrent.PeerProcess;
+
+import java.io.*;
+import java.net.ConnectException;
 import java.net.Socket;
-import java.util.Scanner;
+import java.net.UnknownHostException;
+import java.util.Properties;
 
-public class PeerProcess1003
-{
-    public static void main(String[] args) {
-        try
-        {
-            Scanner scn = new Scanner(System.in);
+public class PeerProcess1003 {
+    private static int numberOfPreferredNeighbors;
+    private static int unchokingInterval;
+    private static int optimisticUnchokingInterval;
+    private static String fileName;
+    private static int fileSize;
+    private static int pieceSize;
+    Socket requestSocket;           //socket connect to the server
+    ObjectOutputStream out;         //stream write to the socket
+    ObjectInputStream in;          //stream read from the socket
+    String message;                //message send to the server
+    String MESSAGE;                //capitalized message read from the server
 
-            // getting localhost ip
-            InetAddress ip = InetAddress.getByName("localhost");
+    public void Client() {}
 
-            // establish the connection with server port 5056
-            Socket s = new Socket(ip, 5056);
+    void run()
+    {
+        try{
+            String handshakeMSG = "P2PFILESHARINGPROJ00000000001001";
 
-            // obtaining input and out streams
-            DataInputStream dis = new DataInputStream(s.getInputStream());
-            DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+            //create a socket to connect to the server
+            requestSocket = new Socket("localhost", 8000);
+            System.out.println("Connected to localhost in port 8000");
+            //initialize inputStream and outputStream
+            out = new ObjectOutputStream(requestSocket.getOutputStream());
+            out.flush();
+            in = new ObjectInputStream(requestSocket.getInputStream());
 
-            // the following loop performs the exchange of
-            // information between client and client handler
-            while (true)
+            //get Input from standard input
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+            sendMessage(handshakeMSG);
+
+            while(true)
             {
-                System.out.println(dis.readUTF());
-                String tosend = scn.nextLine();
-                dos.writeUTF(tosend);
+                //System.out.print("Hello, please input a sentence: ");
+                //read a sentence from the standard input
+                //message = bufferedReader.readLine();
+                //Send the sentence to the server
+                //sendMessage(message);
+                //Receive the upperCase sentence from the server
+                MESSAGE = (String)in.readObject();
+                //show the message to the user
 
-                // If client sends exit,close this connection
-                // and then break from the while loop
-                if(tosend.equals("Exit"))
-                {
-                    System.out.println("Closing this connection : " + s);
-                    s.close();
-                    System.out.println("Connection closed");
-                    break;
-                }
+                //
 
-                // printing date or time as requested by client
-                String received = dis.readUTF();
-                System.out.println(received);
+                System.out.println("Receive message: " + MESSAGE);
             }
-
-            // closing resources
-            scn.close();
-            dis.close();
-            dos.close();
-        }catch(Exception e){
-            e.printStackTrace();
+        }
+        catch (ConnectException e) {
+            System.err.println("Connection refused. You need to initiate a server first.");
+        }
+        catch ( ClassNotFoundException e ) {
+            System.err.println("Class not found");
+        }
+        catch(UnknownHostException unknownHost){
+            System.err.println("You are trying to connect to an unknown host!");
+        }
+        catch(IOException ioException){
+            ioException.printStackTrace();
+        }
+        finally{
+            //Close connections
+            try{
+                in.close();
+                out.close();
+                requestSocket.close();
+            }
+            catch(IOException ioException){
+                ioException.printStackTrace();
+            }
         }
     }
+    //send a message to the output stream
+    void sendMessage(String msg)
+    {
+        try{
+            //stream write the message
+            out.writeObject(msg);
+            out.flush();
+        }
+        catch(IOException ioException){
+            ioException.printStackTrace();
+        }
+    }
+    //main method
+    public static void main(String args[]) throws Exception
+    {
+        // Read common.cfg file
+        FileInputStream common = new FileInputStream("src/BitTorrent/Common.cfg");
+        Properties properties = new Properties();
+        properties.load(common);
+        numberOfPreferredNeighbors = Integer.parseInt(properties.getProperty("NumberOfPreferredNeighbors"));
+        unchokingInterval = Integer.parseInt(properties.getProperty("UnchokingInterval"));
+        optimisticUnchokingInterval = Integer.parseInt(properties.getProperty("OptimisticUnchokingInterval"));
+        fileName = properties.getProperty("FileName", null);
+        fileSize = Integer.parseInt(properties.getProperty("FileSize"));
+        pieceSize = Integer.parseInt(properties.getProperty("PieceSize"));
+        PeerProcess peerProcess = new PeerProcess(1003, numberOfPreferredNeighbors, unchokingInterval, optimisticUnchokingInterval, fileName, fileSize, pieceSize);
+        peerProcess.connect(1001);
+        peerProcess.connect(1002);
+
+        peerProcess.serverThread = new Thread(peerProcess::startServer);
+        peerProcess.serverThread.start();
+        //BitTorrent._1001.PeerProcess1003 client = new BitTorrent._1003.PeerProcess1003();
+        //client.run();
+    }
+
 }
