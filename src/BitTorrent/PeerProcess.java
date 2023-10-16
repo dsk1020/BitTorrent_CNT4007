@@ -16,6 +16,8 @@ public class PeerProcess {
     public static int pieceSize;
     public int hasFile; //boolean for checking if current peer process contains entire file (0 = false, 1 = true)
     public ArrayList<String> peerInfo; //raw info for each peer, in case it's needed
+    public ObjectOutputStream outputStream = null;
+    public ObjectInputStream inputStream = null;
 
 
     // Managing All Sockets and Streams
@@ -23,6 +25,7 @@ public class PeerProcess {
     public List<Socket> connectedTo = new ArrayList<>();
     public HashMap<Socket, ObjectInputStream> inputStreams = new HashMap<>();
     public HashMap<Socket, ObjectOutputStream> outputStreams = new HashMap<>();
+    public HashMap<Socket, Integer> connectedID = new HashMap<>();
     public ServerSocket serverSocket = null;
 
     // Logging functionality
@@ -80,29 +83,38 @@ public class PeerProcess {
     public void sendHandshake(Socket socket) {
         try {
             String handshakeMessage = "P2PFILESHARINGPROJ0000000000" + String.valueOf(port);
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
-            objectOutputStream.writeObject(handshakeMessage);
+            outputStream = new ObjectOutputStream(socket.getOutputStream());
+            outputStream.writeObject(handshakeMessage);
 
-            System.out.println("Sent handshake message from " + port);
+            //System.out.println("Sent handshake message from " + port);
             logMessage("TCP connection");
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 
     public void read() {
         while (true) {
-            // Check if we are choked
-            if (readThread.isInterrupted()) {
-                // Handle choking
+            // TODO - Check if we are choked
+
+            List<Socket> allConnections = new ArrayList<>(this.connectedFrom);
+            allConnections.addAll(this.connectedTo);
+
+            for(Socket socket:allConnections)
+            {
+                try{
+                    socket.setSoTimeout(500); //TODO - set to unchoke time
+                    inputStream = new ObjectInputStream(socket.getInputStream());
+                    String mss = (String)inputStream.readObject();
+                    System.out.println(mss);
+                    // TODO - Message response
+                }catch (IOException i)
+                {
+                    //System.out.println(i);
+                } catch (ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
             }
-            // Create list of all sockets
-            // for each socket...
-                // try catch block
-                // Set timeout for 1 second
-                // Set up input streams
-                // Read message
-                // Switch statement for each message type
         }
     }
 
@@ -181,116 +193,5 @@ public class PeerProcess {
         }
     }
 
-    public static ArrayList<Handler> processList = new ArrayList<>();
-    /**
-     * A handler thread class.  Handlers are spawned from the listening
-     * loop and are responsible for dealing with a single client's requests.
-     */
-    private static class Handler extends Thread {
-        private String message;    //message received from the client
-        private String MESSAGE;    //uppercase message send to the client
-        private final Socket connection;
-        private ObjectInputStream in;    //stream read from the socket
-        private ObjectOutputStream out;    //stream write to the socket
-        private PrintWriter log; //stream write to log
-        private final int no;        //The index number of the client
-        private final DateFormat forTime = new SimpleDateFormat("hh:mm:ss");
-
-        private final int pos; // stores position in array
-
-        public Handler(Socket connection, int no) {
-            this.connection = connection;
-            this.no = no;
-            pos = processList.size();
-            processList.add(this);
-        }
-
-        public void run() {
-            try {
-                //initialize Input and Output streams
-                out = new ObjectOutputStream(connection.getOutputStream());
-                out.flush();
-                in = new ObjectInputStream(connection.getInputStream());
-                log = new PrintWriter("src/BitTorrent/log_peer_100" + no + ".log");
-
-                System.out.println("CLIENT AMOUNT =" + processList.size());
-
-                try {
-                    while (true) {
-                        //receive the message sent from the client
-                        message = (String) in.readObject();
-                        //show the message to the user
-
-                        System.out.println("Receive message: " + message + " from client " + no);
-                        //Capitalize all letters in the message
-                        MESSAGE = message.toUpperCase();
-                        //message = (String)in.readObject();
-
-                        //send MESSAGE back to the client
-                        for(int i = processList.size(); i > 0; i--)
-                        {
-                            if(i == (no))
-                            {
-                                continue;
-                            }
-                            sendMessage(MESSAGE, i - 1);
-                        }
-
-                        // Every time a messsage is received from a peer,
-                        // a test log message is written to the corresponding peer log file
-                        logMessage( "test", 1001, 1002);
-                    }
-                } catch (ClassNotFoundException classnot) {
-                    System.err.println("Data received in unknown format");
-                }
-            } catch (IOException ioException) {
-                System.out.println("Disconnect with Client " + no);
-            } finally {
-                //Close connections
-                try {
-                    in.close();
-                    out.close();
-                    log.close();
-                    connection.close();
-                } catch (IOException ioException) {
-                    System.out.println("Disconnect with Client " + no);
-                }
-            }
-        }
-
-        //send a message to the output stream
-        public void sendMessage(String msg, int target) {
-            try {
-                processList.get(target).out.writeObject(msg);
-                processList.get(target).out.flush();
-                System.out.println("Send message: " + msg + " to Client " + target);
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-        }
-
-        public void logMessage(String msgType, int id1, int id2) {
-            try {
-                Date getDate = new Date();
-                String time = forTime.format(getDate);
-
-                switch (msgType) {
-                    case "test":
-                        log.println(time + ": This is a test message, id1:  " + id1 + " , id2: " + id2 + ".");
-                        break;
-                    case "TCP connection":
-                        log.println(time + ": Peer " + id1 + " makes a connection to Peer " + id2 + ".");
-                        break;
-                    case "change of preferred neighbors":
-                        log.println(time + ": Change of preferred neighbors log, etc...");
-                    default:
-                        log.println("Invalid log type");
-                }
-            } catch (Error e) {
-                e.printStackTrace();
-            }
-        }
-
-    }
 
 }

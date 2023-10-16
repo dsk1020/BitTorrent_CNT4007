@@ -107,8 +107,8 @@ public class PeerProcess1001 {
         fileSize = Integer.parseInt(properties.getProperty("FileSize"));
         pieceSize = Integer.parseInt(properties.getProperty("PieceSize"));
         PeerProcess peerProcess = new PeerProcess(1001, numberOfPreferredNeighbors, unchokingInterval, optimisticUnchokingInterval, fileName, fileSize, pieceSize);
-        peerProcess.connect(1002);
-        peerProcess.connect(1003);
+        //peerProcess.connect(1002);
+        //peerProcess.connect(1003);
 
         peerProcess.serverThread = new Thread(peerProcess::startServer);
         peerProcess.readThread = new Thread(peerProcess::read);
