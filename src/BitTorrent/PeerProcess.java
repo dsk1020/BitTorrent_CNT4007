@@ -5,7 +5,7 @@ import java.text.*;
 import java.util.*;
 
 public class PeerProcess {
-    public Thread serverThread, t2, t3, t4;
+    public Thread serverThread, readThread, t3, t4;
     // Config parameters
     public static int port;
     public static int numberOfPreferredNeighbors;
@@ -79,6 +79,22 @@ public class PeerProcess {
             System.out.println("Sent handshake message from " + port);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void read() {
+        while (true) {
+            // Check if we are choked
+            if (readThread.isInterrupted()) {
+                // Handle choking
+            }
+            // Create list of all sockets
+            // for each socket...
+                // try catch block
+                // Set timeout for 1 second
+                // Set up input streams
+                // Read message
+                // Switch statement for each message type
         }
     }
 //    public static void main(String[] args) throws Exception {
