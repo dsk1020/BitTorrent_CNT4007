@@ -22,6 +22,10 @@ public class PeerProcess {
     public HashMap<Socket, ObjectOutputStream> outputStreams = new HashMap<>();
     public ServerSocket serverSocket = null;
 
+    // Logging functionality
+    private final DateFormat forTime = new SimpleDateFormat("hh:mm:ss");
+    private final PrintWriter log;
+
     // Constructor
     public PeerProcess(int port, int numberOfPreferredNeighbors, int unchokingInterval, int optimisticUnchokingInterval, String fileName, int fileSize, int pieceSize) throws Exception {
         PeerProcess.port = port;
@@ -32,6 +36,7 @@ public class PeerProcess {
         PeerProcess.fileName = fileName;
         PeerProcess.fileSize = fileSize;
         PeerProcess.pieceSize = pieceSize;
+        log = new PrintWriter("src/BitTorrent/log_peer_" + port + ".log");
     }
 
     public void connect (int port) {
@@ -56,7 +61,6 @@ public class PeerProcess {
                 inputStreams.put(socket, new ObjectInputStream(socket.getInputStream()));
                 outputStreams.put(socket, new ObjectOutputStream(socket.getOutputStream()));
                 connectedFrom.add(socket);
-
                 sendHandshake(socket);
             }
         } catch (ConnectException e) {
@@ -77,6 +81,7 @@ public class PeerProcess {
             objectOutputStream.writeObject(handshakeMessage);
 
             System.out.println("Sent handshake message from " + port);
+            logMessage("TCP connection");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -97,19 +102,30 @@ public class PeerProcess {
                 // Switch statement for each message type
         }
     }
-//    public static void main(String[] args) throws Exception {
-//        ServerSocket listener = new ServerSocket(port);
-//        int clientNum = 1;
-//        try {
-//            while(true) {
-//                new Handler(listener.accept(),clientNum).start();
-//                clientNum++;
-//            }
-//        } finally {
-//            listener.close();
-//        }
-//
-//    }
+
+    public void logMessage(String msgType) {
+        try {
+            Date getDate = new Date();
+            String time = forTime.format(getDate);
+
+            switch (msgType) {
+                case "test":
+                    log.println(time + ": This is a test message, id1:  " + port + " , id2: " + "INSERT ID FROM connectdID MAP" + ".");
+                    break;
+                case "TCP connection":
+                    log.println(time + ": Peer " + port + " makes a connection to Peer " + "INSERT ID FROM connectdID MAP" + ".");
+                    break;
+                case "change of preferred neighbors":
+                    log.println(time + ": Change of preferred neighbors log, etc...");
+                    break;
+                default:
+                    log.println("Invalid log type");
+            }
+            log.flush();
+        } catch (Error e) {
+            e.printStackTrace();
+        }
+    }
 
     public static ArrayList<Handler> processList = new ArrayList<>();
     /**

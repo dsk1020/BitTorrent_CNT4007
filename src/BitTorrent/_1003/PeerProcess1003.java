@@ -111,7 +111,10 @@ public class PeerProcess1003 {
         peerProcess.connect(1002);
 
         peerProcess.serverThread = new Thread(peerProcess::startServer);
+        peerProcess.readThread = new Thread(peerProcess::read);
+
         peerProcess.serverThread.start();
+        peerProcess.readThread.start();
         //BitTorrent._1001.PeerProcess1003 client = new BitTorrent._1003.PeerProcess1003();
         //client.run();
     }
