@@ -113,13 +113,40 @@ public class PeerProcess {
 
             switch (msgType) {
                 case "test":
-                    log.println(time + ": This is a test message, id1:  " + port + " , id2: " + "INSERT ID FROM connectdID MAP" + ".");
+                    log.println(time + ": This is a test message, id1:  " + port + " , id2: " + "[peer_ID 2]" + ".");
                     break;
-                case "TCP connection":
-                    log.println(time + ": Peer " + port + " makes a connection to Peer " + "INSERT ID FROM connectdID MAP" + ".");
+                case "sends connection":
+                    log.println(time + ": Peer " + port + " makes a connection to Peer " + "[peer_ID 2]" + ".");
+                    break;
+                case "connection made":
+                    log.println(time + ": Peer " + port + " is connected from Peer " + "[peer_ID 2]" + ".");
                     break;
                 case "change of preferred neighbors":
-                    log.println(time + ": Change of preferred neighbors log, etc...");
+                    log.println(time + ": Peer " + port + " has the preferred neighbors " + "[preferred neighbor ID list].");
+                    break;
+                case "change of optimistically unchoked neighbor":
+                    log.println(time + ": Peer " + port + " has the optimistically unchoked neighbor " + "[optimistically unchoked neighbor ID].");
+                    break;
+                case "unchoking":
+                    log.println(time + ": Peer " + port + " is unchoked by " + " [peer_ID 2].");
+                    break;
+                case "choking":
+                    log.println(time + ": Peer " + port + " is choked by " + " [peer_ID 2].");
+                    break;
+                case "receive HAVE":
+                    log.println(time + ": Peer " + port + " received the 'have' message from " + "[peer_ID 2]" + " for the piece " + "[piece index].");
+                    break;
+                case "receive INTERESTED":
+                    log.println(time + ": Peer " + port + " received the 'interested' message from " + "[peer_ID 2]");
+                    break;
+                case "receive NOT INTERESTED":
+                    log.println(time + ": Peer " + port + " received the 'not interested' message from " + "[peer_ID 2]");
+                    break;
+                case "downloading a piece":
+                    log.println(time + ": Peer " + port + " has downloaded the piece " + "[piece index]" + " from " + "[peer_ID 2]" + " . Now the number of pieces it has is " + "[number of pieces]" + " .");
+                    break;
+                case "completion of download":
+                    log.println(time + ": Peer " + port + " has downloaded the complete file.");
                     break;
                 default:
                     log.println("Invalid log type");
