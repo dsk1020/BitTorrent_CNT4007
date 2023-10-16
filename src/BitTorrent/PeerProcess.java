@@ -14,6 +14,9 @@ public class PeerProcess {
     public static String fileName;
     public static int fileSize;
     public static int pieceSize;
+    public int hasFile; //boolean for checking if current peer process contains entire file (0 = false, 1 = true)
+    public ArrayList<String> peerInfo; //raw info for each peer, in case it's needed
+
 
     // Managing All Sockets and Streams
     public List<Socket> connectedFrom = new ArrayList<>();
@@ -124,6 +127,30 @@ public class PeerProcess {
             log.flush();
         } catch (Error e) {
             e.printStackTrace();
+        }
+    }
+
+
+    public void parsePeerInfo() throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader("BitTorrent_CNT4007/src/BitTorrent/peerInfo.cfg")); //My intellij is weird about relative file paths so this may need to be changed
+        ArrayList<String> peers = new ArrayList<String>();
+        while (true) {
+            String peer = reader.readLine();
+            if (peer != null) {
+                peers.add(peer);
+            }
+            else
+                break;
+        }
+        this.peerInfo = peers;
+        for (String peer : peers) {
+            String[] info = peer.split(" ");
+            if (Integer.parseInt(info[2]) != this.port) {
+                this.connect(Integer.parseInt(info[2]));
+            }
+            else {
+                this.hasFile = Integer.parseInt(info[3]);
+            }
         }
     }
 
