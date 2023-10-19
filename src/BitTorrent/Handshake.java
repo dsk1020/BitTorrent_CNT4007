@@ -7,7 +7,8 @@ public class Handshake implements Serializable
     private String _0bits;
     private int _id;
 
-    public void Handshake(int id)
+
+    public Handshake(int id)
     {
         this._header = "P2PFILESHARINGPROJ";
         this._0bits = "0000000000";
