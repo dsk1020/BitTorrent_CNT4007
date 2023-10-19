@@ -96,6 +96,7 @@ public class PeerProcess1001 {
     //main method
     public static void main(String args[]) throws Exception
     {
+        int port = Integer.parseInt(args[0]); // In current implementation id for peer process = port
         // Read common.cfg file
         FileInputStream common = new FileInputStream("src/BitTorrent/Common.cfg");
         Properties properties = new Properties();
@@ -106,7 +107,7 @@ public class PeerProcess1001 {
         fileName = properties.getProperty("FileName", null);
         fileSize = Integer.parseInt(properties.getProperty("FileSize"));
         pieceSize = Integer.parseInt(properties.getProperty("PieceSize"));
-        PeerProcess peerProcess = new PeerProcess(1001, numberOfPreferredNeighbors, unchokingInterval, optimisticUnchokingInterval, fileName, fileSize, pieceSize);
+        PeerProcess peerProcess = new PeerProcess(port, numberOfPreferredNeighbors, unchokingInterval, optimisticUnchokingInterval, fileName, fileSize, pieceSize);
         //peerProcess.connect(1002);
         //peerProcess.connect(1003);
 

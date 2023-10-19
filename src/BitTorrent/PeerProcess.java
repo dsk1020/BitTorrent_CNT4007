@@ -177,18 +177,23 @@ public class PeerProcess {
             String peer = reader.readLine();
             if (peer != null) {
                 peers.add(peer);
-            }
-            else
+            } else
                 break;
         }
         this.peerInfo = peers;
         for (String peer : peers) {
             String[] info = peer.split(" ");
-            if (Integer.parseInt(info[2]) != this.port) {
-                this.connect(Integer.parseInt(info[2]));
-            }
-            else {
+            if (Integer.parseInt(info[2]) == this.port) {
                 this.hasFile = Integer.parseInt(info[3]);
+            }
+        }
+    }
+
+    public void connectToAllBefore(){
+        for (String peer: this.peerInfo) {
+            String[] info = peer.split(" ");
+            if (Integer.parseInt(info[2]) < this.port) {
+                this.connect(Integer.parseInt(info[2]));
             }
         }
     }
