@@ -42,7 +42,7 @@ public class PeerProcess {
         PeerProcess.fileName = fileName;
         PeerProcess.fileSize = fileSize;
         PeerProcess.pieceSize = pieceSize;
-        log = new PrintWriter("src/BitTorrent/log_peer_" + port + ".log");
+        log = new PrintWriter("BitTorrent_CNT4007/src/BitTorrent/log_peer_" + port + ".log");
     }
 
     public void connect (int port) {
@@ -171,7 +171,7 @@ public class PeerProcess {
 
 
     public void parsePeerInfo() throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("BitTorrent_CNT4007/src/BitTorrent/peerInfo.cfg")); //My intellij is weird about relative file paths so this may need to be changed
+        BufferedReader reader = new BufferedReader(new FileReader("BitTorrent_CNT4007/src/BitTorrent/PeerInfo.cfg")); //My intellij is weird about relative file paths so this may need to be changed
         ArrayList<String> peers = new ArrayList<String>();
         while (true) {
             String peer = reader.readLine();
@@ -191,7 +191,7 @@ public class PeerProcess {
     }
 
     public static int findPortFromPeerInfo(String id) throws IOException { //This function is a bit redundant if process id = port number, but necessary in current implementation to have the port of a process be grabbed from the PeerInfo.cfg file
-        BufferedReader reader = new BufferedReader(new FileReader("BitTorrent_CNT4007/src/BitTorrent/peerInfo.cfg"));
+        BufferedReader reader = new BufferedReader(new FileReader("BitTorrent_CNT4007/src/BitTorrent/PeerInfo.cfg"));
         int foundPort = -1; //Will return -1 if process id not in PeerInfo.cfg
         while (true) {
             String process = reader.readLine();
