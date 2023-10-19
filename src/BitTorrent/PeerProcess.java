@@ -5,7 +5,7 @@ import java.text.*;
 import java.util.*;
 
 public class PeerProcess {
-    public Thread serverThread, readThread, t3, t4;
+    public Thread serverThread, readThread, unchokingThread, optimisticUnchokingThread;
     // Config parameters
     public static int port;
     public static int numberOfPreferredNeighbors;
@@ -14,6 +14,7 @@ public class PeerProcess {
     public static String fileName;
     public static int fileSize;
     public static int pieceSize;
+    public boolean isUnchoked, isOptimisticallyUnchoked = false;
     public int hasFile; //boolean for checking if current peer process contains entire file (0 = false, 1 = true)
     public ArrayList<String> peerInfo; //raw info for each peer, in case it's needed
     public ObjectOutputStream outputStream = null;
@@ -42,7 +43,7 @@ public class PeerProcess {
         PeerProcess.fileName = fileName;
         PeerProcess.fileSize = fileSize;
         PeerProcess.pieceSize = pieceSize;
-        log = new PrintWriter("BitTorrent_CNT4007/src/BitTorrent/log_peer_" + port + ".log");
+        log = new PrintWriter("src/BitTorrent/log_peer_" + port + ".log");
     }
 
     public void connect (int port) {
@@ -95,7 +96,9 @@ public class PeerProcess {
 
     public void read() {
         while (true) {
-            // TODO - Check if we are choked
+            if (readThread.isInterrupted()) {
+                // TODO: Handle interrupt message/ Do choking stuff
+            }
 
             List<Socket> allConnections = new ArrayList<>(this.connectedFrom);
             allConnections.addAll(this.connectedTo);
@@ -114,6 +117,37 @@ public class PeerProcess {
                 } catch (ClassNotFoundException e) {
                     throw new RuntimeException(e);
                 }
+            }
+        }
+    }
+
+    public void unchokingInterval() {
+        while (true) {
+            try {
+                // Sleep for unchoking interval seconds
+                Thread.sleep(unchokingInterval * 1000L);
+                System.out.println("Unchoking interval is " + unchokingInterval + " seconds.");
+                System.out.println("Unchoke alert sent from peer process " + port);
+                isUnchoked = true;
+                readThread.interrupt();
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public void optimisticUnchokingInterval() {
+        while (true) {
+            try {
+                // Sleep for optimistic unchoking interval seconds
+                Thread.sleep(optimisticUnchokingInterval * 1000L);
+                System.out.println("Optimistc unchoking interval is " + optimisticUnchokingInterval + " seconds.");
+                System.out.println("Optimistic unchoke alert sent from peer process " + port);
+                isOptimisticallyUnchoked = true;
+                readThread.interrupt();
+            }
+            catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }
@@ -171,7 +205,7 @@ public class PeerProcess {
 
 
     public void parsePeerInfo() throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("BitTorrent_CNT4007/src/BitTorrent/PeerInfo.cfg")); //My intellij is weird about relative file paths so this may need to be changed
+        BufferedReader reader = new BufferedReader(new FileReader("src/BitTorrent/PeerInfo.cfg")); //My intellij is weird about relative file paths so this may need to be changed
         ArrayList<String> peers = new ArrayList<String>();
         while (true) {
             String peer = reader.readLine();
@@ -191,7 +225,7 @@ public class PeerProcess {
     }
 
     public static int findPortFromPeerInfo(String id) throws IOException { //This function is a bit redundant if process id = port number, but necessary in current implementation to have the port of a process be grabbed from the PeerInfo.cfg file
-        BufferedReader reader = new BufferedReader(new FileReader("BitTorrent_CNT4007/src/BitTorrent/PeerInfo.cfg"));
+        BufferedReader reader = new BufferedReader(new FileReader("src/BitTorrent/PeerInfo.cfg"));
         int foundPort = -1; //Will return -1 if process id not in PeerInfo.cfg
         while (true) {
             String process = reader.readLine();
@@ -216,6 +250,5 @@ public class PeerProcess {
             }
         }
     }
-
 
 }

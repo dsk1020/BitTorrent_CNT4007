@@ -22,7 +22,7 @@ public class PeerProcess1001 {
         String processId = args[0];
         int port = PeerProcess.findPortFromPeerInfo(processId);
         // Read common.cfg file
-        FileInputStream common = new FileInputStream("BitTorrent_CNT4007/src/BitTorrent/Common.cfg");
+        FileInputStream common = new FileInputStream("src/BitTorrent/Common.cfg");
         Properties properties = new Properties();
         properties.load(common);
         numberOfPreferredNeighbors = Integer.parseInt(properties.getProperty("NumberOfPreferredNeighbors"));
@@ -37,9 +37,14 @@ public class PeerProcess1001 {
 
         peerProcess.serverThread = new Thread(peerProcess::startServer);
         peerProcess.readThread = new Thread(peerProcess::read);
+        peerProcess.unchokingThread = new Thread(peerProcess::unchokingInterval);
+        peerProcess.optimisticUnchokingThread = new Thread(peerProcess::optimisticUnchokingInterval);
+
 
         peerProcess.serverThread.start();
         peerProcess.readThread.start();
+        peerProcess.unchokingThread.start();
+        peerProcess.optimisticUnchokingThread.start();
     }
 
 }

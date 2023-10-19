@@ -37,9 +37,14 @@ public class PeerProcess1002 {
 
         peerProcess.serverThread = new Thread(peerProcess::startServer);
         peerProcess.readThread = new Thread(peerProcess::read);
+        peerProcess.unchokingThread = new Thread(peerProcess::unchokingInterval);
+        peerProcess.optimisticUnchokingThread = new Thread(peerProcess::optimisticUnchokingInterval);
+
 
         peerProcess.serverThread.start();
         peerProcess.readThread.start();
+        peerProcess.unchokingThread.start();
+        peerProcess.optimisticUnchokingThread.start();
     }
 
 }
