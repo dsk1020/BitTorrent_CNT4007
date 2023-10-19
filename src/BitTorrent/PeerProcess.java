@@ -1,4 +1,7 @@
 package BitTorrent;
+import BitTorrent.Message;
+import BitTorrent.Handshake;
+
 import java.net.*;
 import java.io.*;
 import java.text.*;
@@ -250,5 +253,6 @@ public class PeerProcess {
             }
         }
     }
+
 
 }
