@@ -1,54 +1,44 @@
 package BitTorrent._1004;
-import java.net.*;
+
+import BitTorrent.PeerProcess;
+
 import java.io.*;
-import java.util.Scanner;
+import java.net.ConnectException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.Properties;
 
-public class PeerProcess1004
-{
-    public static void main(String[] args) throws IOException {
-        try
-        {
-            Scanner scn = new Scanner(System.in);
+public class PeerProcess1004 {
+    private static int numberOfPreferredNeighbors;
+    private static int unchokingInterval;
+    private static int optimisticUnchokingInterval;
+    private static String fileName;
+    private static int fileSize;
+    private static int pieceSize;
 
-            // getting localhost ip
-            InetAddress ip = InetAddress.getByName("localhost");
+    //main method
+    public static void main(String args[]) throws Exception
+    {
+        String processId = args[0];
+        int port = PeerProcess.findPortFromPeerInfo(processId);
+        // Read common.cfg file
+        FileInputStream common = new FileInputStream("src/BitTorrent/Common.cfg");
+        Properties properties = new Properties();
+        properties.load(common);
+        numberOfPreferredNeighbors = Integer.parseInt(properties.getProperty("NumberOfPreferredNeighbors"));
+        unchokingInterval = Integer.parseInt(properties.getProperty("UnchokingInterval"));
+        optimisticUnchokingInterval = Integer.parseInt(properties.getProperty("OptimisticUnchokingInterval"));
+        fileName = properties.getProperty("FileName", null);
+        fileSize = Integer.parseInt(properties.getProperty("FileSize"));
+        pieceSize = Integer.parseInt(properties.getProperty("PieceSize"));
+        PeerProcess peerProcess = new PeerProcess(port, numberOfPreferredNeighbors, unchokingInterval, optimisticUnchokingInterval, fileName, fileSize, pieceSize);
+        peerProcess.connectToAllBefore();
 
-            // establish the connection with server port 5056
-            Socket s = new Socket(ip, 5056);
+        peerProcess.serverThread = new Thread(peerProcess::startServer);
+        peerProcess.readThread = new Thread(peerProcess::read);
 
-            // obtaining input and out streams
-            DataInputStream dis = new DataInputStream(s.getInputStream());
-            DataOutputStream dos = new DataOutputStream(s.getOutputStream());
-
-            // the following loop performs the exchange of
-            // information between client and client handler
-            while (true)
-            {
-                System.out.println(dis.readUTF());
-                String tosend = scn.nextLine();
-                dos.writeUTF(tosend);
-
-                // If client sends exit,close this connection
-                // and then break from the while loop
-                if(tosend.equals("Exit"))
-                {
-                    System.out.println("Closing this connection : " + s);
-                    s.close();
-                    System.out.println("Connection closed");
-                    break;
-                }
-
-                // printing date or time as requested by client
-                String received = dis.readUTF();
-                System.out.println(received);
-            }
-
-            // closing resources
-            scn.close();
-            dis.close();
-            dos.close();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
+        peerProcess.serverThread.start();
+        peerProcess.readThread.start();
     }
+
 }

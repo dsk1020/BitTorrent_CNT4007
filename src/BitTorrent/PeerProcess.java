@@ -177,7 +177,8 @@ public class PeerProcess {
             String peer = reader.readLine();
             if (peer != null) {
                 peers.add(peer);
-            } else
+            }
+            else
                 break;
         }
         this.peerInfo = peers;
@@ -187,6 +188,24 @@ public class PeerProcess {
                 this.hasFile = Integer.parseInt(info[3]);
             }
         }
+    }
+
+    public static int findPortFromPeerInfo(String id) throws IOException { //This function is a bit redundant if process id = port number, but necessary in current implementation to have the port of a process be grabbed from the PeerInfo.cfg file
+        BufferedReader reader = new BufferedReader(new FileReader("BitTorrent_CNT4007/src/BitTorrent/peerInfo.cfg"));
+        int foundPort = -1; //Will return -1 if process id not in PeerInfo.cfg
+        while (true) {
+            String process = reader.readLine();
+            if (process != null) {
+                if (process.contains(id)) {
+                    String[] info = process.split(" ");
+                    foundPort = Integer.parseInt(info[2]);
+                    return foundPort;
+                }
+            }
+            else
+                break;
+        }
+        return foundPort;
     }
 
     public void connectToAllBefore(){
