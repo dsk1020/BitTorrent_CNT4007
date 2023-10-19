@@ -86,13 +86,27 @@ public class PeerProcess {
 
     public void sendHandshake(Socket socket) {
         try {
-            String handshakeMessage = "P2PFILESHARINGPROJ0000000000" + String.valueOf(port);
+            //String handshakeMessage = "P2PFILESHARINGPROJ0000000000" + String.valueOf(port);
+            Handshake msg = new Handshake(port);
             outputStream = new ObjectOutputStream(socket.getOutputStream());
-            outputStream.writeObject(handshakeMessage);
+            outputStream.writeObject(msg);
 
             //System.out.println("Sent handshake message from " + port);
             logMessage("TCP connection");
         } catch (Exception e) {
+            //e.printStackTrace();
+        }
+    }
+
+    public void send(Socket socket, Message sndMsg)
+    {
+        try {
+            outputStream = new ObjectOutputStream(socket.getOutputStream());
+            outputStream.writeObject(sndMsg);
+
+            //TODO - add Log Message
+        } catch(Exception e)
+        {
             //e.printStackTrace();
         }
     }
@@ -110,9 +124,18 @@ public class PeerProcess {
             {
                 try{
                     socket.setSoTimeout(500); //TODO - set to unchoke time
+
                     inputStream = new ObjectInputStream(socket.getInputStream());
-                    String mss = (String)inputStream.readObject();
-                    System.out.println(mss);
+                    Object inMsg = inputStream.readObject();
+
+                    if(inMsg instanceof Handshake)
+                    {
+                        Handshake msg = (Handshake) inMsg;
+                        connectedID.put(socket,msg.getID());
+                        //TODO - Send Bitfield Message
+                        //Message bitfieldMsg = new Message(length, type, bitfield)
+                        //send(socket,
+                    }
                     // TODO - Message response
                 }catch (IOException i)
                 {
