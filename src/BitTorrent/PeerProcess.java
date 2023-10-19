@@ -1,6 +1,7 @@
 package BitTorrent;
 import BitTorrent.Message;
 import BitTorrent.Handshake;
+import BitTorrent.Type;
 
 import java.net.*;
 import java.io.*;
@@ -17,7 +18,8 @@ public class PeerProcess {
     public static String fileName;
     public static int fileSize;
     public static int pieceSize;
-    public boolean isUnchoked, isOptimisticallyUnchoked = false;
+    public boolean isUnchoked, isOptimisticallyUnchoked = false; // Flag for choking/unchoking intervals
+    public ArrayList<Socket> neighbors;
     public int hasFile; //boolean for checking if current peer process contains entire file (0 = false, 1 = true)
     public ArrayList<String> peerInfo; //raw info for each peer, in case it's needed
     public ObjectOutputStream outputStream = null;
@@ -113,7 +115,20 @@ public class PeerProcess {
 
     public void read() {
         while (true) {
+            // Handle choke
             if (readThread.isInterrupted()) {
+                // Send choking message to all neighbors
+                for (Socket socket : neighbors) {
+                    Message message = new Message();
+                    message.setMsgType(Type.choke);
+                    // TODO: Send choke message, i.e. send(socket, message)
+                }
+                if (isUnchoked) {
+                    // TODO: changeNeighbors();
+                }
+                if (isOptimisticallyUnchoked) {
+                    // TODO: changeOptimisticNeighbors();
+                }
                 // TODO: Handle interrupt message/ Do choking stuff
             }
 
