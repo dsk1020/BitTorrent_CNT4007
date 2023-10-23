@@ -16,7 +16,8 @@ public class PeerProcess {
     public static int fileSize;
     public static int pieceSize;
     public boolean isUnchoked, isOptimisticallyUnchoked = false; // Flag for choking/unchoking intervals
-    public Set<Socket> neighbors;
+    public Set<Socket> neighbors; // Preferred neighbors
+    public Socket optimisticNeighbor = null; // Optimistic neighbor
     public int hasFile; //boolean for checking if current peer process contains entire file (0 = false, 1 = true)
     public String bitfield;
     public ArrayList<String> peerInfo; //raw info for each peer, in case it's needed
@@ -126,12 +127,12 @@ public class PeerProcess {
                     // TODO: Send choke message, i.e. send(socket, chokeMessage)
                 }
                 if (isUnchoked) {
-                    this.setNeighbors();
+                    setNeighbors();
                     isUnchoked = false;
                 }
                 if (isOptimisticallyUnchoked) {
-                    // TODO: changeOptimisticNeighbors();
-                    this.isOptimisticallyUnchoked = false;
+                    setOptimisticNeighbor();
+                    isOptimisticallyUnchoked = false;
                 }
                 Thread.interrupted();
                 continue;
@@ -183,6 +184,30 @@ public class PeerProcess {
                 }
             }
         }
+    }
+
+    private void setOptimisticNeighbor() {
+        // If all connected sockets are neighbors, there aren't any choked sockets to optimistically choose.
+        if (connectedFrom.size() >= neighbors.size()) {
+            // TODO: Print sizes of connectionsFrom and neighbors.size() and figure out what's going wrong with the logging
+            return;
+        }
+        Random random = new Random();
+        List<Socket> allConnections = new ArrayList<>(this.connectedFrom);
+        allConnections.addAll(this.connectedTo);
+        if (allConnections.isEmpty()) return;
+
+        // Get random index of socket which is not in the unchocked neighbors
+        int randomIndex = random.nextInt(allConnections.size());
+        if (neighbors.contains(allConnections.get(randomIndex))) {
+            randomIndex = random.nextInt(allConnections.size());
+        }
+        optimisticNeighbor = allConnections.get(randomIndex);
+        Message unchokeMessage = new Message();
+        unchokeMessage.setMsgType(MessageType.unchoke);
+        // TODO: send(optimisticNeighbor, unchokeMessage);
+
+        logMessage("change of optimistically unchoked neighbor", connectedID.get(optimisticNeighbor));
     }
 
     private void setNeighbors() {
@@ -259,7 +284,7 @@ public class PeerProcess {
                     log.println(time + ": Peer " + port + " has the preferred neighbors " + idList + ".");
                     break;
                 case "change of optimistically unchoked neighbor":
-                    log.println(time + ": Peer " + port + " has the optimistically unchoked neighbor " + "[optimistically unchoked neighbor ID].");
+                    log.println(time + ": Peer " + port + " has the optimistically unchoked neighbor " + id2 + ".");
                     break;
                 case "unchoking":
                     log.println(time + ": Peer " + port + " is unchoked by " + id2);
