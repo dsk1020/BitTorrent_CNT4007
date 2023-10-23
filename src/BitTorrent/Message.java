@@ -1,8 +1,8 @@
 package BitTorrent;
-
+import java.io.Serializable;
 import java.util.List;
 
-public class Message
+public class Message implements Serializable
 {
     private int msgLength;
     private byte msgType;

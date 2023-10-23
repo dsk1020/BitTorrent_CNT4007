@@ -101,12 +101,15 @@ public class PeerProcess {
     {
         try {
             outputStream = new ObjectOutputStream(socket.getOutputStream());
+            outputStream.flush();
             outputStream.writeObject(sndMsg);
+            outputStream.flush();
+            System.out.println("SEND");
 
             //TODO - add Log Message
         } catch(Exception e)
         {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
     }
 
@@ -135,7 +138,7 @@ public class PeerProcess {
             for(Socket socket:allConnections)
             {
                 try{
-                    socket.setSoTimeout(500); //TODO - set to unchoke time
+                    socket.setSoTimeout(1000); //TODO - set to unchoke time
 
                     inputStream = new ObjectInputStream(socket.getInputStream());
                     Object inMsg = inputStream.readObject();
@@ -144,11 +147,29 @@ public class PeerProcess {
                     {
                         Handshake msg = (Handshake) inMsg;
                         connectedID.put(socket,msg.getID());
+                        System.out.println("-----Handshake: " + msg.getID());
                         //TODO - Send Bitfield Message
-                        //Message bitfieldMsg = new Message(length, type, bitfield)
-                        //send(socket,
+                        String tmpBit = "00010000100011110";
+                        int tmpLen = tmpBit.length();
+                        Message bitfieldMsg = new Message(tmpLen, MessageType.bitfield, tmpBit);
+                        send(socket,bitfieldMsg);
                     }
                     // TODO - Message response
+                    else if(inMsg instanceof Message)
+                    {
+                        Message msg = (Message) inMsg;
+                        // TODO - Choke
+                        // TODO - Unchoke
+                        // TODO - Interested
+                        // TODO - Not Interested
+                        // TODO - Have
+                        if(msg.getMsgType() == MessageType.bitfield)
+                        {
+                            System.out.println("---Bitfield: " + msg.getMsgBitfield());
+                        }
+                        // TODO - Request
+                        // TODO - Piece
+                    }
                 }catch (IOException i)
                 {
                     //System.out.println(i);
