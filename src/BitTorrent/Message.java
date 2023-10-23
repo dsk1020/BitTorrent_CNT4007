@@ -9,6 +9,7 @@ public class Message implements Serializable
 
     private List<Integer> msgPayload;
     private String msgBitfield = "";
+    private int haveIndex;
 
     public Message()
     {
@@ -24,6 +25,19 @@ public class Message implements Serializable
         this.msgLength = length;
         this.msgType = type;
         this.msgBitfield = bitfield;
+    }
+
+    public Message(int length, byte type) // for messages with no payload: choke, unchoke, interested, not interested
+    {
+        this.msgLength = length;
+        this.msgType = type;
+    }
+
+    public Message(int length, byte type, int have) // for have and request messages
+    {
+        this.msgLength = length;
+        this.msgType = type;
+        this.haveIndex = have;
     }
 
     public int getMsgLength()

@@ -31,6 +31,8 @@ public class PeerProcess {
     public HashMap<Socket, ObjectInputStream> inputStreams = new HashMap<>();
     public HashMap<Socket, ObjectOutputStream> outputStreams = new HashMap<>();
     public HashMap<Socket, Integer> connectedID = new HashMap<>();
+    public HashMap<Socket,String> peerBitfields = new HashMap<>();
+    public List<Socket> interestedNeighbors = new ArrayList<>();
     public ServerSocket serverSocket = null;
 
     // Logging functionality
@@ -107,9 +109,7 @@ public class PeerProcess {
             outputStream.flush();
             outputStream.writeObject(sndMsg);
             outputStream.flush();
-            System.out.println("SEND");
 
-            //TODO - add Log Message
         } catch(Exception e)
         {
             e.printStackTrace();
@@ -124,7 +124,7 @@ public class PeerProcess {
                 for (Socket socket : neighbors) {
                     Message chokeMessage = new Message();
                     chokeMessage.setMsgType(MessageType.choke);
-                    // TODO: Send choke message, i.e. send(socket, chokeMessage)
+                    send(socket, chokeMessage);
                 }
                 if (isUnchoked) {
                     setNeighbors();
@@ -154,32 +154,88 @@ public class PeerProcess {
                         Handshake msg = (Handshake) inMsg;
                         connectedID.put(socket,msg.getID());
                         System.out.println("-----Handshake: " + msg.getID());
-                        //TODO - Send Bitfield Message
-                        String tmpBit = "00010000100011110";
-                        int tmpLen = tmpBit.length();
-                        Message bitfieldMsg = new Message(tmpLen, MessageType.bitfield, tmpBit);
+
+                        //send bitfield message
+                        Message bitfieldMsg = new Message(this.bitfield.length(), MessageType.bitfield, this.bitfield);
                         send(socket,bitfieldMsg);
                     }
                     // TODO - Message response
                     else if(inMsg instanceof Message)
                     {
                         Message msg = (Message) inMsg;
-                        // TODO - Choke
-                        // TODO - Unchoke
-                        // TODO - Interested
-                        // TODO - Not Interested
-                        // TODO - Have
-                        if(msg.getMsgType() == MessageType.bitfield)
+
+                        if(msg.getMsgType() == MessageType.choke)
+                        {
+                            System.out.println("CHOKE");
+                            // TODO - Choke functionality
+                        }
+                        else if(msg.getMsgType() == MessageType.unchoke)
+                        {
+                            System.out.println("UNCHOKE");
+                            // TODO - Unchoke functionality
+                        }
+                        else if(msg.getMsgType() == MessageType.interested)
+                        {
+                            interestedNeighbors.add(socket); // save interested neighbors
+                            logMessage("receive INTERESTED", connectedID.get(socket));
+                        }
+                        else if(msg.getMsgType() == MessageType.not_interested)
+                        {
+                            int index = interestedNeighbors.indexOf(socket);
+                            if(index != -1)
+                            {
+                                interestedNeighbors.remove(index); // remove neighbor from interested list
+                            }
+                            logMessage("receive NOT INTERESTED", connectedID.get(socket));
+                        }
+                        else if(msg.getMsgType() == MessageType.have)
+                        {
+                            // TODO - Have
+                            // get the index of the piece peer has
+                            // u[date peers bitfield
+                        }
+                        else if(msg.getMsgType() == MessageType.bitfield)
                         {
                             System.out.println("---Bitfield: " + msg.getMsgBitfield());
+                            this.peerBitfields.put(socket,msg.getMsgBitfield()); // store all peer bitfields
+
+                            List<Integer> missingPieces = findMissingPieces(msg.getMsgBitfield());
+
+                            if(missingPieces.isEmpty()) // if connected peer has no pieces this peer needs
+                            {
+                                Message outMsg = new Message(0, MessageType.not_interested);
+                                send(socket, outMsg);
+                            }
+                            else
+                            {
+                                Message outMsg = new Message(0, MessageType.interested);
+                                send(socket, outMsg);
+                                // TODO - rest of bitfield
+                            }
+
+
                         }
-                        // TODO - Request
-                        // TODO - Piece
+                        else if(msg.getMsgType() == MessageType.request)
+                        {
+                            // TODO - Request
+                        }
+                        else if(msg.getMsgType() == MessageType.piece)
+                        {
+                            // TODO - Piece
+                        }
+                        else
+                        {
+                            throw new Exception("Message type not supported");
+                        }
                     }
                 }catch (IOException i)
                 {
                     //System.out.println(i);
-                } catch (ClassNotFoundException e) {
+                } catch (ClassNotFoundException e)
+                {
+                    throw new RuntimeException(e);
+                } catch (Exception e)
+                {
                     throw new RuntimeException(e);
                 }
             }
@@ -223,7 +279,7 @@ public class PeerProcess {
         for (Socket socket : neighbors) {
             Message unchokeMessage = new Message();
             unchokeMessage.setMsgType(MessageType.unchoke);
-            // TODO: send(socket, unchokeMessage);
+            send(socket, unchokeMessage);
         }
 
         logMessage("change of preferred neighbors", 0);
