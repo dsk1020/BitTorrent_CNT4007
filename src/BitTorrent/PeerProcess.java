@@ -18,6 +18,7 @@ public class PeerProcess {
     public boolean isUnchoked, isOptimisticallyUnchoked = false; // Flag for choking/unchoking intervals
     public ArrayList<Socket> neighbors;
     public int hasFile; //boolean for checking if current peer process contains entire file (0 = false, 1 = true)
+    public String bitfield;
     public ArrayList<String> peerInfo; //raw info for each peer, in case it's needed
     public ObjectOutputStream outputStream = null;
     public ObjectInputStream inputStream = null;
@@ -279,6 +280,8 @@ public class PeerProcess {
             String[] info = peer.split(" ");
             if (Integer.parseInt(info[2]) == this.port) {
                 this.hasFile = Integer.parseInt(info[3]);
+                //String repeat code: https://stackoverflow.com/questions/1235179/simple-way-to-repeat-a-string (String.repeat() was not working on my version of Java)
+                this.bitfield = String.join("", Collections.nCopies((int)Math.ceil(fileSize / pieceSize), info[3])); //Technically each *bit* of the bitfield should specify the piece index, but in this case each byte (char) of the string = 1 bit.
             }
         }
     }
@@ -307,6 +310,14 @@ public class PeerProcess {
             if (Integer.parseInt(info[2]) < this.port) {
                 this.connect(Integer.parseInt(info[2]));
             }
+        }
+    }
+
+    public void updateBitfield(int index){
+        if (index <= (fileSize / pieceSize)) {
+            char[] bitfieldArray = this.bitfield.toCharArray();
+            bitfieldArray[index] = '1';
+            this.bitfield = String.valueOf(bitfieldArray);
         }
     }
 
