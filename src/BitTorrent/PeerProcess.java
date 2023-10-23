@@ -16,7 +16,7 @@ public class PeerProcess {
     public static int fileSize;
     public static int pieceSize;
     public boolean isUnchoked, isOptimisticallyUnchoked = false; // Flag for choking/unchoking intervals
-    public ArrayList<Socket> neighbors;
+    public Set<Socket> neighbors;
     public int hasFile; //boolean for checking if current peer process contains entire file (0 = false, 1 = true)
     public String bitfield;
     public ArrayList<String> peerInfo; //raw info for each peer, in case it's needed
@@ -47,6 +47,7 @@ public class PeerProcess {
         PeerProcess.fileSize = fileSize;
         PeerProcess.pieceSize = pieceSize;
         log = new PrintWriter("src/BitTorrent/log_peer_" + port + ".log");
+        neighbors = new HashSet<>();
     }
 
     public void connect (int port) {
@@ -92,7 +93,7 @@ public class PeerProcess {
             outputStream.writeObject(msg);
 
             //System.out.println("Sent handshake message from " + port);
-            logMessage("TCP connection");
+            logMessage("sends connection", connectedID.get(socket));
         } catch (Exception e) {
             //e.printStackTrace();
         }
@@ -120,17 +121,20 @@ public class PeerProcess {
             if (readThread.isInterrupted()) {
                 // Send choking message to all neighbors
                 for (Socket socket : neighbors) {
-                    Message message = new Message();
-                    message.setMsgType(MessageType.choke);
-                    // TODO: Send choke message, i.e. send(socket, message)
+                    Message chokeMessage = new Message();
+                    chokeMessage.setMsgType(MessageType.choke);
+                    // TODO: Send choke message, i.e. send(socket, chokeMessage)
                 }
                 if (isUnchoked) {
-                    // TODO: changeNeighbors();
+                    this.setNeighbors();
+                    isUnchoked = false;
                 }
                 if (isOptimisticallyUnchoked) {
                     // TODO: changeOptimisticNeighbors();
+                    this.isOptimisticallyUnchoked = false;
                 }
-                // TODO: Handle interrupt message/ Do choking stuff
+                Thread.interrupted();
+                continue;
             }
 
             List<Socket> allConnections = new ArrayList<>(this.connectedFrom);
@@ -181,6 +185,25 @@ public class PeerProcess {
         }
     }
 
+    private void setNeighbors() {
+        neighbors = new HashSet<>();
+        List<Socket> allConnections = new ArrayList<>(this.connectedFrom);
+        allConnections.addAll(this.connectedTo);
+        while (neighbors.size() < Math.min(allConnections.size(), numberOfPreferredNeighbors)) {
+            Socket neighbor = allConnections.get(new Random().nextInt(allConnections.size()));
+            if (neighbor != null) {
+                neighbors.add(neighbor);
+            }
+        }
+        for (Socket socket : neighbors) {
+            Message unchokeMessage = new Message();
+            unchokeMessage.setMsgType(MessageType.unchoke);
+            // TODO: send(socket, unchokeMessage);
+        }
+
+        logMessage("change of preferred neighbors", 0);
+    }
+
     public void unchokingInterval() {
         while (true) {
             try {
@@ -212,44 +235,49 @@ public class PeerProcess {
         }
     }
 
-    public void logMessage(String msgType) {
+    public void logMessage(String msgType, int id2) {
         try {
             Date getDate = new Date();
             String time = forTime.format(getDate);
 
             switch (msgType) {
                 case "test":
-                    log.println(time + ": This is a test message, id1:  " + port + " , id2: " + "[peer_ID 2]" + ".");
+                    log.println(time + ": This is a test message, id1:  " + port + " , id2: " + id2 + ".");
                     break;
                 case "sends connection":
-                    log.println(time + ": Peer " + port + " makes a connection to Peer " + "[peer_ID 2]" + ".");
+                    log.println(time + ": Peer " + port + " makes a connection to Peer " + id2 + ".");
                     break;
                 case "connection made":
-                    log.println(time + ": Peer " + port + " is connected from Peer " + "[peer_ID 2]" + ".");
+                    log.println(time + ": Peer " + port + " is connected from Peer " + id2 + ".");
                     break;
                 case "change of preferred neighbors":
-                    log.println(time + ": Peer " + port + " has the preferred neighbors " + "[preferred neighbor ID list].");
+                    String idList = "";
+                    for (Socket socket : neighbors) {
+                        idList += connectedID.get(socket) + ",";
+                    }
+                    idList = idList.substring(0, idList.length() - 1);
+                    log.println(time + ": Peer " + port + " has the preferred neighbors " + idList + ".");
                     break;
                 case "change of optimistically unchoked neighbor":
                     log.println(time + ": Peer " + port + " has the optimistically unchoked neighbor " + "[optimistically unchoked neighbor ID].");
                     break;
                 case "unchoking":
-                    log.println(time + ": Peer " + port + " is unchoked by " + " [peer_ID 2].");
+                    log.println(time + ": Peer " + port + " is unchoked by " + id2);
                     break;
                 case "choking":
-                    log.println(time + ": Peer " + port + " is choked by " + " [peer_ID 2].");
+                    log.println(time + ": Peer " + port + " is choked by " + id2);
                     break;
                 case "receive HAVE":
-                    log.println(time + ": Peer " + port + " received the 'have' message from " + "[peer_ID 2]" + " for the piece " + "[piece index].");
+                    log.println(time + ": Peer " + port + " received the 'have' message from " + id2 + " for the piece " + "[piece index].");
                     break;
                 case "receive INTERESTED":
-                    log.println(time + ": Peer " + port + " received the 'interested' message from " + "[peer_ID 2]");
+                    log.println(time + ": Peer " + port + " received the 'interested' message from " + id2);
                     break;
                 case "receive NOT INTERESTED":
-                    log.println(time + ": Peer " + port + " received the 'not interested' message from " + "[peer_ID 2]");
+                    log.println(time + ": Peer " + port + " received the 'not interested' message from " + id2);
                     break;
                 case "downloading a piece":
-                    log.println(time + ": Peer " + port + " has downloaded the piece " + "[piece index]" + " from " + "[peer_ID 2]" + " . Now the number of pieces it has is " + "[number of pieces]" + " .");
+                    log.println(time + ": Peer " + port + " has downloaded the piece " + "[piece index]" + " from " + id2 + " . Now the number of pieces it has is " + "[number of pieces]" + " .");
                     break;
                 case "completion of download":
                     log.println(time + ": Peer " + port + " has downloaded the complete file.");
