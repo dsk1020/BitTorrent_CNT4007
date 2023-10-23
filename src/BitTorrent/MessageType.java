@@ -1,6 +1,6 @@
 package BitTorrent;
 
-public class Type {
+public class MessageType {
     final static public byte choke = 0;
     final static public byte unchoke = 1;
     final static public byte interested = 2;

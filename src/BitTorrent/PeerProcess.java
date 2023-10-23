@@ -1,7 +1,4 @@
 package BitTorrent;
-import BitTorrent.Message;
-import BitTorrent.Handshake;
-import BitTorrent.Type;
 
 import java.net.*;
 import java.io.*;
@@ -120,7 +117,7 @@ public class PeerProcess {
                 // Send choking message to all neighbors
                 for (Socket socket : neighbors) {
                     Message message = new Message();
-                    message.setMsgType(Type.choke);
+                    message.setMsgType(MessageType.choke);
                     // TODO: Send choke message, i.e. send(socket, message)
                 }
                 if (isUnchoked) {
