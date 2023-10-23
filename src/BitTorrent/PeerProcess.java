@@ -321,5 +321,14 @@ public class PeerProcess {
         }
     }
 
+    public List<Integer> findMissingPieces(String incomingBitfield) {
+        List <Integer> missingPieces = new ArrayList<>();
+        for (int i = 0; i < incomingBitfield.length(); i++) {
+            if (incomingBitfield.charAt(i) == '1' && this.bitfield.charAt(i) == '0')
+                missingPieces.add(i);
+        }
+        return missingPieces;
+    }
+
 
 }
