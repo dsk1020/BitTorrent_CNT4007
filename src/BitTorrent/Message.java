@@ -14,10 +14,11 @@ public class Message implements Serializable
     public Message()
     {
     }
-    public Message(int length, byte type, List<Integer> payload) // regular message
+    public Message(int length, byte type, int pieceIndex, List<Integer> payload) // regular message
     {
         this.msgLength = length;
         this.msgType = type;
+        this.haveIndex = pieceIndex;
         this.msgPayload = payload;
     }
     public Message(int length, byte type, String bitfield) // bit field message
@@ -66,12 +67,19 @@ public class Message implements Serializable
         this.msgBitfield = bitfield;
     }
 
-    public List<Integer> getMsgPayload() {
+    public List<Integer> getMsgPayload()
+    {
         return msgPayload;
     }
 
-    public void setMsgPayload(List<Integer> msgPayload) {
+    public void setMsgPayload(List<Integer> msgPayload)
+    {
         this.msgPayload = msgPayload;
+    }
+
+    public void setHaveIndex(int index)
+    {
+        this.haveIndex = index;
     }
 
     public int getHaveIndex() {return this.haveIndex;}
