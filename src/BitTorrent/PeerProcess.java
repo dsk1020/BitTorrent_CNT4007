@@ -176,6 +176,13 @@ public class PeerProcess {
                         {
                             // We already handle unchokes in setNeighbors() and setOptimisticNeighbor() so we just need to log this
                             logMessage("unchoking", connectedID.get(socket), 0);
+
+                            List<Integer> missingPieces = findMissingPieces(peerBitfields.get(socket));
+
+                            Random rand = new Random();
+                            int randPieceIndex = rand.nextInt(missingPieces.size());
+                            Message sndMsg = new Message(4, MessageType.request, randPieceIndex);
+                            send(socket, sndMsg);
                         }
                         else if(msg.getMsgType() == MessageType.interested)
                         {
@@ -193,9 +200,21 @@ public class PeerProcess {
                         }
                         else if(msg.getMsgType() == MessageType.have)
                         {
-                            // TODO - Have
-                            // get the index of the piece peer has
-                            // u[date peers bitfield
+                            int index = msg.getHaveIndex();
+
+                            String ogBitfield = peerBitfields.get(socket); // get peers bitfield
+                            String modBitfield = ogBitfield.substring(0, index) + '1' + ogBitfield.substring(index + 1); // modify it to include the piece it has
+
+                            peerBitfields.put(socket, modBitfield); // update
+
+                            logMessage("receive HAVE", connectedID.get(socket), index);
+
+                            if(this.bitfield.charAt(index) == '0')
+                            {
+                                Message sndMsg = new Message(0, MessageType.interested);
+                                send(socket, sndMsg);
+                            }
+
                         }
                         else if(msg.getMsgType() == MessageType.bitfield)
                         {
@@ -213,7 +232,12 @@ public class PeerProcess {
                             {
                                 Message outMsg = new Message(0, MessageType.interested);
                                 send(socket, outMsg);
-                                // TODO - rest of bitfield
+
+                                // send one request message
+                                Random rand = new Random();
+                                int randPieceIndex = rand.nextInt(missingPieces.size());
+                                Message sndMsg = new Message(4, MessageType.request, randPieceIndex);
+                                send(socket, sndMsg);
                             }
 
 
