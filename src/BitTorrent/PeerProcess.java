@@ -406,7 +406,6 @@ public class PeerProcess {
                 pieceData.add((int) fileData[dataIndex]);
                 dataIndex++;
             }
-            System.out.println("pieceIndex: " + pieceIndex);
             filePieces.put(pieceIndex, pieceData);
         }
 
