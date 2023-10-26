@@ -73,4 +73,7 @@ public class Message implements Serializable
     public void setMsgPayload(List<Integer> msgPayload) {
         this.msgPayload = msgPayload;
     }
+
+    public int getHaveIndex() {return this.haveIndex;}
+
 }

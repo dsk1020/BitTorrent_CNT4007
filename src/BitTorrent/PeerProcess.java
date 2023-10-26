@@ -20,6 +20,7 @@ public class PeerProcess {
     public Socket optimisticNeighbor = null; // Optimistic neighbor
     public int hasFile; //boolean for checking if current peer process contains entire file (0 = false, 1 = true)
     public String bitfield;
+    public HashMap<Integer, String> filePieces;
     public ArrayList<String> peerInfo; //raw info for each peer, in case it's needed
     public ObjectOutputStream outputStream = null;
     public ObjectInputStream inputStream = null;
@@ -217,7 +218,10 @@ public class PeerProcess {
                         }
                         else if(msg.getMsgType() == MessageType.request)
                         {
-                            // TODO - Request
+                            int requestedPieceIndex = msg.getHaveIndex();
+                            Message outMsg = new Message(4+pieceSize, MessageType.piece, piececontent);
+                            send(socket, outMsg);
+                            // TODO - rest of request
                         }
                         else if(msg.getMsgType() == MessageType.piece)
                         {
@@ -390,6 +394,7 @@ public class PeerProcess {
                 this.hasFile = Integer.parseInt(info[3]);
                 //String repeat code: https://stackoverflow.com/questions/1235179/simple-way-to-repeat-a-string (String.repeat() was not working on my version of Java)
                 this.bitfield = String.join("", Collections.nCopies((int)Math.ceil(fileSize / pieceSize), info[3])); //Technically each *bit* of the bitfield should specify the piece index, but in this case each byte (char) of the string = 1 bit.
+                initializeFilePieces();
             }
         }
     }
