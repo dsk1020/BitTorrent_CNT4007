@@ -99,7 +99,7 @@ public class PeerProcess {
             outputStream.writeObject(msg);
 
             //System.out.println("Sent handshake message from " + port);
-            logMessage("sends connection", connectedID.get(socket));
+            logMessage("sends connection", connectedID.get(socket), 0);
         } catch (Exception e) {
             //e.printStackTrace();
         }
@@ -170,18 +170,17 @@ public class PeerProcess {
                         if(msg.getMsgType() == MessageType.choke)
                         {
                             // We already handle chokes in setNeighbors() and setOptimisticNeighbor() so we just need to log this
-                            logMessage("choking", connectedID.get(socket));
+                            logMessage("choking", connectedID.get(socket), 0);
                         }
                         else if(msg.getMsgType() == MessageType.unchoke)
                         {
                             // We already handle unchokes in setNeighbors() and setOptimisticNeighbor() so we just need to log this
-                            logMessage("unchoking", connectedID.get(socket));
-                            // TODO: Sent request message back to the socket to request a piece it needs
+                            logMessage("unchoking", connectedID.get(socket), 0);
                         }
                         else if(msg.getMsgType() == MessageType.interested)
                         {
                             interestedNeighbors.add(socket); // save interested neighbors
-                            logMessage("receive INTERESTED", connectedID.get(socket));
+                            logMessage("receive INTERESTED", connectedID.get(socket), 0);
                         }
                         else if(msg.getMsgType() == MessageType.not_interested)
                         {
@@ -190,7 +189,7 @@ public class PeerProcess {
                             {
                                 interestedNeighbors.remove(index); // remove neighbor from interested list
                             }
-                            logMessage("receive NOT INTERESTED", connectedID.get(socket));
+                            logMessage("receive NOT INTERESTED", connectedID.get(socket), 0);
                         }
                         else if(msg.getMsgType() == MessageType.have)
                         {
@@ -222,14 +221,22 @@ public class PeerProcess {
                         else if(msg.getMsgType() == MessageType.request)
                         {
                             int requestedPieceIndex = msg.getHaveIndex();
-                            List<Integer> pieceContent = List.of(1, 2, 3, 4, 5); //TODO: Get pieceContent from filePieces
-                            Message outMsg = new Message(4+pieceSize, MessageType.piece, requestedPieceIndex, pieceContent);
+                            List<Integer> pieceContent = filePieces.get(requestedPieceIndex);
+                            Message outMsg = new Message(4+pieceSize, MessageType.piece, requestedPieceIndex, pieceContent); //4 = size of pieceIndex field
                             send(socket, outMsg);
                             // TODO - rest of request
                         }
                         else if(msg.getMsgType() == MessageType.piece)
                         {
-                            // TODO - Piece
+                            int pieceIndex = msg.getHaveIndex();
+                            List<Integer> acquiredPiece = msg.getMsgPayload();
+                            filePieces.put(pieceIndex, acquiredPiece);
+                            updateBitfield(pieceIndex);
+                            logMessage("downloading a piece", connectedID.get(socket), 0); //specify pieces downloaded
+                            //Send out have messages?
+                            //Message outMsg = new Message(4+pieceSize, MessageType.request, function to find interesting pieceIndex)
+                            //send(socket, outMsg);
+                            // TODO - rest of piece
                         }
                         else
                         {
@@ -269,7 +276,7 @@ public class PeerProcess {
         unchokeMessage.setMsgType(MessageType.unchoke);
         send(optimisticNeighbor, unchokeMessage);
 
-        logMessage("change of optimistically unchoked neighbor", connectedID.get(optimisticNeighbor));
+        logMessage("change of optimistically unchoked neighbor", connectedID.get(optimisticNeighbor), 0);
     }
 
     private void setNeighbors() {
@@ -288,7 +295,7 @@ public class PeerProcess {
             send(socket, unchokeMessage);
         }
 
-        logMessage("change of preferred neighbors", 0);
+        logMessage("change of preferred neighbors", 0, 0);
     }
 
     public void unchokingInterval() {
@@ -322,7 +329,7 @@ public class PeerProcess {
         }
     }
 
-    public void logMessage(String msgType, int id2) {
+    public void logMessage(String msgType, int id2, int pieceIndex) {
         try {
             Date getDate = new Date();
             String time = forTime.format(getDate);
@@ -356,7 +363,7 @@ public class PeerProcess {
                     log.println(time + ": Peer " + port + " is choked by " + id2);
                     break;
                 case "receive HAVE":
-                    log.println(time + ": Peer " + port + " received the 'have' message from " + id2 + " for the piece " + "[piece index].");
+                    log.println(time + ": Peer " + port + " received the 'have' message from " + id2 + " for the piece " + pieceIndex + " .");
                     break;
                 case "receive INTERESTED":
                     log.println(time + ": Peer " + port + " received the 'interested' message from " + id2);
@@ -365,7 +372,7 @@ public class PeerProcess {
                     log.println(time + ": Peer " + port + " received the 'not interested' message from " + id2);
                     break;
                 case "downloading a piece":
-                    log.println(time + ": Peer " + port + " has downloaded the piece " + "[piece index]" + " from " + id2 + " . Now the number of pieces it has is " + "[number of pieces]" + " .");
+                    log.println(time + ": Peer " + port + " has downloaded the piece " + pieceIndex + " from " + id2 + " . Now the number of pieces it has is " + filePieces.size() + " .");
                     break;
                 case "completion of download":
                     log.println(time + ": Peer " + port + " has downloaded the complete file.");
