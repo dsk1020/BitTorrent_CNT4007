@@ -2,6 +2,7 @@ package BitTorrent;
 
 import java.net.*;
 import java.io.*;
+import java.nio.file.*;
 import java.text.*;
 import java.util.*;
 
@@ -20,7 +21,7 @@ public class PeerProcess {
     public Socket optimisticNeighbor = null; // Optimistic neighbor
     public int hasFile; //boolean for checking if current peer process contains entire file (0 = false, 1 = true)
     public String bitfield;
-    public HashMap<Integer, String> filePieces;
+    public HashMap<Integer, List<Integer>> filePieces;
     public ArrayList<String> peerInfo; //raw info for each peer, in case it's needed
     public ObjectOutputStream outputStream = null;
     public ObjectInputStream inputStream = null;
@@ -50,6 +51,7 @@ public class PeerProcess {
         PeerProcess.fileName = fileName;
         PeerProcess.fileSize = fileSize;
         PeerProcess.pieceSize = pieceSize;
+        filePieces = new HashMap<Integer, List<Integer>>();
         log = new PrintWriter("src/BitTorrent/log_peer_" + port + ".log");
         neighbors = new HashSet<>();
     }
@@ -174,6 +176,7 @@ public class PeerProcess {
                         {
                             // We already handle unchokes in setNeighbors() and setOptimisticNeighbor() so we just need to log this
                             logMessage("unchoking", connectedID.get(socket));
+                            // TODO: Sent request message back to the socket to request a piece it needs
                         }
                         else if(msg.getMsgType() == MessageType.interested)
                         {
@@ -219,7 +222,8 @@ public class PeerProcess {
                         else if(msg.getMsgType() == MessageType.request)
                         {
                             int requestedPieceIndex = msg.getHaveIndex();
-                            Message outMsg = new Message(4+pieceSize, MessageType.piece, piececontent);
+                            List<Integer> pieceContent = List.of(1, 2, 3, 4, 5); //TODO: Get pieceContent from filePieces
+                            Message outMsg = new Message(4+pieceSize, MessageType.piece, requestedPieceIndex, pieceContent);
                             send(socket, outMsg);
                             // TODO - rest of request
                         }
@@ -375,6 +379,38 @@ public class PeerProcess {
         }
     }
 
+    private void initializeFilePieces() {
+        if (this.hasFile != 1) {
+            return;
+        }
+
+        byte[] fileData;
+        try {
+            String path = "src/BitTorrent/_" + port + "/thefile";
+            fileData = Files.readAllBytes(Path.of(path));
+            System.out.println("fileData.length(): " + fileData.length);
+        }
+        catch (IOException e) {
+            System.out.println("Wrong file path");
+            e.printStackTrace();
+            return;
+        }
+
+        // Rounding up integer division
+        int numPieces = (fileSize + pieceSize - 1) / pieceSize;
+        int dataIndex = 0;
+        for (int pieceIndex = 0; pieceIndex < numPieces; pieceIndex++) {
+            List<Integer> pieceData = new ArrayList<>();
+
+            for (int i = 0; i < pieceSize && dataIndex < fileSize; i++) {
+                pieceData.add((int) fileData[dataIndex]);
+                dataIndex++;
+            }
+            System.out.println("pieceIndex: " + pieceIndex);
+            filePieces.put(pieceIndex, pieceData);
+        }
+
+    }
 
     public void parsePeerInfo() throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader("src/BitTorrent/PeerInfo.cfg")); //My intellij is weird about relative file paths so this may need to be changed
