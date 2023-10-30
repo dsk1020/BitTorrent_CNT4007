@@ -445,7 +445,7 @@ public class PeerProcess {
     }
 
     private void exportFilePieces() {
-        String path = "src/BitTorrent/_" + port + "/downloadedfile.jpg";
+        String path = "src/BitTorrent/_" + port + "/downloaded" + fileName;
         try (FileOutputStream fos = new FileOutputStream(path)) {
             for (int pieceIndex = 0; pieceIndex < filePieces.size(); pieceIndex++) {
                 List<Integer> pieceData = filePieces.get(pieceIndex);
