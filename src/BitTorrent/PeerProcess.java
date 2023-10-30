@@ -64,6 +64,8 @@ public class PeerProcess {
             outputStreams.put(socket, new ObjectOutputStream(socket.getOutputStream()));
             inputStreams.put(socket, new ObjectInputStream(socket.getInputStream()));
 
+            logMessage("sends connection", port, 0);
+
             sendHandshake(socket);
         } catch (Exception e) {
             e.printStackTrace();
@@ -98,7 +100,6 @@ public class PeerProcess {
             outputStream = new ObjectOutputStream(socket.getOutputStream());
             outputStream.writeObject(msg);
 
-            logMessage("sends connection", port, 0);
         } catch (Exception e) {
             //e.printStackTrace();
         }
