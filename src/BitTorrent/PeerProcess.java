@@ -529,11 +529,13 @@ public class PeerProcess {
     public void requestRandomPiece(Socket socket)
     {
         List<Integer> missingPieces = findMissingPieces(peerBitfields.get(socket));
-
-        Random rand = new Random();
-        int randPieceIndex = rand.nextInt(missingPieces.size());
-        Message sndMsg = new Message(4, MessageType.request, randPieceIndex);
-        send(socket, sndMsg);
+        if(!missingPieces.isEmpty())
+        {
+            Random rand = new Random();
+            int randPieceIndex = rand.nextInt(missingPieces.size());
+            Message sndMsg = new Message(4, MessageType.request, randPieceIndex);
+            send(socket, sndMsg);
+        }
     }
 
 }
