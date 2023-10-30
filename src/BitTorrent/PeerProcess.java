@@ -252,9 +252,9 @@ public class PeerProcess {
                             filePieces.put(pieceIndex, acquiredPiece);
                             updateBitfield(pieceIndex);
                             logMessage("downloading a piece", connectedID.get(socket), 0); //specify pieces downloaded
+
                             // Check if we have all the pieces
-                            List<Integer> missingPieces = findMissingPieces(bitfield);
-                            if (missingPieces.isEmpty()) {
+                            if (!bitfield.contains("0")) {
                                 // Export filePieces into actual file
                                 hasFile = 1;
                                 exportFilePieces();
@@ -441,7 +441,6 @@ public class PeerProcess {
             }
             filePieces.put(pieceIndex, pieceData);
         }
-        exportFilePieces();
     }
 
     private void exportFilePieces() {
