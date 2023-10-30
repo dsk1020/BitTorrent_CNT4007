@@ -265,9 +265,11 @@ public class PeerProcess {
                             Message haveOutMsg = new Message(4, MessageType.have, pieceIndex);
                             Message notInterestedOutMsg = new Message(0, MessageType.not_interested);
                             for (Socket connectedNeighbor : allConnections) {
-                                send(connectedNeighbor, haveOutMsg); // where else would Have messages get sent out?
-                                if (findMissingPieces(peerBitfields.get(connectedNeighbor)).size() == 0 && interestedNeighbors.contains(connectedNeighbor)) { //for each connected neighbor that shares all bitfield entries with current peer, send a "not_interested" msg
-                                    send(connectedNeighbor, notInterestedOutMsg);
+                                send(connectedNeighbor, haveOutMsg); // where else would Have messages get sent out?]
+                                if (peerBitfields.get(connectedNeighbor) != null) {
+                                    if (findMissingPieces(peerBitfields.get(connectedNeighbor)).size() == 0  && interestedNeighbors.contains(connectedNeighbor)) { //for each connected neighbor that shares all bitfield entries with current peer, send a "not_interested" msg
+                                        send(connectedNeighbor, notInterestedOutMsg);
+                                    }
                                 }
                             }
                         }
@@ -396,7 +398,7 @@ public class PeerProcess {
                     log.println(time + ": Peer " + port + " is choked by " + id2);
                     break;
                 case "receive HAVE":
-                    log.println(time + ": Peer " + port + " received the 'have' message from " + id2 + " for the piece " + pieceIndex + " .");
+                    log.println(time + ": Peer " + port + " received the 'have' message from " + id2 + " for the piece " + pieceIndex + ".");
                     break;
                 case "receive INTERESTED":
                     log.println(time + ": Peer " + port + " received the 'interested' message from " + id2);
@@ -405,7 +407,7 @@ public class PeerProcess {
                     log.println(time + ": Peer " + port + " received the 'not interested' message from " + id2);
                     break;
                 case "downloading a piece":
-                    log.println(time + ": Peer " + port + " has downloaded the piece " + pieceIndex + " from " + id2 + " . Now the number of pieces it has is " + filePieces.size() + " .");
+                    log.println(time + ": Peer " + port + " has downloaded the piece " + pieceIndex + " from " + id2 + ". Now the number of pieces it has is " + filePieces.size() + ".");
                     break;
                 case "completion of download":
                     log.println(time + ": Peer " + port + " has downloaded the complete file.");
