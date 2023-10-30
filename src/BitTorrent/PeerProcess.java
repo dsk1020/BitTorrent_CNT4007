@@ -96,9 +96,7 @@ public class PeerProcess {
             //String handshakeMessage = "P2PFILESHARINGPROJ0000000000" + String.valueOf(port);
             Handshake msg = new Handshake(port);
             outputStream = new ObjectOutputStream(socket.getOutputStream());
-            outputStream.flush();
             outputStream.writeObject(msg);
-            outputStream.flush();
 
             logMessage("sends connection", port, 0);
         } catch (Exception e) {
@@ -254,7 +252,7 @@ public class PeerProcess {
                             List<Integer> acquiredPiece = msg.getMsgPayload();
                             filePieces.put(pieceIndex, acquiredPiece);
                             updateBitfield(pieceIndex);
-                            logMessage("downloading a piece", connectedID.get(socket), 0); //specify pieces downloaded
+                            logMessage("downloading a piece", connectedID.get(socket), pieceIndex); //specify pieces downloaded
 
                             // Check if we have all the pieces
                             if (!bitfield.contains("0")) {
@@ -537,7 +535,7 @@ public class PeerProcess {
             {
                 Random rand = new Random();
                 int randPieceIndex = rand.nextInt(missingPieces.size());
-                Message sndMsg = new Message(4, MessageType.request, randPieceIndex);
+                Message sndMsg = new Message(4, MessageType.request, missingPieces.get(randPieceIndex));
                 send(socket, sndMsg);
             }
         }
