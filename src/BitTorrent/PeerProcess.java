@@ -58,7 +58,7 @@ public class PeerProcess {
 
     public void connect (int port) {
         try {
-            System.out.println("Peer " + PeerProcess.port + " made connection to port " + port);
+            //System.out.println("Peer " + PeerProcess.port + " made connection to port " + port);
             Socket socket = new Socket("localhost", port);
             connectedTo.add(socket);
             outputStreams.put(socket, new ObjectOutputStream(socket.getOutputStream()));
@@ -147,24 +147,22 @@ public class PeerProcess {
             for(Socket socket:allConnections)
             {
                 try{
-                    socket.setSoTimeout(1000); //TODO - set to unchoke time
+                    socket.setSoTimeout(500); //TODO - set to unchoke time
 
                     inputStream = new ObjectInputStream(socket.getInputStream());
                     Object inMsg = inputStream.readObject();
 
-                    if(inMsg instanceof Handshake)
-                    {
+                    if(inMsg instanceof Handshake) {
                         Handshake msg = (Handshake) inMsg;
-                        connectedID.put(socket,msg.getID());
-                        System.out.println("-----Handshake: " + msg.getID());
+                        connectedID.put(socket, msg.getID());
+                        //System.out.println("-----Handshake: " + msg.getID());
 
                         logMessage("connection made", msg.getID(), 0);
 
                         //send bitfield message
                         Message bitfieldMsg = new Message(this.bitfield.length(), MessageType.bitfield, this.bitfield);
-                        send(socket,bitfieldMsg);
+                        send(socket, bitfieldMsg);
                     }
-                    // TODO - Message response
                     else if(inMsg instanceof Message)
                     {
                         Message msg = (Message) inMsg;
@@ -215,7 +213,7 @@ public class PeerProcess {
                         }
                         else if(msg.getMsgType() == MessageType.bitfield)
                         {
-                            System.out.println("---Bitfield: " + msg.getMsgBitfield());
+                            //System.out.println("---Bitfield: " + msg.getMsgBitfield());
                             this.peerBitfields.put(socket,msg.getMsgBitfield()); // store all peer bitfields
 
                             List<Integer> missingPieces = findMissingPieces(msg.getMsgBitfield());
@@ -245,7 +243,6 @@ public class PeerProcess {
                             List<Integer> pieceContent = filePieces.get(requestedPieceIndex);
                             Message outMsg = new Message(4+pieceSize, MessageType.piece, requestedPieceIndex, pieceContent); //4 = size of pieceIndex field
                             send(socket, outMsg);
-                            // TODO - rest of request
                         }
                         else if(msg.getMsgType() == MessageType.piece)
                         {
@@ -268,7 +265,7 @@ public class PeerProcess {
                             for (Socket connectedNeighbor : allConnections) {
                                 if (peerBitfields.get(connectedNeighbor) != null) {
                                     send(connectedNeighbor, haveOutMsg); // where else would Have messages get sent out?]
-                                    if (findMissingPieces(peerBitfields.get(connectedNeighbor)).size() == 0  && interestedNeighbors.contains(connectedNeighbor)) { //for each connected neighbor that shares all bitfield entries with current peer, send a "not_interested" msg
+                                    if (findMissingPieces(peerBitfields.get(connectedNeighbor)).isEmpty() && interestedNeighbors.contains(connectedNeighbor)) { //for each connected neighbor that shares all bitfield entries with current peer, send a "not_interested" msg
                                         send(connectedNeighbor, notInterestedOutMsg);
                                     }
                                 }
@@ -339,8 +336,8 @@ public class PeerProcess {
             try {
                 // Sleep for unchoking interval seconds
                 Thread.sleep(unchokingInterval * 1000L);
-                System.out.println("Unchoking interval is " + unchokingInterval + " seconds.");
-                System.out.println("Unchoke alert sent from peer process " + port);
+                //System.out.println("Unchoking interval is " + unchokingInterval + " seconds.");
+                //System.out.println("Unchoke alert sent from peer process " + port);
                 isUnchoked = true;
                 readThread.interrupt();
             }
@@ -354,8 +351,8 @@ public class PeerProcess {
             try {
                 // Sleep for optimistic unchoking interval seconds
                 Thread.sleep(optimisticUnchokingInterval * 1000L);
-                System.out.println("Optimistc unchoking interval is " + optimisticUnchokingInterval + " seconds.");
-                System.out.println("Optimistic unchoke alert sent from peer process " + port);
+                //System.out.println("Optimistc unchoking interval is " + optimisticUnchokingInterval + " seconds.");
+                //System.out.println("Optimistic unchoke alert sent from peer process " + port);
                 isOptimisticallyUnchoked = true;
                 readThread.interrupt();
             }
