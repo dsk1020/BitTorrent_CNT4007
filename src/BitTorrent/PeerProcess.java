@@ -233,6 +233,14 @@ public class PeerProcess {
                             filePieces.put(pieceIndex, acquiredPiece);
                             updateBitfield(pieceIndex);
                             logMessage("downloading a piece", connectedID.get(socket), 0); //specify pieces downloaded
+                            // Check if we have all the pieces
+                            List<Integer> missingPieces = findMissingPieces(bitfield);
+                            if (missingPieces.isEmpty()) {
+                                // Export filePieces into actual file
+                                hasFile = 1;
+                                exportFilePieces();
+                                logMessage("completion of download", 0, 0);
+                            }
                             //Send out have messages?
                             //Message outMsg = new Message(4+pieceSize, MessageType.request, function to find interesting pieceIndex)
                             //send(socket, outMsg);
@@ -393,9 +401,8 @@ public class PeerProcess {
 
         byte[] fileData;
         try {
-            String path = "src/BitTorrent/_" + port + "/thefile";
+            String path = "src/BitTorrent/_" + port + "/" + fileName;
             fileData = Files.readAllBytes(Path.of(path));
-            System.out.println("fileData.length(): " + fileData.length);
         }
         catch (IOException e) {
             System.out.println("Wrong file path");
@@ -415,7 +422,22 @@ public class PeerProcess {
             }
             filePieces.put(pieceIndex, pieceData);
         }
+        exportFilePieces();
+    }
 
+    private void exportFilePieces() {
+        String path = "src/BitTorrent/_" + port + "/downloadedfile.jpg";
+        try (FileOutputStream fos = new FileOutputStream(path)) {
+            for (int pieceIndex = 0; pieceIndex < filePieces.size(); pieceIndex++) {
+                List<Integer> pieceData = filePieces.get(pieceIndex);
+                for (Integer byteValue : pieceData) {
+                    fos.write(byteValue);
+                }
+            }
+            fos.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void parsePeerInfo() throws IOException {
