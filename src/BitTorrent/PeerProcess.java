@@ -252,9 +252,9 @@ public class PeerProcess {
                             filePieces.put(pieceIndex, acquiredPiece);
                             updateBitfield(pieceIndex);
                             logMessage("downloading a piece", connectedID.get(socket), 0); //specify pieces downloaded
+
                             // Check if we have all the pieces
-                            List<Integer> missingPieces = findMissingPieces(bitfield);
-                            if (missingPieces.isEmpty()) {
+                            if (!bitfield.contains("0")) {
                                 // Export filePieces into actual file
                                 hasFile = 1;
                                 exportFilePieces();
@@ -441,11 +441,10 @@ public class PeerProcess {
             }
             filePieces.put(pieceIndex, pieceData);
         }
-        exportFilePieces();
     }
 
     private void exportFilePieces() {
-        String path = "src/BitTorrent/_" + port + "/downloadedfile.jpg";
+        String path = "src/BitTorrent/_" + port + "/downloaded" + fileName;
         try (FileOutputStream fos = new FileOutputStream(path)) {
             for (int pieceIndex = 0; pieceIndex < filePieces.size(); pieceIndex++) {
                 List<Integer> pieceData = filePieces.get(pieceIndex);
