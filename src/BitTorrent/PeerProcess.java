@@ -266,8 +266,8 @@ public class PeerProcess {
                             Message haveOutMsg = new Message(4, MessageType.have, pieceIndex);
                             Message notInterestedOutMsg = new Message(0, MessageType.not_interested);
                             for (Socket connectedNeighbor : allConnections) {
-                                send(connectedNeighbor, haveOutMsg); // where else would Have messages get sent out?]
                                 if (peerBitfields.get(connectedNeighbor) != null) {
+                                    send(connectedNeighbor, haveOutMsg); // where else would Have messages get sent out?]
                                     if (findMissingPieces(peerBitfields.get(connectedNeighbor)).size() == 0  && interestedNeighbors.contains(connectedNeighbor)) { //for each connected neighbor that shares all bitfield entries with current peer, send a "not_interested" msg
                                         send(connectedNeighbor, notInterestedOutMsg);
                                     }
