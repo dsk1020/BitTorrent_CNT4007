@@ -261,10 +261,15 @@ public class PeerProcess {
                                 exportFilePieces();
                                 logMessage("completion of download", 0, 0);
                             }
-                            //Send out have messages?
-                            //Message outMsg = new Message(4+pieceSize, MessageType.request, function to find interesting pieceIndex)
-                            //send(socket, outMsg);
-                            // TODO - rest of piece
+                            requestRandomPiece(socket);
+                            Message haveOutMsg = new Message(4, MessageType.have, pieceIndex);
+                            Message notInterestedOutMsg = new Message(0, MessageType.not_interested);
+                            for (Socket connectedNeighbor : allConnections) {
+                                send(connectedNeighbor, haveOutMsg); // where else would Have messages get sent out?
+                                if (findMissingPieces(peerBitfields.get(connectedNeighbor)).size() == 0 && interestedNeighbors.contains(connectedNeighbor)) { //for each connected neighbor that shares all bitfield entries with current peer, send a "not_interested" msg
+                                    send(connectedNeighbor, notInterestedOutMsg);
+                                }
+                            }
                         }
                         else
                         {
