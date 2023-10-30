@@ -96,10 +96,11 @@ public class PeerProcess {
             //String handshakeMessage = "P2PFILESHARINGPROJ0000000000" + String.valueOf(port);
             Handshake msg = new Handshake(port);
             outputStream = new ObjectOutputStream(socket.getOutputStream());
+            outputStream.flush();
             outputStream.writeObject(msg);
+            outputStream.flush();
 
-            //System.out.println("Sent handshake message from " + port);
-            logMessage("sends connection", connectedID.get(socket), 0);
+            logMessage("sends connection", port, 0);
         } catch (Exception e) {
             //e.printStackTrace();
         }
@@ -157,6 +158,8 @@ public class PeerProcess {
                         Handshake msg = (Handshake) inMsg;
                         connectedID.put(socket,msg.getID());
                         System.out.println("-----Handshake: " + msg.getID());
+
+                        logMessage("connection made", msg.getID(), 0);
 
                         //send bitfield message
                         Message bitfieldMsg = new Message(this.bitfield.length(), MessageType.bitfield, this.bitfield);
@@ -527,13 +530,16 @@ public class PeerProcess {
 
     public void requestRandomPiece(Socket socket)
     {
-        List<Integer> missingPieces = findMissingPieces(peerBitfields.get(socket));
-        if(!missingPieces.isEmpty())
+        if(peerBitfields.get(socket) != null)
         {
-            Random rand = new Random();
-            int randPieceIndex = rand.nextInt(missingPieces.size());
-            Message sndMsg = new Message(4, MessageType.request, randPieceIndex);
-            send(socket, sndMsg);
+            List<Integer> missingPieces = findMissingPieces(peerBitfields.get(socket));
+            if(!missingPieces.isEmpty())
+            {
+                Random rand = new Random();
+                int randPieceIndex = rand.nextInt(missingPieces.size());
+                Message sndMsg = new Message(4, MessageType.request, randPieceIndex);
+                send(socket, sndMsg);
+            }
         }
     }
 
