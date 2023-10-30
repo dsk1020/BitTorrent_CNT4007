@@ -177,12 +177,7 @@ public class PeerProcess {
                             // We already handle unchokes in setNeighbors() and setOptimisticNeighbor() so we just need to log this
                             logMessage("unchoking", connectedID.get(socket), 0);
 
-                            List<Integer> missingPieces = findMissingPieces(peerBitfields.get(socket));
-
-                            Random rand = new Random();
-                            int randPieceIndex = rand.nextInt(missingPieces.size());
-                            Message sndMsg = new Message(4, MessageType.request, randPieceIndex);
-                            send(socket, sndMsg);
+                            requestRandomPiece(socket);
                         }
                         else if(msg.getMsgType() == MessageType.interested)
                         {
@@ -509,5 +504,14 @@ public class PeerProcess {
         return missingPieces;
     }
 
+    public void requestRandomPiece(Socket socket)
+    {
+        List<Integer> missingPieces = findMissingPieces(peerBitfields.get(socket));
+
+        Random rand = new Random();
+        int randPieceIndex = rand.nextInt(missingPieces.size());
+        Message sndMsg = new Message(4, MessageType.request, randPieceIndex);
+        send(socket, sndMsg);
+    }
 
 }
