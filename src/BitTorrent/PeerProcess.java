@@ -54,7 +54,7 @@ public class PeerProcess {
         PeerProcess.fileSize = fileSize;
         PeerProcess.pieceSize = pieceSize;
         filePieces = new HashMap<Integer, List<Integer>>();
-        log = new PrintWriter("src/BitTorrent/log_peer_" + port + ".log");
+        log = new PrintWriter("src/BitTorrent/log_peer_" + peerID + ".log");
         neighbors = new HashSet<>();
     }
 
@@ -66,7 +66,7 @@ public class PeerProcess {
             outputStreams.put(socket, new ObjectOutputStream(socket.getOutputStream()));
             inputStreams.put(socket, new ObjectInputStream(socket.getInputStream()));
 
-            logMessage("sends connection", port, 0);
+            logMessage("sends connection", peerID, 0);
 
             sendHandshake(socket);
         } catch (Exception e) {
@@ -98,7 +98,7 @@ public class PeerProcess {
     public void sendHandshake(Socket socket) {
         try {
             //String handshakeMessage = "P2PFILESHARINGPROJ0000000000" + String.valueOf(port);
-            Handshake msg = new Handshake(port);
+            Handshake msg = new Handshake(peerID);
             outputStream = new ObjectOutputStream(socket.getOutputStream());
             outputStream.writeObject(msg);
 
@@ -369,21 +369,19 @@ public class PeerProcess {
     }
 
     public void logMessage(String msgType, int id2, int pieceIndex) {
-        int logPort = port - 1000;
-        id2 -= 1000;
         try {
             Date getDate = new Date();
             String time = forTime.format(getDate);
 
             switch (msgType) {
                 case "test":
-                    log.println(time + ": This is a test message, id1:  " + logPort + " , id2: " + id2 + ".");
+                    log.println(time + ": This is a test message, id1:  " + peerID + " , id2: " + id2 + ".");
                     break;
                 case "sends connection":
-                    log.println(time + ": Peer " + logPort + " makes a connection to Peer " + id2 + ".");
+                    log.println(time + ": Peer " + peerID + " makes a connection to Peer " + id2 + ".");
                     break;
                 case "connection made":
-                    log.println(time + ": Peer " + logPort + " is connected from Peer " + id2 + ".");
+                    log.println(time + ": Peer " + peerID + " is connected from Peer " + id2 + ".");
                     break;
                 case "change of preferred neighbors":
                     if (neighbors.isEmpty()) return;
@@ -392,31 +390,31 @@ public class PeerProcess {
                         idList += connectedID.get(socket) + ",";
                     }
                     idList = idList.substring(0, idList.length() - 1);
-                    log.println(time + ": Peer " + logPort + " has the preferred neighbors " + idList + ".");
+                    log.println(time + ": Peer " + peerID + " has the preferred neighbors " + idList + ".");
                     break;
                 case "change of optimistically unchoked neighbor":
-                    log.println(time + ": Peer " + logPort + " has the optimistically unchoked neighbor " + id2 + ".");
+                    log.println(time + ": Peer " + peerID + " has the optimistically unchoked neighbor " + id2 + ".");
                     break;
                 case "unchoking":
-                    log.println(time + ": Peer " + logPort + " is unchoked by " + id2);
+                    log.println(time + ": Peer " + peerID + " is unchoked by " + id2);
                     break;
                 case "choking":
-                    log.println(time + ": Peer " + logPort + " is choked by " + id2);
+                    log.println(time + ": Peer " + peerID + " is choked by " + id2);
                     break;
                 case "receive HAVE":
-                    log.println(time + ": Peer " + logPort + " received the 'have' message from " + id2 + " for the piece " + pieceIndex + ".");
+                    log.println(time + ": Peer " + peerID + " received the 'have' message from " + id2 + " for the piece " + pieceIndex + ".");
                     break;
                 case "receive INTERESTED":
-                    log.println(time + ": Peer " + logPort + " received the 'interested' message from " + id2);
+                    log.println(time + ": Peer " + peerID + " received the 'interested' message from " + id2);
                     break;
                 case "receive NOT INTERESTED":
-                    log.println(time + ": Peer " + logPort + " received the 'not interested' message from " + id2);
+                    log.println(time + ": Peer " + peerID + " received the 'not interested' message from " + id2);
                     break;
                 case "downloading a piece":
-                    log.println(time + ": Peer " + logPort + " has downloaded the piece " + pieceIndex + " from " + id2 + ". Now the number of pieces it has is " + filePieces.size() + ".");
+                    log.println(time + ": Peer " + peerID + " has downloaded the piece " + pieceIndex + " from " + id2 + ". Now the number of pieces it has is " + filePieces.size() + ".");
                     break;
                 case "completion of download":
-                    log.println(time + ": Peer " + logPort + " has downloaded the complete file.");
+                    log.println(time + ": Peer " + peerID + " has downloaded the complete file.");
                     break;
                 default:
                     log.println("Invalid log type");
@@ -434,7 +432,7 @@ public class PeerProcess {
 
         byte[] fileData;
         try {
-            String path = "src/BitTorrent/_" + (port - 1000) + "/" + fileName;
+            String path = "src/BitTorrent/_" + peerID + "/" + fileName;
             fileData = Files.readAllBytes(Path.of(path));
         }
         catch (IOException e) {
@@ -458,7 +456,7 @@ public class PeerProcess {
     }
 
     private void exportFilePieces() {
-        String path = "src/BitTorrent/_" + port + "/downloaded" + fileName;
+        String path = "src/BitTorrent/_" + peerID + "/downloaded" + fileName;
         try (FileOutputStream fos = new FileOutputStream(path)) {
             for (int pieceIndex = 0; pieceIndex < filePieces.size(); pieceIndex++) {
                 List<Integer> pieceData = filePieces.get(pieceIndex);
