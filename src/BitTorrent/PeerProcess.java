@@ -248,9 +248,11 @@ public class PeerProcess {
                         {
                             int pieceIndex = msg.getHaveIndex();
                             List<Integer> acquiredPiece = msg.getMsgPayload();
-                            filePieces.put(pieceIndex, acquiredPiece);
-                            updateBitfield(pieceIndex);
-                            logMessage("downloading a piece", connectedID.get(socket), pieceIndex); //specify pieces downloaded
+                            if (!filePieces.containsValue(acquiredPiece)) {
+                                filePieces.put(pieceIndex, acquiredPiece);
+                                updateBitfield(pieceIndex);
+                                logMessage("downloading a piece", connectedID.get(socket), pieceIndex); //specify pieces downloaded
+                            }
 
                             // Check if we have all the pieces
                             if (!bitfield.contains("0")) {
@@ -309,7 +311,9 @@ public class PeerProcess {
         unchokeMessage.setMsgType(MessageType.unchoke);
         send(optimisticNeighbor, unchokeMessage);
 
-        logMessage("change of optimistically unchoked neighbor", connectedID.get(optimisticNeighbor), 0);
+        if (connectedID.get(optimisticNeighbor) != null) {
+            logMessage("change of optimistically unchoked neighbor", connectedID.get(optimisticNeighbor), 0);
+        }
     }
 
     private void setNeighbors() {
