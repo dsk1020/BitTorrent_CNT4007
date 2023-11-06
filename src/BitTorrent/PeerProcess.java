@@ -9,6 +9,7 @@ import java.util.*;
 public class PeerProcess {
     public Thread serverThread, readThread, unchokingThread, optimisticUnchokingThread;
     // Config parameters
+    public static int peerID;
     public static int port;
     public static int numberOfPreferredNeighbors;
     public static int unchokingInterval;
@@ -42,7 +43,8 @@ public class PeerProcess {
     private final PrintWriter log;
 
     // Constructor
-    public PeerProcess(int port, int numberOfPreferredNeighbors, int unchokingInterval, int optimisticUnchokingInterval, String fileName, int fileSize, int pieceSize) throws Exception {
+    public PeerProcess(int peerID, int port, int numberOfPreferredNeighbors, int unchokingInterval, int optimisticUnchokingInterval, String fileName, int fileSize, int pieceSize) throws Exception {
+        PeerProcess.peerID = peerID;
         PeerProcess.port = port;
         serverSocket = new ServerSocket(port);
         PeerProcess.numberOfPreferredNeighbors = numberOfPreferredNeighbors;
@@ -367,19 +369,21 @@ public class PeerProcess {
     }
 
     public void logMessage(String msgType, int id2, int pieceIndex) {
+        int logPort = port - 1000;
+        id2 -= 1000;
         try {
             Date getDate = new Date();
             String time = forTime.format(getDate);
 
             switch (msgType) {
                 case "test":
-                    log.println(time + ": This is a test message, id1:  " + port + " , id2: " + id2 + ".");
+                    log.println(time + ": This is a test message, id1:  " + logPort + " , id2: " + id2 + ".");
                     break;
                 case "sends connection":
-                    log.println(time + ": Peer " + port + " makes a connection to Peer " + id2 + ".");
+                    log.println(time + ": Peer " + logPort + " makes a connection to Peer " + id2 + ".");
                     break;
                 case "connection made":
-                    log.println(time + ": Peer " + port + " is connected from Peer " + id2 + ".");
+                    log.println(time + ": Peer " + logPort + " is connected from Peer " + id2 + ".");
                     break;
                 case "change of preferred neighbors":
                     if (neighbors.isEmpty()) return;
@@ -388,31 +392,31 @@ public class PeerProcess {
                         idList += connectedID.get(socket) + ",";
                     }
                     idList = idList.substring(0, idList.length() - 1);
-                    log.println(time + ": Peer " + port + " has the preferred neighbors " + idList + ".");
+                    log.println(time + ": Peer " + logPort + " has the preferred neighbors " + idList + ".");
                     break;
                 case "change of optimistically unchoked neighbor":
-                    log.println(time + ": Peer " + port + " has the optimistically unchoked neighbor " + id2 + ".");
+                    log.println(time + ": Peer " + logPort + " has the optimistically unchoked neighbor " + id2 + ".");
                     break;
                 case "unchoking":
-                    log.println(time + ": Peer " + port + " is unchoked by " + id2);
+                    log.println(time + ": Peer " + logPort + " is unchoked by " + id2);
                     break;
                 case "choking":
-                    log.println(time + ": Peer " + port + " is choked by " + id2);
+                    log.println(time + ": Peer " + logPort + " is choked by " + id2);
                     break;
                 case "receive HAVE":
-                    log.println(time + ": Peer " + port + " received the 'have' message from " + id2 + " for the piece " + pieceIndex + ".");
+                    log.println(time + ": Peer " + logPort + " received the 'have' message from " + id2 + " for the piece " + pieceIndex + ".");
                     break;
                 case "receive INTERESTED":
-                    log.println(time + ": Peer " + port + " received the 'interested' message from " + id2);
+                    log.println(time + ": Peer " + logPort + " received the 'interested' message from " + id2);
                     break;
                 case "receive NOT INTERESTED":
-                    log.println(time + ": Peer " + port + " received the 'not interested' message from " + id2);
+                    log.println(time + ": Peer " + logPort + " received the 'not interested' message from " + id2);
                     break;
                 case "downloading a piece":
-                    log.println(time + ": Peer " + port + " has downloaded the piece " + pieceIndex + " from " + id2 + ". Now the number of pieces it has is " + filePieces.size() + ".");
+                    log.println(time + ": Peer " + logPort + " has downloaded the piece " + pieceIndex + " from " + id2 + ". Now the number of pieces it has is " + filePieces.size() + ".");
                     break;
                 case "completion of download":
-                    log.println(time + ": Peer " + port + " has downloaded the complete file.");
+                    log.println(time + ": Peer " + logPort + " has downloaded the complete file.");
                     break;
                 default:
                     log.println("Invalid log type");
@@ -430,7 +434,7 @@ public class PeerProcess {
 
         byte[] fileData;
         try {
-            String path = "src/BitTorrent/_" + port + "/" + fileName;
+            String path = "src/BitTorrent/_" + (port - 1000) + "/" + fileName;
             fileData = Files.readAllBytes(Path.of(path));
         }
         catch (IOException e) {

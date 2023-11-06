@@ -31,7 +31,7 @@ public class PeerProcess1002 {
         fileName = properties.getProperty("FileName", null);
         fileSize = Integer.parseInt(properties.getProperty("FileSize"));
         pieceSize = Integer.parseInt(properties.getProperty("PieceSize"));
-        PeerProcess peerProcess = new PeerProcess(port, numberOfPreferredNeighbors, unchokingInterval, optimisticUnchokingInterval, fileName, fileSize, pieceSize);
+        PeerProcess peerProcess = new PeerProcess(Integer.parseInt(processId), port, numberOfPreferredNeighbors, unchokingInterval, optimisticUnchokingInterval, fileName, fileSize, pieceSize);
         peerProcess.parsePeerInfo();
         peerProcess.connectToAllBefore();
 
