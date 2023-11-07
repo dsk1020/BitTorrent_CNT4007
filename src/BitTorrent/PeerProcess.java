@@ -37,6 +37,7 @@ public class PeerProcess {
     public HashMap<Socket,String> peerBitfields = new HashMap<>();
     public List<Socket> interestedNeighbors = new ArrayList<>();
     public ServerSocket serverSocket = null;
+    public HashMap<Socket, List<Integer>> backlog = new HashMap<>(); // when connecting sequentially this saves have messages until it gets a bitfield to process them
 
     // Logging functionality
     private final DateFormat forTime = new SimpleDateFormat("hh:mm:ss");
@@ -113,7 +114,6 @@ public class PeerProcess {
             outputStream = new ObjectOutputStream(socket.getOutputStream());
             outputStream.flush();
             outputStream.writeObject(sndMsg);
-            outputStream.flush();
 
         } catch(Exception e)
         {
@@ -153,6 +153,7 @@ public class PeerProcess {
 
                     inputStream = new ObjectInputStream(socket.getInputStream());
                     Object inMsg = inputStream.readObject();
+                    socket.setSoTimeout(10); // wait for small amount of time in case there are no messages
 
                     if(inMsg instanceof Handshake) {
                         Handshake msg = (Handshake) inMsg;
@@ -179,11 +180,18 @@ public class PeerProcess {
                             // We already handle unchokes in setNeighbors() and setOptimisticNeighbor() so we just need to log this
                             logMessage("unchoking", connectedID.get(socket), 0);
 
-                            requestRandomPiece(socket);
+                            if(hasFile == 0)
+                            {
+                                requestRandomPiece(socket);
+                            }
                         }
                         else if(msg.getMsgType() == MessageType.interested)
                         {
-                            interestedNeighbors.add(socket); // save interested neighbors
+                            if (!interestedNeighbors.contains(socket))
+                            {
+                                interestedNeighbors.add(socket); // save interested neighbors
+                            }
+
                             logMessage("receive INTERESTED", connectedID.get(socket), 0);
                         }
                         else if(msg.getMsgType() == MessageType.not_interested)
@@ -199,10 +207,22 @@ public class PeerProcess {
                         {
                             int index = msg.getHaveIndex();
 
-                            String ogBitfield = peerBitfields.get(socket); // get peers bitfield
-                            String modBitfield = ogBitfield.substring(0, index) + '1' + ogBitfield.substring(index + 1); // modify it to include the piece it has
-
-                            peerBitfields.put(socket, modBitfield); // update
+                            if(peerBitfields.get(socket) == null)
+                            {
+                                List<Integer> newBacklog = new ArrayList<>();
+                                if (backlog.get(socket) != null)
+                                {
+                                    newBacklog = backlog.get(socket);
+                                }
+                                newBacklog.add(index);
+                                backlog.put(socket, newBacklog);
+                            }
+                            else
+                            {
+                                String ogBitfield = peerBitfields.get(socket); // get peers bitfield
+                                String modBitfield = ogBitfield.substring(0, index) + '1' + ogBitfield.substring(index + 1); // modify it to include the piece it has
+                                peerBitfields.put(socket, modBitfield); // update
+                            }
 
                             logMessage("receive HAVE", connectedID.get(socket), index);
 
@@ -211,12 +231,31 @@ public class PeerProcess {
                                 Message sndMsg = new Message(0, MessageType.interested);
                                 send(socket, sndMsg);
                             }
+                            else
+                            {
+                                Message sndMsg = new Message(0, MessageType.not_interested);
+                                send(socket, sndMsg);
+                            }
 
                         }
                         else if(msg.getMsgType() == MessageType.bitfield)
                         {
                             //System.out.println("---Bitfield: " + msg.getMsgBitfield());
                             this.peerBitfields.put(socket,msg.getMsgBitfield()); // store all peer bitfields
+
+                            if (backlog.get(socket) != null) {
+                                String tmpBitfield = peerBitfields.get(socket);
+                                List<Integer> saved = backlog.get(socket);
+                                for (int i = 0; i < saved.size(); i++) {
+                                    if (i <= (fileSize / pieceSize)) {
+                                        char[] bitfieldArray = tmpBitfield.toCharArray();
+                                        bitfieldArray[i] = '1';
+                                        tmpBitfield = String.valueOf(bitfieldArray);
+                                    }
+                                }
+
+                                peerBitfields.put(socket, tmpBitfield);
+                            }
 
                             List<Integer> missingPieces = findMissingPieces(msg.getMsgBitfield());
 
@@ -250,45 +289,57 @@ public class PeerProcess {
                         {
                             int pieceIndex = msg.getHaveIndex();
                             List<Integer> acquiredPiece = msg.getMsgPayload();
-                            if (!filePieces.containsValue(acquiredPiece)) {
-                                filePieces.put(pieceIndex, acquiredPiece);
-                                updateBitfield(pieceIndex);
-                                logMessage("downloading a piece", connectedID.get(socket), pieceIndex); //specify pieces downloaded
-                            }
 
-                            // Check if we have all the pieces
-                            if (!bitfield.contains("0")) {
-                                // Export filePieces into actual file
-                                hasFile = 1;
-                                exportFilePieces();
-                                logMessage("completion of download", 0, 0);
-                            }
-                            requestRandomPiece(socket);
-                            Message haveOutMsg = new Message(4, MessageType.have, pieceIndex);
-                            Message notInterestedOutMsg = new Message(0, MessageType.not_interested);
-                            for (Socket connectedNeighbor : allConnections) {
-                                if (peerBitfields.get(connectedNeighbor) != null) {
+                            if(!filePieces.containsKey(msg.getHaveIndex()))
+                            {
+                                if (acquiredPiece != null || !acquiredPiece.isEmpty())
+                                {
+                                    filePieces.put(pieceIndex, acquiredPiece);
+                                    updateBitfield(pieceIndex);
+                                    logMessage("downloading a piece", connectedID.get(socket), pieceIndex); //specify pieces downloaded
+                                }
+
+                                if (!bitfield.contains("0"))
+                                {
+                                    // Export filePieces into actual file
+                                    hasFile = 1;
+                                    exportFilePieces();
+                                    logMessage("completion of download", 0, 0);
+                                }
+
+                                requestRandomPiece(socket);
+                                Message haveOutMsg = new Message(4, MessageType.have, pieceIndex);
+                                Message notInterestedOutMsg = new Message(0, MessageType.not_interested);
+
+                                for (Socket connectedNeighbor : allConnections)
+                                {
                                     send(connectedNeighbor, haveOutMsg); // where else would Have messages get sent out?]
-                                    if (findMissingPieces(peerBitfields.get(connectedNeighbor)).isEmpty() && interestedNeighbors.contains(connectedNeighbor)) { //for each connected neighbor that shares all bitfield entries with current peer, send a "not_interested" msg
-                                        send(connectedNeighbor, notInterestedOutMsg);
+
+                                    if (peerBitfields.get(connectedNeighbor) != null)
+                                    {
+                                        if (findMissingPieces(peerBitfields.get(connectedNeighbor)).isEmpty() && interestedNeighbors.contains(connectedNeighbor))
+                                        { //for each connected neighbor that shares all bitfield entries with current peer, send a "not_interested" msg
+                                            send(connectedNeighbor, notInterestedOutMsg);
+                                        }
+
+
                                     }
                                 }
+
                             }
-                        }
-                        else
-                        {
+
+                        } else {
                             throw new Exception("Message type not supported");
                         }
                     }
-                }catch (IOException i)
-                {
+                } catch (SocketException s) {
+                    //IGNORE DO NOTHING
+                } catch (IOException i) {
                     //System.out.println(i);
-                } catch (ClassNotFoundException e)
-                {
+                } catch (ClassNotFoundException e) {
                     throw new RuntimeException(e);
-                } catch (Exception e)
-                {
-                    throw new RuntimeException(e);
+                } catch (Exception e) {
+                    //throw new RuntimeException(e);
                 }
             }
         }
@@ -487,7 +538,8 @@ public class PeerProcess {
             if (Integer.parseInt(info[2]) == this.port) {
                 this.hasFile = Integer.parseInt(info[3]);
                 //String repeat code: https://stackoverflow.com/questions/1235179/simple-way-to-repeat-a-string (String.repeat() was not working on my version of Java)
-                this.bitfield = String.join("", Collections.nCopies((int)Math.ceil(fileSize / pieceSize), info[3])); //Technically each *bit* of the bitfield should specify the piece index, but in this case each byte (char) of the string = 1 bit.
+                int numPieces = (fileSize + pieceSize - 1) / pieceSize;
+                this.bitfield = String.join("", Collections.nCopies(numPieces, info[3])); //Technically each *bit* of the bitfield should specify the piece index, but in this case each byte (char) of the string = 1 bit.
                 initializeFilePieces();
             }
         }
