@@ -115,7 +115,10 @@ public class PeerProcess {
             outputStream.flush();
             outputStream.writeObject(sndMsg);
 
-        } catch(Exception e)
+        } catch (SocketException s)
+        {
+            //Expected for terminating
+        }catch(Exception e)
         {
             e.printStackTrace();
         }
@@ -145,6 +148,21 @@ public class PeerProcess {
 
             List<Socket> allConnections = new ArrayList<>(this.connectedFrom);
             allConnections.addAll(this.connectedTo);
+
+            if (hasFile == 1 && peerBitfields.size() == (peerInfo.size() - 1))
+            {
+                int finalCount = 1;
+                for (Socket soc : allConnections) {
+                    if (!peerBitfields.get(soc).contains("0"))
+                    {
+                        finalCount++;
+                    }
+                }
+                if (finalCount == peerInfo.size())
+                {
+                    break;
+                }
+            }
 
             for(Socket socket:allConnections)
             {
@@ -342,6 +360,16 @@ public class PeerProcess {
                     //throw new RuntimeException(e);
                 }
             }
+        }
+        try
+        {
+            serverSocket.setSoTimeout(20000);
+            readThread.interrupt();
+            System.exit(0);
+        }catch (Exception e)
+        {
+            System.out.println("ISSUE With Termination");
+
         }
     }
 
