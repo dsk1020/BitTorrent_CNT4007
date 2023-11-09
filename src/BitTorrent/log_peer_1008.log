@@ -1,0 +1,2179 @@
+01:42:22: Peer 1008 makes a connection to Peer 1008.
+01:42:23: Peer 1008 makes a connection to Peer 1008.
+01:42:23: Peer 1008 makes a connection to Peer 1008.
+01:42:23: Peer 1008 makes a connection to Peer 1008.
+01:42:23: Peer 1008 makes a connection to Peer 1008.
+01:42:23: Peer 1008 makes a connection to Peer 1008.
+01:42:23: Peer 1008 makes a connection to Peer 1008.
+01:42:23: Peer 1008 is connected from Peer 1001.
+01:42:23: Peer 1008 is connected from Peer 1002.
+01:42:23: Peer 1008 is connected from Peer 1003.
+01:42:23: Peer 1008 is connected from Peer 1004.
+01:42:23: Peer 1008 is connected from Peer 1005.
+01:42:23: Peer 1008 is connected from Peer 1006.
+01:42:23: Peer 1008 is connected from Peer 1007.
+01:42:23: Peer 1008 is unchoked by 1002
+01:42:23: Peer 1008 received the 'have' message from 1004 for the piece 114.
+01:42:24: Peer 1008 received the 'not interested' message from 1003
+01:42:24: Peer 1008 received the 'have' message from 1005 for the piece 88.
+01:42:24: Peer 1008 received the 'not interested' message from 1006
+01:42:24: Peer 1008 received the 'have' message from 1007 for the piece 52.
+01:42:25: Peer 1008 received the 'not interested' message from 1001
+01:42:25: Peer 1008 received the 'not interested' message from 1002
+01:42:25: Peer 1008 received the 'have' message from 1003 for the piece 70.
+01:42:25: Peer 1008 received the 'have' message from 1004 for the piece 51.
+01:42:25: Peer 1008 received the 'not interested' message from 1005
+01:42:25: Peer 1008 received the 'not interested' message from 1007
+01:42:25: Peer 1008 is unchoked by 1001
+01:42:26: Peer 1008 is unchoked by 1003
+01:42:26: Peer 1008 received the 'not interested' message from 1004
+01:42:26: Peer 1008 received the 'have' message from 1005 for the piece 113.
+01:42:26: Peer 1008 has downloaded the piece 39 from 1006. Now the number of pieces it has is 1.
+01:42:26: Peer 1008 received the 'have' message from 1007 for the piece 45.
+01:42:26: Peer 1008 has downloaded the piece 37 from 1001. Now the number of pieces it has is 2.
+01:42:26: Peer 1008 has downloaded the piece 97 from 1002. Now the number of pieces it has is 3.
+01:42:26: Peer 1008 received the 'have' message from 1004 for the piece 126.
+01:42:26: Peer 1008 received the 'not interested' message from 1005
+01:42:26: Peer 1008 has downloaded the piece 111 from 1006. Now the number of pieces it has is 4.
+01:42:26: Peer 1008 received the 'have' message from 1007 for the piece 54.
+01:42:27: Peer 1008 received the 'not interested' message from 1002
+01:42:27: Peer 1008 has downloaded the piece 6 from 1003. Now the number of pieces it has is 5.
+01:42:27: Peer 1008 received the 'have' message from 1005 for the piece 69.
+01:42:27: Peer 1008 received the 'not interested' message from 1006
+01:42:27: Peer 1008 received the 'have' message from 1007 for the piece 34.
+01:42:27: Peer 1008 has downloaded the piece 7 from 1001. Now the number of pieces it has is 6.
+01:42:28: Peer 1008 is choked by 1002
+01:42:28: Peer 1008 received the 'have' message from 1003 for the piece 27.
+01:42:28: Peer 1008 received the 'not interested' message from 1004
+01:42:28: Peer 1008 received the 'not interested' message from 1005
+01:42:28: Peer 1008 received the 'not interested' message from 1006
+01:42:28: Peer 1008 received the 'have' message from 1007 for the piece 89.
+01:42:28: Peer 1008 has the preferred neighbors 1004,1006,1001.
+01:42:28: Peer 1008 received the 'not interested' message from 1001
+01:42:28: Peer 1008 is unchoked by 1002
+01:42:28: Peer 1008 received the 'not interested' message from 1003
+01:42:28: Peer 1008 received the 'interested' message from 1004
+01:42:28: Peer 1008 received the 'not interested' message from 1007
+01:42:29: Peer 1008 received the 'not interested' message from 1002
+01:42:29: Peer 1008 received the 'have' message from 1003 for the piece 93.
+01:42:29: Peer 1008 received the 'not interested' message from 1004
+01:42:29: Peer 1008 received the 'have' message from 1005 for the piece 116.
+01:42:29: Peer 1008 received the 'not interested' message from 1006
+01:42:29: Peer 1008 received the 'have' message from 1007 for the piece 14.
+01:42:29: Peer 1008 has downloaded the piece 15 from 1001. Now the number of pieces it has is 7.
+01:42:29: Peer 1008 is choked by 1002
+01:42:29: Peer 1008 received the 'not interested' message from 1003
+01:42:29: Peer 1008 received the 'have' message from 1004 for the piece 13.
+01:42:29: Peer 1008 received the 'not interested' message from 1005
+01:42:29: Peer 1008 received the 'not interested' message from 1007
+01:42:30: Peer 1008 has downloaded the piece 72 from 1002. Now the number of pieces it has is 8.
+01:42:30: Peer 1008 received the 'have' message from 1003 for the piece 89.
+01:42:30: Peer 1008 received the 'not interested' message from 1004
+01:42:30: Peer 1008 received the 'not interested' message from 1005
+01:42:30: Peer 1008 is unchoked by 1006
+01:42:30: Peer 1008 is unchoked by 1007
+01:42:30: Peer 1008 received the 'not interested' message from 1001
+01:42:30: Peer 1008 received the 'not interested' message from 1002
+01:42:30: Peer 1008 received the 'not interested' message from 1003
+01:42:30: Peer 1008 received the 'have' message from 1004 for the piece 14.
+01:42:30: Peer 1008 received the 'have' message from 1005 for the piece 95.
+01:42:30: Peer 1008 is unchoked by 1006
+01:42:30: Peer 1008 received the 'not interested' message from 1001
+01:42:30: Peer 1008 received the 'not interested' message from 1002
+01:42:30: Peer 1008 received the 'not interested' message from 1003
+01:42:30: Peer 1008 received the 'have' message from 1004 for the piece 84.
+01:42:30: Peer 1008 received the 'not interested' message from 1005
+01:42:30: Peer 1008 has downloaded the piece 107 from 1006. Now the number of pieces it has is 9.
+01:42:30: Peer 1008 received the 'interested' message from 1007
+01:42:30: Peer 1008 is choked by 1001
+01:42:31: Peer 1008 received the 'interested' message from 1003
+01:42:31: Peer 1008 received the 'not interested' message from 1004
+01:42:31: Peer 1008 received the 'have' message from 1005 for the piece 19.
+01:42:31: Peer 1008 received the 'not interested' message from 1006
+01:42:31: Peer 1008 received the 'have' message from 1007 for the piece 98.
+01:42:31: Peer 1008 received the 'not interested' message from 1001
+01:42:31: Peer 1008 received the 'not interested' message from 1002
+01:42:31: Peer 1008 received the 'interested' message from 1003
+01:42:31: Peer 1008 received the 'interested' message from 1004
+01:42:31: Peer 1008 received the 'not interested' message from 1005
+01:42:32: Peer 1008 received the 'interested' message from 1007
+01:42:32: Peer 1008 received the 'not interested' message from 1001
+01:42:32: Peer 1008 received the 'not interested' message from 1002
+01:42:32: Peer 1008 is choked by 1003
+01:42:32: Peer 1008 received the 'interested' message from 1005
+01:42:32: Peer 1008 received the 'not interested' message from 1006
+01:42:32: Peer 1008 received the 'have' message from 1007 for the piece 31.
+01:42:32: Peer 1008 is connected from Peer 1009.
+01:42:33: Peer 1008 has downloaded the piece 38 from 1002. Now the number of pieces it has is 10.
+01:42:33: Peer 1008 received the 'interested' message from 1003
+01:42:33: Peer 1008 received the 'have' message from 1004 for the piece 54.
+01:42:33: Peer 1008 received the 'have' message from 1005 for the piece 129.
+01:42:33: Peer 1008 received the 'not interested' message from 1006
+01:42:33: Peer 1008 received the 'interested' message from 1007
+01:42:33: Peer 1008 has the preferred neighbors 1005,1004,1003.
+01:42:33: Peer 1008 has the optimistically unchoked neighbor 1006.
+01:42:33: Peer 1008 has downloaded the piece 125 from 1001. Now the number of pieces it has is 11.
+01:42:34: Peer 1008 received the 'have' message from 1003 for the piece 45.
+01:42:34: Peer 1008 received the 'not interested' message from 1004
+01:42:34: Peer 1008 received the 'interested' message from 1005
+01:42:34: Peer 1008 received the 'interested' message from 1007
+01:42:34: Peer 1008 received the 'interested' message from 1009
+01:42:34: Peer 1008 received the 'not interested' message from 1001
+01:42:34: Peer 1008 received the 'not interested' message from 1002
+01:42:34: Peer 1008 has downloaded the piece 24 from 1003. Now the number of pieces it has is 12.
+01:42:34: Peer 1008 received the 'have' message from 1004 for the piece 59.
+01:42:34: Peer 1008 received the 'not interested' message from 1005
+01:42:35: Peer 1008 is choked by 1006
+01:42:35: Peer 1008 received the 'have' message from 1007 for the piece 71.
+01:42:35: Peer 1008 has downloaded the piece 57 from 1002. Now the number of pieces it has is 13.
+01:42:35: Peer 1008 received the 'not interested' message from 1003
+01:42:35: Peer 1008 received the 'not interested' message from 1004
+01:42:35: Peer 1008 received the 'interested' message from 1005
+01:42:35: Peer 1008 is unchoked by 1006
+01:42:35: Peer 1008 received the 'have' message from 1007 for the piece 59.
+01:42:35: Peer 1008 received the 'interested' message from 1009
+01:42:36: Peer 1008 received the 'not interested' message from 1002
+01:42:36: Peer 1008 received the 'not interested' message from 1003
+01:42:36: Peer 1008 is unchoked by 1004
+01:42:36: Peer 1008 received the 'interested' message from 1005
+01:42:36: Peer 1008 received the 'not interested' message from 1006
+01:42:36: Peer 1008 is choked by 1007
+01:42:36: Peer 1008 received the 'have' message from 1009 for the piece 124.
+01:42:37: Peer 1008 received the 'not interested' message from 1002
+01:42:37: Peer 1008 received the 'have' message from 1003 for the piece 12.
+01:42:37: Peer 1008 received the 'have' message from 1004 for the piece 28.
+01:42:37: Peer 1008 received the 'have' message from 1005 for the piece 118.
+01:42:37: Peer 1008 received the 'not interested' message from 1006
+01:42:37: Peer 1008 is unchoked by 1007
+01:42:37: Peer 1008 received the 'interested' message from 1009
+01:42:37: Peer 1008 has downloaded the piece 120 from 1001. Now the number of pieces it has is 14.
+01:42:37: Peer 1008 received the 'have' message from 1003 for the piece 82.
+01:42:37: Peer 1008 received the 'interested' message from 1004
+01:42:37: Peer 1008 received the 'have' message from 1005 for the piece 61.
+01:42:37: Peer 1008 has downloaded the piece 100 from 1006. Now the number of pieces it has is 15.
+01:42:37: Peer 1008 received the 'interested' message from 1007
+01:42:37: Peer 1008 received the 'have' message from 1009 for the piece 77.
+01:42:38: Peer 1008 received the 'not interested' message from 1001
+01:42:38: Peer 1008 has downloaded the piece 29 from 1002. Now the number of pieces it has is 16.
+01:42:38: Peer 1008 received the 'interested' message from 1003
+01:42:38: Peer 1008 received the 'have' message from 1005 for the piece 31.
+01:42:38: Peer 1008 received the 'have' message from 1007 for the piece 55.
+01:42:38: Peer 1008 has the preferred neighbors 1005,1003,1001.
+01:42:38: Peer 1008 received the 'have' message from 1009 for the piece 2.
+01:42:39: Peer 1008 received the 'not interested' message from 1002
+01:42:39: Peer 1008 received the 'interested' message from 1003
+01:42:39: Peer 1008 received the 'have' message from 1004 for the piece 37.
+01:42:39: Peer 1008 received the 'interested' message from 1005
+01:42:39: Peer 1008 has downloaded the piece 110 from 1006. Now the number of pieces it has is 17.
+01:42:39: Peer 1008 received the 'interested' message from 1007
+01:42:39: Peer 1008 received the 'have' message from 1009 for the piece 119.
+01:42:39: Peer 1008 received the 'not interested' message from 1001
+01:42:39: Peer 1008 received the 'have' message from 1003 for the piece 84.
+01:42:39: Peer 1008 received the 'not interested' message from 1004
+01:42:39: Peer 1008 received the 'interested' message from 1005
+01:42:39: Peer 1008 received the 'not interested' message from 1006
+01:42:39: Peer 1008 received the 'have' message from 1007 for the piece 26.
+01:42:39: Peer 1008 received the 'interested' message from 1009
+01:42:40: Peer 1008 received the 'not interested' message from 1001
+01:42:40: Peer 1008 received the 'not interested' message from 1002
+01:42:40: Peer 1008 received the 'have' message from 1003 for the piece 130.
+01:42:40: Peer 1008 received the 'have' message from 1004 for the piece 101.
+01:42:40: Peer 1008 received the 'not interested' message from 1005
+01:42:40: Peer 1008 is choked by 1006
+01:42:40: Peer 1008 received the 'have' message from 1007 for the piece 110.
+01:42:40: Peer 1008 received the 'have' message from 1009 for the piece 75.
+01:42:40: Peer 1008 received the 'not interested' message from 1002
+01:42:40: Peer 1008 received the 'interested' message from 1003
+01:42:40: Peer 1008 received the 'have' message from 1004 for the piece 71.
+01:42:40: Peer 1008 received the 'have' message from 1005 for the piece 32.
+01:42:40: Peer 1008 received the 'not interested' message from 1006
+01:42:40: Peer 1008 received the 'interested' message from 1007
+01:42:40: Peer 1008 received the 'have' message from 1009 for the piece 8.
+01:42:41: Peer 1008 received the 'not interested' message from 1001
+01:42:41: Peer 1008 received the 'have' message from 1003 for the piece 114.
+01:42:41: Peer 1008 received the 'have' message from 1004 for the piece 7.
+01:42:41: Peer 1008 received the 'interested' message from 1005
+01:42:42: Peer 1008 received the 'interested' message from 1007
+01:42:42: Peer 1008 received the 'have' message from 1009 for the piece 83.
+01:42:42: Peer 1008 is unchoked by 1001
+01:42:42: Peer 1008 has downloaded the piece 105 from 1002. Now the number of pieces it has is 18.
+01:42:42: Peer 1008 received the 'interested' message from 1003
+01:42:42: Peer 1008 received the 'have' message from 1005 for the piece 24.
+01:42:42: Peer 1008 received the 'have' message from 1007 for the piece 7.
+01:42:42: Peer 1008 received the 'have' message from 1009 for the piece 33.
+01:42:43: Peer 1008 received the 'not interested' message from 1002
+01:42:43: Peer 1008 received the 'have' message from 1003 for the piece 68.
+01:42:43: Peer 1008 received the 'have' message from 1004 for the piece 27.
+01:42:43: Peer 1008 received the 'not interested' message from 1006
+01:42:43: Peer 1008 has downloaded the piece 64 from 1007. Now the number of pieces it has is 19.
+01:42:43: Peer 1008 has the preferred neighbors 1005,1004,1002.
+01:42:43: Peer 1008 has the optimistically unchoked neighbor 1007.
+01:42:43: Peer 1008 received the 'interested' message from 1009
+01:42:43: Peer 1008 has downloaded the piece 73 from 1001. Now the number of pieces it has is 20.
+01:42:43: Peer 1008 received the 'not interested' message from 1002
+01:42:43: Peer 1008 received the 'interested' message from 1004
+01:42:43: Peer 1008 received the 'have' message from 1005 for the piece 121.
+01:42:43: Peer 1008 received the 'not interested' message from 1006
+01:42:43: Peer 1008 received the 'have' message from 1007 for the piece 109.
+01:42:43: Peer 1008 received the 'have' message from 1009 for the piece 113.
+01:42:44: Peer 1008 received the 'have' message from 1003 for the piece 58.
+01:42:44: Peer 1008 is choked by 1004
+01:42:44: Peer 1008 received the 'have' message from 1005 for the piece 75.
+01:42:44: Peer 1008 received the 'not interested' message from 1006
+01:42:44: Peer 1008 is choked by 1007
+01:42:44: Peer 1008 received the 'have' message from 1009 for the piece 114.
+01:42:44: Peer 1008 received the 'not interested' message from 1001
+01:42:44: Peer 1008 received the 'not interested' message from 1002
+01:42:44: Peer 1008 received the 'interested' message from 1003
+01:42:44: Peer 1008 received the 'not interested' message from 1004
+01:42:44: Peer 1008 received the 'interested' message from 1005
+01:42:45: Peer 1008 is unchoked by 1007
+01:42:45: Peer 1008 received the 'interested' message from 1009
+01:42:45: Peer 1008 received the 'not interested' message from 1001
+01:42:45: Peer 1008 has downloaded the piece 130 from 1002. Now the number of pieces it has is 21.
+01:42:45: Peer 1008 received the 'have' message from 1003 for the piece 100.
+01:42:45: Peer 1008 received the 'have' message from 1004 for the piece 82.
+01:42:45: Peer 1008 received the 'have' message from 1005 for the piece 18.
+01:42:45: Peer 1008 has downloaded the piece 81 from 1006. Now the number of pieces it has is 22.
+01:42:45: Peer 1008 received the 'interested' message from 1007
+01:42:45: Peer 1008 received the 'interested' message from 1009
+01:42:45: Peer 1008 received the 'not interested' message from 1001
+01:42:46: Peer 1008 received the 'have' message from 1003 for the piece 25.
+01:42:46: Peer 1008 received the 'have' message from 1004 for the piece 32.
+01:42:46: Peer 1008 received the 'not interested' message from 1005
+01:42:46: Peer 1008 received the 'not interested' message from 1006
+01:42:46: Peer 1008 received the 'have' message from 1007 for the piece 101.
+01:42:46: Peer 1008 received the 'have' message from 1009 for the piece 45.
+01:42:46: Peer 1008 is choked by 1001
+01:42:46: Peer 1008 received the 'not interested' message from 1002
+01:42:46: Peer 1008 has downloaded the piece 2 from 1003. Now the number of pieces it has is 23.
+01:42:46: Peer 1008 received the 'interested' message from 1004
+01:42:46: Peer 1008 received the 'interested' message from 1005
+01:42:46: Peer 1008 received the 'interested' message from 1007
+01:42:46: Peer 1008 received the 'have' message from 1009 for the piece 34.
+01:42:46: Peer 1008 is unchoked by 1001
+01:42:47: Peer 1008 received the 'not interested' message from 1002
+01:42:47: Peer 1008 received the 'have' message from 1003 for the piece 126.
+01:42:47: Peer 1008 has downloaded the piece 23 from 1004. Now the number of pieces it has is 24.
+01:42:47: Peer 1008 received the 'interested' message from 1005
+01:42:47: Peer 1008 has downloaded the piece 85 from 1006. Now the number of pieces it has is 25.
+01:42:47: Peer 1008 received the 'have' message from 1007 for the piece 77.
+01:42:47: Peer 1008 received the 'interested' message from 1009
+01:42:47: Peer 1008 has downloaded the piece 56 from 1001. Now the number of pieces it has is 26.
+01:42:47: Peer 1008 received the 'not interested' message from 1003
+01:42:47: Peer 1008 received the 'have' message from 1004 for the piece 115.
+01:42:47: Peer 1008 received the 'have' message from 1005 for the piece 29.
+01:42:48: Peer 1008 received the 'not interested' message from 1006
+01:42:48: Peer 1008 received the 'interested' message from 1007
+01:42:48: Peer 1008 has the preferred neighbors 1007,1003,1002.
+01:42:48: Peer 1008 received the 'have' message from 1009 for the piece 38.
+01:42:48: Peer 1008 received the 'not interested' message from 1001
+01:42:48: Peer 1008 has downloaded the piece 68 from 1002. Now the number of pieces it has is 27.
+01:42:48: Peer 1008 received the 'have' message from 1003 for the piece 96.
+01:42:48: Peer 1008 received the 'have' message from 1004 for the piece 113.
+01:42:48: Peer 1008 received the 'have' message from 1005 for the piece 2.
+01:42:48: Peer 1008 received the 'interested' message from 1007
+01:42:48: Peer 1008 received the 'interested' message from 1009
+01:42:48: Peer 1008 received the 'not interested' message from 1001
+01:42:49: Peer 1008 received the 'not interested' message from 1002
+01:42:49: Peer 1008 received the 'interested' message from 1003
+01:42:49: Peer 1008 received the 'interested' message from 1004
+01:42:49: Peer 1008 received the 'interested' message from 1005
+01:42:49: Peer 1008 received the 'not interested' message from 1006
+01:42:49: Peer 1008 received the 'have' message from 1007 for the piece 92.
+01:42:49: Peer 1008 received the 'have' message from 1009 for the piece 55.
+01:42:49: Peer 1008 received the 'not interested' message from 1001
+01:42:49: Peer 1008 received the 'have' message from 1003 for the piece 116.
+01:42:49: Peer 1008 received the 'have' message from 1004 for the piece 70.
+01:42:49: Peer 1008 received the 'not interested' message from 1005
+01:42:49: Peer 1008 has downloaded the piece 1 from 1006. Now the number of pieces it has is 28.
+01:42:49: Peer 1008 received the 'interested' message from 1007
+01:42:49: Peer 1008 received the 'have' message from 1009 for the piece 132.
+01:42:50: Peer 1008 received the 'not interested' message from 1002
+01:42:50: Peer 1008 received the 'not interested' message from 1003
+01:42:50: Peer 1008 received the 'interested' message from 1004
+01:42:50: Peer 1008 received the 'have' message from 1005 for the piece 34.
+01:42:50: Peer 1008 is unchoked by 1006
+01:42:50: Peer 1008 received the 'have' message from 1007 for the piece 23.
+01:42:50: Peer 1008 received the 'have' message from 1009 for the piece 60.
+01:42:51: Peer 1008 received the 'have' message from 1003 for the piece 54.
+01:42:51: Peer 1008 received the 'interested' message from 1004
+01:42:51: Peer 1008 received the 'not interested' message from 1006
+01:42:51: Peer 1008 received the 'have' message from 1007 for the piece 119.
+01:42:51: Peer 1008 received the 'interested' message from 1009
+01:42:51: Peer 1008 received the 'not interested' message from 1001
+01:42:51: Peer 1008 received the 'not interested' message from 1002
+01:42:51: Peer 1008 received the 'not interested' message from 1003
+01:42:51: Peer 1008 received the 'have' message from 1004 for the piece 45.
+01:42:51: Peer 1008 received the 'have' message from 1005 for the piece 42.
+01:42:51: Peer 1008 received the 'not interested' message from 1006
+01:42:51: Peer 1008 is choked by 1007
+01:42:51: Peer 1008 received the 'have' message from 1009 for the piece 48.
+01:42:51: Peer 1008 is unchoked by 1001
+01:42:52: Peer 1008 received the 'interested' message from 1003
+01:42:52: Peer 1008 received the 'have' message from 1004 for the piece 81.
+01:42:52: Peer 1008 received the 'not interested' message from 1005
+01:42:52: Peer 1008 received the 'not interested' message from 1006
+01:42:52: Peer 1008 has downloaded the piece 34 from 1007. Now the number of pieces it has is 29.
+01:42:52: Peer 1008 received the 'interested' message from 1009
+01:42:52: Peer 1008 has downloaded the piece 121 from 1001. Now the number of pieces it has is 30.
+01:42:52: Peer 1008 has downloaded the piece 26 from 1002. Now the number of pieces it has is 31.
+01:42:52: Peer 1008 received the 'have' message from 1003 for the piece 72.
+01:42:52: Peer 1008 received the 'have' message from 1004 for the piece 22.
+01:42:52: Peer 1008 received the 'have' message from 1005 for the piece 15.
+01:42:53: Peer 1008 received the 'have' message from 1007 for the piece 94.
+01:42:53: Peer 1008 received the 'interested' message from 1009
+01:42:53: Peer 1008 received the 'not interested' message from 1001
+01:42:53: Peer 1008 received the 'not interested' message from 1002
+01:42:53: Peer 1008 received the 'have' message from 1003 for the piece 8.
+01:42:53: Peer 1008 received the 'interested' message from 1004
+01:42:53: Peer 1008 received the 'have' message from 1005 for the piece 78.
+01:42:53: Peer 1008 received the 'not interested' message from 1006
+01:42:53: Peer 1008 received the 'interested' message from 1007
+01:42:53: Peer 1008 has the preferred neighbors 1009,1002,1001.
+01:42:53: Peer 1008 has the optimistically unchoked neighbor 1002.
+01:42:53: Peer 1008 received the 'have' message from 1009 for the piece 18.
+01:42:54: Peer 1008 is unchoked by 1002
+01:42:54: Peer 1008 is unchoked by 1003
+01:42:54: Peer 1008 received the 'interested' message from 1004
+01:42:54: Peer 1008 received the 'have' message from 1005 for the piece 72.
+01:42:54: Peer 1008 received the 'interested' message from 1007
+01:42:54: Peer 1008 received the 'have' message from 1009 for the piece 69.
+01:42:54: Peer 1008 received the 'not interested' message from 1001
+01:42:54: Peer 1008 received the 'not interested' message from 1002
+01:42:54: Peer 1008 received the 'have' message from 1003 for the piece 56.
+01:42:54: Peer 1008 received the 'have' message from 1005 for the piece 20.
+01:42:54: Peer 1008 received the 'not interested' message from 1006
+01:42:54: Peer 1008 received the 'have' message from 1007 for the piece 86.
+01:42:54: Peer 1008 received the 'interested' message from 1009
+01:42:55: Peer 1008 received the 'not interested' message from 1002
+01:42:55: Peer 1008 received the 'have' message from 1004 for the piece 107.
+01:42:55: Peer 1008 received the 'interested' message from 1005
+01:42:55: Peer 1008 is choked by 1006
+01:42:55: Peer 1008 received the 'interested' message from 1007
+01:42:55: Peer 1008 received the 'interested' message from 1009
+01:42:56: Peer 1008 received the 'interested' message from 1003
+01:42:56: Peer 1008 received the 'have' message from 1004 for the piece 122.
+01:42:56: Peer 1008 received the 'have' message from 1005 for the piece 77.
+01:42:56: Peer 1008 has downloaded the piece 8 from 1006. Now the number of pieces it has is 32.
+01:42:56: Peer 1008 received the 'have' message from 1007 for the piece 9.
+01:42:56: Peer 1008 received the 'have' message from 1009 for the piece 126.
+01:42:56: Peer 1008 has downloaded the piece 99 from 1001. Now the number of pieces it has is 33.
+01:42:56: Peer 1008 received the 'not interested' message from 1002
+01:42:56: Peer 1008 received the 'have' message from 1003 for the piece 30.
+01:42:56: Peer 1008 received the 'not interested' message from 1004
+01:42:56: Peer 1008 received the 'not interested' message from 1006
+01:42:56: Peer 1008 received the 'not interested' message from 1007
+01:42:56: Peer 1008 received the 'not interested' message from 1009
+01:42:56: Peer 1008 is choked by 1001
+01:42:57: Peer 1008 received the 'not interested' message from 1002
+01:42:57: Peer 1008 received the 'not interested' message from 1003
+01:42:57: Peer 1008 received the 'have' message from 1005 for the piece 6.
+01:42:57: Peer 1008 received the 'not interested' message from 1006
+01:42:57: Peer 1008 is unchoked by 1007
+01:42:57: Peer 1008 received the 'interested' message from 1009
+01:42:57: Peer 1008 received the 'not interested' message from 1001
+01:42:57: Peer 1008 received the 'not interested' message from 1002
+01:42:57: Peer 1008 is choked by 1003
+01:42:57: Peer 1008 received the 'interested' message from 1004
+01:42:57: Peer 1008 received the 'have' message from 1005 for the piece 12.
+01:42:58: Peer 1008 received the 'interested' message from 1007
+01:42:58: Peer 1008 has the preferred neighbors 1006,1007,1001.
+01:42:58: Peer 1008 received the 'interested' message from 1009
+01:42:58: Peer 1008 received the 'not interested' message from 1001
+01:42:59: Peer 1008 is unchoked by 1003
+01:42:59: Peer 1008 received the 'not interested' message from 1004
+01:42:59: Peer 1008 received the 'interested' message from 1005
+01:42:59: Peer 1008 received the 'not interested' message from 1006
+01:42:59: Peer 1008 received the 'have' message from 1007 for the piece 85.
+01:42:59: Peer 1008 received the 'have' message from 1009 for the piece 35.
+01:42:59: Peer 1008 is choked by 1002
+01:42:59: Peer 1008 received the 'not interested' message from 1003
+01:42:59: Peer 1008 is unchoked by 1004
+01:42:59: Peer 1008 received the 'have' message from 1005 for the piece 27.
+01:42:59: Peer 1008 has downloaded the piece 43 from 1006. Now the number of pieces it has is 34.
+01:42:59: Peer 1008 has downloaded the piece 31 from 1007. Now the number of pieces it has is 35.
+01:42:59: Peer 1008 received the 'have' message from 1009 for the piece 49.
+01:42:59: Peer 1008 received the 'not interested' message from 1001
+01:43:00: Peer 1008 received the 'have' message from 1003 for the piece 118.
+01:43:00: Peer 1008 received the 'have' message from 1004 for the piece 46.
+01:43:00: Peer 1008 received the 'not interested' message from 1006
+01:43:00: Peer 1008 received the 'not interested' message from 1007
+01:43:00: Peer 1008 received the 'interested' message from 1009
+01:43:00: Peer 1008 received the 'not interested' message from 1001
+01:43:00: Peer 1008 has downloaded the piece 90 from 1002. Now the number of pieces it has is 36.
+01:43:00: Peer 1008 received the 'interested' message from 1003
+01:43:00: Peer 1008 received the 'have' message from 1004 for the piece 131.
+01:43:00: Peer 1008 received the 'not interested' message from 1005
+01:43:00: Peer 1008 is unchoked by 1006
+01:43:00: Peer 1008 received the 'interested' message from 1009
+01:43:01: Peer 1008 has downloaded the piece 17 from 1001. Now the number of pieces it has is 37.
+01:43:01: Peer 1008 received the 'have' message from 1003 for the piece 117.
+01:43:01: Peer 1008 received the 'have' message from 1004 for the piece 120.
+01:43:01: Peer 1008 received the 'have' message from 1005 for the piece 16.
+01:43:01: Peer 1008 received the 'not interested' message from 1006
+01:43:01: Peer 1008 received the 'have' message from 1007 for the piece 91.
+01:43:01: Peer 1008 received the 'have' message from 1009 for the piece 112.
+01:43:02: Peer 1008 received the 'not interested' message from 1002
+01:43:02: Peer 1008 received the 'have' message from 1004 for the piece 25.
+01:43:02: Peer 1008 received the 'have' message from 1005 for the piece 96.
+01:43:02: Peer 1008 received the 'not interested' message from 1006
+01:43:02: Peer 1008 received the 'have' message from 1007 for the piece 83.
+01:43:02: Peer 1008 received the 'have' message from 1009 for the piece 92.
+01:43:02: Peer 1008 received the 'not interested' message from 1001
+01:43:02: Peer 1008 received the 'not interested' message from 1002
+01:43:02: Peer 1008 received the 'have' message from 1003 for the piece 38.
+01:43:02: Peer 1008 received the 'not interested' message from 1004
+01:43:02: Peer 1008 received the 'have' message from 1005 for the piece 28.
+01:43:02: Peer 1008 has downloaded the piece 53 from 1006. Now the number of pieces it has is 38.
+01:43:02: Peer 1008 received the 'interested' message from 1007
+01:43:02: Peer 1008 received the 'have' message from 1009 for the piece 36.
+01:43:03: Peer 1008 received the 'not interested' message from 1002
+01:43:03: Peer 1008 received the 'have' message from 1003 for the piece 103.
+01:43:03: Peer 1008 received the 'have' message from 1004 for the piece 118.
+01:43:03: Peer 1008 received the 'interested' message from 1005
+01:43:03: Peer 1008 received the 'not interested' message from 1006
+01:43:03: Peer 1008 received the 'have' message from 1007 for the piece 49.
+01:43:03: Peer 1008 has the preferred neighbors 1009,1006,1003.
+01:43:03: Peer 1008 has the optimistically unchoked neighbor 1004.
+01:43:03: Peer 1008 received the 'interested' message from 1009
+01:43:03: Peer 1008 received the 'not interested' message from 1001
+01:43:03: Peer 1008 received the 'have' message from 1003 for the piece 17.
+01:43:03: Peer 1008 received the 'interested' message from 1004
+01:43:03: Peer 1008 received the 'have' message from 1005 for the piece 37.
+01:43:03: Peer 1008 has downloaded the piece 62 from 1006. Now the number of pieces it has is 39.
+01:43:03: Peer 1008 is choked by 1007
+01:43:03: Peer 1008 received the 'have' message from 1009 for the piece 72.
+01:43:04: Peer 1008 received the 'not interested' message from 1002
+01:43:04: Peer 1008 received the 'not interested' message from 1003
+01:43:04: Peer 1008 received the 'have' message from 1005 for the piece 36.
+01:43:04: Peer 1008 received the 'not interested' message from 1006
+01:43:04: Peer 1008 is unchoked by 1007
+01:43:04: Peer 1008 received the 'have' message from 1009 for the piece 40.
+01:43:05: Peer 1008 received the 'not interested' message from 1001
+01:43:05: Peer 1008 has downloaded the piece 102 from 1002. Now the number of pieces it has is 40.
+01:43:05: Peer 1008 received the 'have' message from 1003 for the piece 107.
+01:43:05: Peer 1008 received the 'not interested' message from 1004
+01:43:05: Peer 1008 received the 'interested' message from 1005
+01:43:05: Peer 1008 is choked by 1006
+01:43:05: Peer 1008 has downloaded the piece 89 from 1007. Now the number of pieces it has is 41.
+01:43:05: Peer 1008 received the 'have' message from 1009 for the piece 47.
+01:43:05: Peer 1008 received the 'not interested' message from 1001
+01:43:06: Peer 1008 received the 'not interested' message from 1002
+01:43:06: Peer 1008 received the 'not interested' message from 1003
+01:43:06: Peer 1008 received the 'interested' message from 1004
+01:43:06: Peer 1008 received the 'not interested' message from 1005
+01:43:06: Peer 1008 is unchoked by 1006
+01:43:06: Peer 1008 received the 'interested' message from 1007
+01:43:06: Peer 1008 received the 'have' message from 1009 for the piece 54.
+01:43:07: Peer 1008 is choked by 1003
+01:43:07: Peer 1008 is choked by 1004
+01:43:07: Peer 1008 received the 'not interested' message from 1005
+01:43:07: Peer 1008 received the 'not interested' message from 1006
+01:43:07: Peer 1008 received the 'interested' message from 1007
+01:43:07: Peer 1008 received the 'not interested' message from 1009
+01:43:07: Peer 1008 received the 'not interested' message from 1001
+01:43:07: Peer 1008 has downloaded the piece 75 from 1003. Now the number of pieces it has is 42.
+01:43:07: Peer 1008 received the 'not interested' message from 1004
+01:43:07: Peer 1008 is unchoked by 1005
+01:43:07: Peer 1008 received the 'not interested' message from 1006
+01:43:07: Peer 1008 received the 'have' message from 1007 for the piece 95.
+01:43:07: Peer 1008 received the 'interested' message from 1009
+01:43:07: Peer 1008 has downloaded the piece 113 from 1001. Now the number of pieces it has is 43.
+01:43:08: Peer 1008 received the 'not interested' message from 1003
+01:43:08: Peer 1008 received the 'have' message from 1004 for the piece 100.
+01:43:08: Peer 1008 received the 'interested' message from 1005
+01:43:08: Peer 1008 has downloaded the piece 116 from 1006. Now the number of pieces it has is 44.
+01:43:08: Peer 1008 received the 'have' message from 1007 for the piece 99.
+01:43:08: Peer 1008 has the preferred neighbors 1006,1002,1001.
+01:43:08: Peer 1008 received the 'have' message from 1009 for the piece 89.
+01:43:08: Peer 1008 received the 'not interested' message from 1001
+01:43:09: Peer 1008 received the 'have' message from 1003 for the piece 50.
+01:43:09: Peer 1008 received the 'not interested' message from 1004
+01:43:09: Peer 1008 received the 'have' message from 1005 for the piece 71.
+01:43:09: Peer 1008 received the 'not interested' message from 1006
+01:43:09: Peer 1008 received the 'interested' message from 1007
+01:43:09: Peer 1008 received the 'interested' message from 1009
+01:43:09: Peer 1008 has downloaded the piece 18 from 1001. Now the number of pieces it has is 45.
+01:43:10: Peer 1008 has downloaded the piece 4 from 1002. Now the number of pieces it has is 46.
+01:43:10: Peer 1008 received the 'have' message from 1003 for the piece 4.
+01:43:10: Peer 1008 received the 'have' message from 1004 for the piece 124.
+01:43:10: Peer 1008 received the 'interested' message from 1005
+01:43:10: Peer 1008 received the 'not interested' message from 1006
+01:43:10: Peer 1008 received the 'not interested' message from 1007
+01:43:10: Peer 1008 received the 'have' message from 1009 for the piece 43.
+01:43:10: Peer 1008 received the 'not interested' message from 1001
+01:43:10: Peer 1008 received the 'not interested' message from 1002
+01:43:10: Peer 1008 received the 'interested' message from 1003
+01:43:10: Peer 1008 received the 'not interested' message from 1004
+01:43:10: Peer 1008 received the 'interested' message from 1005
+01:43:10: Peer 1008 is choked by 1006
+01:43:10: Peer 1008 received the 'have' message from 1007 for the piece 57.
+01:43:11: Peer 1008 received the 'not interested' message from 1001
+01:43:11: Peer 1008 received the 'have' message from 1003 for the piece 108.
+01:43:11: Peer 1008 received the 'have' message from 1004 for the piece 90.
+01:43:11: Peer 1008 received the 'have' message from 1005 for the piece 41.
+01:43:11: Peer 1008 has downloaded the piece 101 from 1006. Now the number of pieces it has is 47.
+01:43:11: Peer 1008 received the 'have' message from 1007 for the piece 78.
+01:43:11: Peer 1008 received the 'have' message from 1009 for the piece 95.
+01:43:11: Peer 1008 is unchoked by 1001
+01:43:11: Peer 1008 received the 'not interested' message from 1002
+01:43:11: Peer 1008 received the 'not interested' message from 1003
+01:43:11: Peer 1008 received the 'have' message from 1004 for the piece 58.
+01:43:11: Peer 1008 is choked by 1005
+01:43:12: Peer 1008 received the 'not interested' message from 1007
+01:43:12: Peer 1008 received the 'have' message from 1009 for the piece 107.
+01:43:12: Peer 1008 received the 'not interested' message from 1001
+01:43:13: Peer 1008 received the 'have' message from 1003 for the piece 60.
+01:43:13: Peer 1008 received the 'have' message from 1004 for the piece 4.
+01:43:13: Peer 1008 is unchoked by 1005
+01:43:13: Peer 1008 received the 'not interested' message from 1006
+01:43:13: Peer 1008 received the 'have' message from 1007 for the piece 74.
+01:43:13: Peer 1008 has the optimistically unchoked neighbor 1003.
+01:43:13: Peer 1008 is unchoked by 1009
+01:43:13: Peer 1008 received the 'not interested' message from 1002
+01:43:13: Peer 1008 received the 'not interested' message from 1003
+01:43:13: Peer 1008 is unchoked by 1004
+01:43:13: Peer 1008 is unchoked by 1005
+01:43:13: Peer 1008 received the 'not interested' message from 1006
+01:43:13: Peer 1008 is choked by 1007
+01:43:13: Peer 1008 has the preferred neighbors 1009,1003,1002.
+01:43:13: Peer 1008 received the 'not interested' message from 1009
+01:43:14: Peer 1008 received the 'have' message from 1003 for the piece 0.
+01:43:14: Peer 1008 received the 'not interested' message from 1004
+01:43:14: Peer 1008 received the 'interested' message from 1005
+01:43:14: Peer 1008 received the 'not interested' message from 1006
+01:43:14: Peer 1008 received the 'interested' message from 1007
+01:43:14: Peer 1008 received the 'interested' message from 1009
+01:43:14: Peer 1008 received the 'not interested' message from 1001
+01:43:14: Peer 1008 received the 'not interested' message from 1002
+01:43:14: Peer 1008 is unchoked by 1003
+01:43:14: Peer 1008 received the 'interested' message from 1004
+01:43:14: Peer 1008 received the 'have' message from 1005 for the piece 9.
+01:43:14: Peer 1008 has downloaded the piece 41 from 1006. Now the number of pieces it has is 48.
+01:43:14: Peer 1008 received the 'have' message from 1007 for the piece 90.
+01:43:14: Peer 1008 received the 'have' message from 1009 for the piece 87.
+01:43:15: Peer 1008 received the 'have' message from 1004 for the piece 21.
+01:43:15: Peer 1008 received the 'have' message from 1005 for the piece 120.
+01:43:15: Peer 1008 is unchoked by 1006
+01:43:15: Peer 1008 received the 'not interested' message from 1009
+01:43:16: Peer 1008 received the 'not interested' message from 1002
+01:43:16: Peer 1008 received the 'not interested' message from 1003
+01:43:16: Peer 1008 received the 'not interested' message from 1004
+01:43:16: Peer 1008 received the 'not interested' message from 1005
+01:43:16: Peer 1008 received the 'not interested' message from 1006
+01:43:16: Peer 1008 received the 'have' message from 1007 for the piece 6.
+01:43:16: Peer 1008 received the 'interested' message from 1009
+01:43:16: Peer 1008 is choked by 1001
+01:43:16: Peer 1008 received the 'not interested' message from 1002
+01:43:16: Peer 1008 received the 'have' message from 1003 for the piece 113.
+01:43:16: Peer 1008 received the 'not interested' message from 1005
+01:43:16: Peer 1008 has downloaded the piece 82 from 1006. Now the number of pieces it has is 49.
+01:43:16: Peer 1008 received the 'interested' message from 1007
+01:43:16: Peer 1008 received the 'have' message from 1009 for the piece 32.
+01:43:17: Peer 1008 received the 'not interested' message from 1002
+01:43:17: Peer 1008 received the 'not interested' message from 1003
+01:43:17: Peer 1008 received the 'have' message from 1004 for the piece 29.
+01:43:17: Peer 1008 received the 'have' message from 1005 for the piece 64.
+01:43:17: Peer 1008 received the 'not interested' message from 1006
+01:43:17: Peer 1008 received the 'have' message from 1007 for the piece 97.
+01:43:17: Peer 1008 is choked by 1009
+01:43:17: Peer 1008 received the 'not interested' message from 1001
+01:43:18: Peer 1008 received the 'not interested' message from 1003
+01:43:18: Peer 1008 received the 'have' message from 1004 for the piece 16.
+01:43:18: Peer 1008 received the 'interested' message from 1005
+01:43:18: Peer 1008 received the 'not interested' message from 1007
+01:43:18: Peer 1008 has the preferred neighbors 1005,1004,1006.
+01:43:18: Peer 1008 received the 'interested' message from 1009
+01:43:18: Peer 1008 received the 'not interested' message from 1001
+01:43:18: Peer 1008 received the 'not interested' message from 1002
+01:43:18: Peer 1008 received the 'have' message from 1003 for the piece 127.
+01:43:18: Peer 1008 is choked by 1004
+01:43:18: Peer 1008 received the 'have' message from 1005 for the piece 81.
+01:43:19: Peer 1008 received the 'have' message from 1007 for the piece 120.
+01:43:19: Peer 1008 received the 'have' message from 1009 for the piece 3.
+01:43:19: Peer 1008 is unchoked by 1002
+01:43:19: Peer 1008 is choked by 1003
+01:43:19: Peer 1008 received the 'interested' message from 1004
+01:43:19: Peer 1008 is choked by 1005
+01:43:19: Peer 1008 received the 'have' message from 1007 for the piece 102.
+01:43:19: Peer 1008 received the 'interested' message from 1009
+01:43:19: Peer 1008 received the 'not interested' message from 1001
+01:43:19: Peer 1008 has downloaded the piece 3 from 1002. Now the number of pieces it has is 50.
+01:43:19: Peer 1008 received the 'not interested' message from 1003
+01:43:19: Peer 1008 received the 'have' message from 1004 for the piece 20.
+01:43:19: Peer 1008 received the 'not interested' message from 1005
+01:43:20: Peer 1008 received the 'have' message from 1007 for the piece 113.
+01:43:20: Peer 1008 received the 'have' message from 1009 for the piece 84.
+01:43:20: Peer 1008 has downloaded the piece 65 from 1001. Now the number of pieces it has is 51.
+01:43:20: Peer 1008 received the 'not interested' message from 1002
+01:43:20: Peer 1008 received the 'interested' message from 1003
+01:43:20: Peer 1008 received the 'not interested' message from 1004
+01:43:20: Peer 1008 received the 'not interested' message from 1005
+01:43:20: Peer 1008 is choked by 1006
+01:43:20: Peer 1008 received the 'have' message from 1007 for the piece 50.
+01:43:20: Peer 1008 received the 'have' message from 1009 for the piece 10.
+01:43:21: Peer 1008 received the 'not interested' message from 1002
+01:43:21: Peer 1008 received the 'have' message from 1003 for the piece 110.
+01:43:21: Peer 1008 received the 'have' message from 1004 for the piece 19.
+01:43:21: Peer 1008 received the 'not interested' message from 1006
+01:43:21: Peer 1008 received the 'have' message from 1009 for the piece 100.
+01:43:21: Peer 1008 received the 'not interested' message from 1001
+01:43:21: Peer 1008 received the 'not interested' message from 1002
+01:43:21: Peer 1008 received the 'have' message from 1003 for the piece 74.
+01:43:21: Peer 1008 received the 'have' message from 1004 for the piece 109.
+01:43:21: Peer 1008 received the 'have' message from 1005 for the piece 7.
+01:43:21: Peer 1008 received the 'not interested' message from 1006
+01:43:21: Peer 1008 received the 'not interested' message from 1007
+01:43:21: Peer 1008 received the 'interested' message from 1009
+01:43:22: Peer 1008 received the 'not interested' message from 1002
+01:43:22: Peer 1008 received the 'have' message from 1005 for the piece 103.
+01:43:22: Peer 1008 received the 'not interested' message from 1006
+01:43:22: Peer 1008 received the 'interested' message from 1007
+01:43:22: Peer 1008 received the 'have' message from 1009 for the piece 105.
+01:43:22: Peer 1008 received the 'not interested' message from 1001
+01:43:22: Peer 1008 received the 'not interested' message from 1002
+01:43:22: Peer 1008 received the 'have' message from 1003 for the piece 49.
+01:43:22: Peer 1008 received the 'have' message from 1004 for the piece 125.
+01:43:22: Peer 1008 received the 'have' message from 1005 for the piece 50.
+01:43:23: Peer 1008 has downloaded the piece 9 from 1006. Now the number of pieces it has is 52.
+01:43:23: Peer 1008 received the 'have' message from 1007 for the piece 112.
+01:43:23: Peer 1008 has the preferred neighbors 1005,1007,1003.
+01:43:23: Peer 1008 has the optimistically unchoked neighbor 1001.
+01:43:23: Peer 1008 received the 'have' message from 1009 for the piece 109.
+01:43:23: Peer 1008 is choked by 1002
+01:43:23: Peer 1008 received the 'have' message from 1003 for the piece 63.
+01:43:23: Peer 1008 has downloaded the piece 98 from 1004. Now the number of pieces it has is 53.
+01:43:23: Peer 1008 received the 'interested' message from 1005
+01:43:23: Peer 1008 received the 'not interested' message from 1006
+01:43:23: Peer 1008 received the 'not interested' message from 1007
+01:43:23: Peer 1008 received the 'have' message from 1009 for the piece 52.
+01:43:24: Peer 1008 received the 'not interested' message from 1003
+01:43:24: Peer 1008 received the 'interested' message from 1004
+01:43:24: Peer 1008 received the 'not interested' message from 1005
+01:43:24: Peer 1008 received the 'not interested' message from 1006
+01:43:24: Peer 1008 received the 'have' message from 1007 for the piece 114.
+01:43:24: Peer 1008 received the 'not interested' message from 1001
+01:43:24: Peer 1008 received the 'not interested' message from 1002
+01:43:24: Peer 1008 received the 'not interested' message from 1003
+01:43:24: Peer 1008 received the 'interested' message from 1004
+01:43:25: Peer 1008 is unchoked by 1006
+01:43:25: Peer 1008 received the 'have' message from 1007 for the piece 79.
+01:43:25: Peer 1008 received the 'have' message from 1009 for the piece 127.
+01:43:25: Peer 1008 received the 'not interested' message from 1001
+01:43:25: Peer 1008 has downloaded the piece 51 from 1002. Now the number of pieces it has is 54.
+01:43:25: Peer 1008 received the 'have' message from 1003 for the piece 52.
+01:43:25: Peer 1008 received the 'have' message from 1004 for the piece 57.
+01:43:25: Peer 1008 received the 'have' message from 1005 for the piece 100.
+01:43:25: Peer 1008 has downloaded the piece 36 from 1006. Now the number of pieces it has is 55.
+01:43:25: Peer 1008 received the 'have' message from 1007 for the piece 46.
+01:43:25: Peer 1008 received the 'interested' message from 1009
+01:43:25: Peer 1008 is unchoked by 1001
+01:43:26: Peer 1008 received the 'not interested' message from 1002
+01:43:26: Peer 1008 has downloaded the piece 67 from 1003. Now the number of pieces it has is 56.
+01:43:26: Peer 1008 is unchoked by 1004
+01:43:26: Peer 1008 received the 'interested' message from 1005
+01:43:26: Peer 1008 received the 'not interested' message from 1006
+01:43:26: Peer 1008 received the 'interested' message from 1007
+01:43:26: Peer 1008 received the 'have' message from 1009 for the piece 90.
+01:43:26: Peer 1008 received the 'not interested' message from 1001
+01:43:27: Peer 1008 received the 'interested' message from 1003
+01:43:27: Peer 1008 received the 'not interested' message from 1004
+01:43:27: Peer 1008 received the 'have' message from 1005 for the piece 65.
+01:43:27: Peer 1008 received the 'not interested' message from 1007
+01:43:27: Peer 1008 received the 'have' message from 1009 for the piece 31.
+01:43:27: Peer 1008 received the 'not interested' message from 1001
+01:43:27: Peer 1008 received the 'not interested' message from 1002
+01:43:27: Peer 1008 received the 'not interested' message from 1003
+01:43:27: Peer 1008 received the 'interested' message from 1004
+01:43:27: Peer 1008 received the 'have' message from 1005 for the piece 80.
+01:43:28: Peer 1008 has the preferred neighbors 1005,1004,1002.
+01:43:28: Peer 1008 received the 'interested' message from 1009
+01:43:29: Peer 1008 received the 'have' message from 1003 for the piece 26.
+01:43:29: Peer 1008 received the 'have' message from 1004 for the piece 79.
+01:43:29: Peer 1008 received the 'interested' message from 1005
+01:43:29: Peer 1008 received the 'not interested' message from 1006
+01:43:29: Peer 1008 received the 'not interested' message from 1009
+01:43:29: Peer 1008 has downloaded the piece 74 from 1001. Now the number of pieces it has is 57.
+01:43:29: Peer 1008 received the 'have' message from 1003 for the piece 22.
+01:43:29: Peer 1008 received the 'have' message from 1004 for the piece 91.
+01:43:29: Peer 1008 received the 'have' message from 1005 for the piece 40.
+01:43:29: Peer 1008 received the 'not interested' message from 1006
+01:43:29: Peer 1008 received the 'interested' message from 1007
+01:43:29: Peer 1008 received the 'have' message from 1009 for the piece 122.
+01:43:29: Peer 1008 received the 'not interested' message from 1001
+01:43:30: Peer 1008 received the 'have' message from 1003 for the piece 123.
+01:43:30: Peer 1008 received the 'interested' message from 1004
+01:43:30: Peer 1008 received the 'interested' message from 1005
+01:43:30: Peer 1008 is choked by 1006
+01:43:30: Peer 1008 received the 'have' message from 1007 for the piece 24.
+01:43:30: Peer 1008 received the 'have' message from 1009 for the piece 30.
+01:43:30: Peer 1008 received the 'not interested' message from 1001
+01:43:31: Peer 1008 received the 'have' message from 1003 for the piece 13.
+01:43:31: Peer 1008 is choked by 1004
+01:43:31: Peer 1008 received the 'have' message from 1005 for the piece 1.
+01:43:31: Peer 1008 has downloaded the piece 33 from 1006. Now the number of pieces it has is 58.
+01:43:31: Peer 1008 received the 'have' message from 1007 for the piece 84.
+01:43:31: Peer 1008 received the 'have' message from 1009 for the piece 16.
+01:43:31: Peer 1008 has downloaded the piece 21 from 1001. Now the number of pieces it has is 59.
+01:43:31: Peer 1008 received the 'not interested' message from 1002
+01:43:31: Peer 1008 is unchoked by 1003
+01:43:31: Peer 1008 is unchoked by 1004
+01:43:31: Peer 1008 received the 'have' message from 1005 for the piece 57.
+01:43:31: Peer 1008 received the 'not interested' message from 1006
+01:43:31: Peer 1008 has downloaded the piece 77 from 1007. Now the number of pieces it has is 60.
+01:43:31: Peer 1008 received the 'not interested' message from 1009
+01:43:31: Peer 1008 is choked by 1001
+01:43:32: Peer 1008 received the 'not interested' message from 1003
+01:43:32: Peer 1008 received the 'have' message from 1004 for the piece 30.
+01:43:32: Peer 1008 received the 'interested' message from 1005
+01:43:32: Peer 1008 received the 'have' message from 1007 for the piece 111.
+01:43:32: Peer 1008 received the 'not interested' message from 1009
+01:43:32: Peer 1008 received the 'not interested' message from 1001
+01:43:32: Peer 1008 received the 'not interested' message from 1002
+01:43:32: Peer 1008 received the 'not interested' message from 1003
+01:43:32: Peer 1008 received the 'interested' message from 1005
+01:43:33: Peer 1008 received the 'not interested' message from 1007
+01:43:33: Peer 1008 has the preferred neighbors 1009,1006,1002.
+01:43:33: Peer 1008 has the optimistically unchoked neighbor 1003.
+01:43:33: Peer 1008 received the 'have' message from 1009 for the piece 17.
+01:43:33: Peer 1008 received the 'not interested' message from 1001
+01:43:33: Peer 1008 received the 'have' message from 1003 for the piece 40.
+01:43:33: Peer 1008 received the 'interested' message from 1004
+01:43:33: Peer 1008 received the 'not interested' message from 1005
+01:43:34: Peer 1008 received the 'have' message from 1007 for the piece 96.
+01:43:34: Peer 1008 received the 'interested' message from 1009
+01:43:34: Peer 1008 received the 'not interested' message from 1001
+01:43:34: Peer 1008 received the 'have' message from 1004 for the piece 63.
+01:43:34: Peer 1008 received the 'have' message from 1005 for the piece 53.
+01:43:34: Peer 1008 has downloaded the piece 122 from 1006. Now the number of pieces it has is 61.
+01:43:34: Peer 1008 received the 'not interested' message from 1007
+01:43:34: Peer 1008 received the 'have' message from 1009 for the piece 130.
+01:43:34: Peer 1008 has downloaded the piece 70 from 1001. Now the number of pieces it has is 62.
+01:43:35: Peer 1008 received the 'have' message from 1003 for the piece 29.
+01:43:35: Peer 1008 received the 'have' message from 1004 for the piece 43.
+01:43:35: Peer 1008 received the 'not interested' message from 1005
+01:43:35: Peer 1008 received the 'not interested' message from 1006
+01:43:35: Peer 1008 received the 'interested' message from 1007
+01:43:35: Peer 1008 received the 'not interested' message from 1009
+01:43:35: Peer 1008 received the 'have' message from 1003 for the piece 32.
+01:43:35: Peer 1008 received the 'interested' message from 1004
+01:43:35: Peer 1008 has downloaded the piece 61 from 1005. Now the number of pieces it has is 63.
+01:43:35: Peer 1008 has downloaded the piece 123 from 1006. Now the number of pieces it has is 64.
+01:43:35: Peer 1008 received the 'have' message from 1007 for the piece 68.
+01:43:35: Peer 1008 received the 'have' message from 1009 for the piece 63.
+01:43:36: Peer 1008 is unchoked by 1001
+01:43:36: Peer 1008 received the 'not interested' message from 1002
+01:43:36: Peer 1008 received the 'not interested' message from 1003
+01:43:36: Peer 1008 received the 'not interested' message from 1004
+01:43:36: Peer 1008 received the 'have' message from 1005 for the piece 90.
+01:43:36: Peer 1008 has downloaded the piece 58 from 1006. Now the number of pieces it has is 65.
+01:43:36: Peer 1008 received the 'have' message from 1007 for the piece 121.
+01:43:36: Peer 1008 received the 'interested' message from 1009
+01:43:36: Peer 1008 received the 'not interested' message from 1001
+01:43:37: Peer 1008 received the 'not interested' message from 1002
+01:43:37: Peer 1008 received the 'have' message from 1004 for the piece 18.
+01:43:37: Peer 1008 received the 'not interested' message from 1005
+01:43:37: Peer 1008 received the 'not interested' message from 1006
+01:43:37: Peer 1008 received the 'interested' message from 1007
+01:43:37: Peer 1008 received the 'not interested' message from 1001
+01:43:38: Peer 1008 is choked by 1003
+01:43:38: Peer 1008 received the 'interested' message from 1004
+01:43:38: Peer 1008 received the 'not interested' message from 1005
+01:43:38: Peer 1008 received the 'have' message from 1007 for the piece 5.
+01:43:38: Peer 1008 has the preferred neighbors 1009,1006,1007.
+01:43:38: Peer 1008 received the 'have' message from 1009 for the piece 120.
+01:43:38: Peer 1008 received the 'not interested' message from 1001
+01:43:38: Peer 1008 received the 'not interested' message from 1002
+01:43:38: Peer 1008 received the 'interested' message from 1003
+01:43:38: Peer 1008 received the 'not interested' message from 1004
+01:43:38: Peer 1008 received the 'have' message from 1005 for the piece 0.
+01:43:38: Peer 1008 received the 'not interested' message from 1006
+01:43:38: Peer 1008 received the 'have' message from 1007 for the piece 129.
+01:43:38: Peer 1008 is unchoked by 1009
+01:43:39: Peer 1008 has downloaded the piece 35 from 1001. Now the number of pieces it has is 66.
+01:43:39: Peer 1008 received the 'not interested' message from 1002
+01:43:39: Peer 1008 received the 'have' message from 1003 for the piece 128.
+01:43:39: Peer 1008 received the 'have' message from 1004 for the piece 119.
+01:43:39: Peer 1008 received the 'not interested' message from 1005
+01:43:39: Peer 1008 received the 'interested' message from 1007
+01:43:39: Peer 1008 is unchoked by 1009
+01:43:40: Peer 1008 has downloaded the piece 106 from 1002. Now the number of pieces it has is 67.
+01:43:40: Peer 1008 received the 'not interested' message from 1003
+01:43:40: Peer 1008 is unchoked by 1004
+01:43:40: Peer 1008 received the 'have' message from 1005 for the piece 130.
+01:43:40: Peer 1008 received the 'not interested' message from 1006
+01:43:40: Peer 1008 has downloaded the piece 91 from 1007. Now the number of pieces it has is 68.
+01:43:40: Peer 1008 received the 'have' message from 1009 for the piece 94.
+01:43:40: Peer 1008 received the 'not interested' message from 1001
+01:43:40: Peer 1008 received the 'not interested' message from 1002
+01:43:40: Peer 1008 received the 'have' message from 1003 for the piece 79.
+01:43:40: Peer 1008 received the 'interested' message from 1004
+01:43:40: Peer 1008 received the 'interested' message from 1005
+01:43:40: Peer 1008 has downloaded the piece 69 from 1006. Now the number of pieces it has is 69.
+01:43:40: Peer 1008 received the 'not interested' message from 1007
+01:43:40: Peer 1008 received the 'interested' message from 1009
+01:43:40: Peer 1008 received the 'not interested' message from 1001
+01:43:41: Peer 1008 received the 'not interested' message from 1002
+01:43:41: Peer 1008 received the 'have' message from 1003 for the piece 129.
+01:43:41: Peer 1008 received the 'have' message from 1004 for the piece 102.
+01:43:41: Peer 1008 received the 'have' message from 1005 for the piece 92.
+01:43:41: Peer 1008 received the 'have' message from 1007 for the piece 125.
+01:43:41: Peer 1008 received the 'have' message from 1009 for the piece 125.
+01:43:41: Peer 1008 is choked by 1001
+01:43:42: Peer 1008 received the 'have' message from 1003 for the piece 97.
+01:43:42: Peer 1008 received the 'not interested' message from 1004
+01:43:42: Peer 1008 received the 'have' message from 1005 for the piece 106.
+01:43:42: Peer 1008 received the 'not interested' message from 1006
+01:43:42: Peer 1008 has downloaded the piece 71 from 1007. Now the number of pieces it has is 70.
+01:43:42: Peer 1008 received the 'have' message from 1009 for the piece 46.
+01:43:42: Peer 1008 received the 'not interested' message from 1002
+01:43:42: Peer 1008 received the 'not interested' message from 1003
+01:43:42: Peer 1008 received the 'not interested' message from 1004
+01:43:42: Peer 1008 received the 'interested' message from 1005
+01:43:43: Peer 1008 received the 'have' message from 1007 for the piece 11.
+01:43:43: Peer 1008 has the preferred neighbors 1004,1001,1002.
+01:43:43: Peer 1008 has the optimistically unchoked neighbor 1007.
+01:43:43: Peer 1008 has downloaded the piece 119 from 1009. Now the number of pieces it has is 71.
+01:43:43: Peer 1008 received the 'not interested' message from 1001
+01:43:43: Peer 1008 received the 'have' message from 1004 for the piece 73.
+01:43:43: Peer 1008 received the 'have' message from 1005 for the piece 26.
+01:43:43: Peer 1008 received the 'not interested' message from 1006
+01:43:43: Peer 1008 received the 'have' message from 1007 for the piece 80.
+01:43:43: Peer 1008 received the 'have' message from 1009 for the piece 81.
+01:43:43: Peer 1008 received the 'not interested' message from 1001
+01:43:44: Peer 1008 received the 'not interested' message from 1002
+01:43:44: Peer 1008 received the 'not interested' message from 1003
+01:43:44: Peer 1008 received the 'not interested' message from 1004
+01:43:44: Peer 1008 has downloaded the piece 118 from 1006. Now the number of pieces it has is 72.
+01:43:44: Peer 1008 received the 'not interested' message from 1007
+01:43:44: Peer 1008 received the 'not interested' message from 1001
+01:43:44: Peer 1008 is unchoked by 1003
+01:43:44: Peer 1008 is choked by 1004
+01:43:44: Peer 1008 received the 'have' message from 1005 for the piece 62.
+01:43:45: Peer 1008 is unchoked by 1006
+01:43:45: Peer 1008 received the 'interested' message from 1007
+01:43:45: Peer 1008 received the 'interested' message from 1009
+01:43:45: Peer 1008 has downloaded the piece 16 from 1001. Now the number of pieces it has is 73.
+01:43:45: Peer 1008 received the 'not interested' message from 1002
+01:43:45: Peer 1008 received the 'not interested' message from 1003
+01:43:45: Peer 1008 is unchoked by 1004
+01:43:45: Peer 1008 received the 'not interested' message from 1006
+01:43:45: Peer 1008 received the 'have' message from 1007 for the piece 51.
+01:43:45: Peer 1008 received the 'interested' message from 1009
+01:43:46: Peer 1008 received the 'not interested' message from 1002
+01:43:46: Peer 1008 received the 'not interested' message from 1003
+01:43:46: Peer 1008 received the 'have' message from 1004 for the piece 48.
+01:43:46: Peer 1008 received the 'have' message from 1005 for the piece 44.
+01:43:46: Peer 1008 received the 'have' message from 1007 for the piece 32.
+01:43:46: Peer 1008 received the 'have' message from 1009 for the piece 99.
+01:43:46: Peer 1008 received the 'not interested' message from 1001
+01:43:46: Peer 1008 received the 'not interested' message from 1002
+01:43:46: Peer 1008 received the 'have' message from 1003 for the piece 23.
+01:43:46: Peer 1008 received the 'have' message from 1004 for the piece 88.
+01:43:46: Peer 1008 received the 'not interested' message from 1005
+01:43:47: Peer 1008 received the 'not interested' message from 1006
+01:43:47: Peer 1008 received the 'not interested' message from 1007
+01:43:47: Peer 1008 is choked by 1009
+01:43:47: Peer 1008 has downloaded the piece 79 from 1001. Now the number of pieces it has is 74.
+01:43:48: Peer 1008 received the 'interested' message from 1003
+01:43:48: Peer 1008 has downloaded the piece 45 from 1004. Now the number of pieces it has is 75.
+01:43:48: Peer 1008 received the 'have' message from 1005 for the piece 49.
+01:43:48: Peer 1008 received the 'not interested' message from 1006
+01:43:48: Peer 1008 is unchoked by 1007
+01:43:48: Peer 1008 received the 'have' message from 1009 for the piece 96.
+01:43:48: Peer 1008 received the 'not interested' message from 1001
+01:43:49: Peer 1008 is unchoked by 1002
+01:43:49: Peer 1008 received the 'not interested' message from 1003
+01:43:49: Peer 1008 received the 'have' message from 1004 for the piece 85.
+01:43:49: Peer 1008 received the 'interested' message from 1005
+01:43:49: Peer 1008 received the 'not interested' message from 1006
+01:43:49: Peer 1008 received the 'interested' message from 1007
+01:43:49: Peer 1008 has the preferred neighbors 1004,1003,1002.
+01:43:49: Peer 1008 received the 'not interested' message from 1009
+01:43:49: Peer 1008 received the 'not interested' message from 1002
+01:43:49: Peer 1008 received the 'have' message from 1003 for the piece 28.
+01:43:49: Peer 1008 received the 'not interested' message from 1004
+01:43:49: Peer 1008 received the 'have' message from 1005 for the piece 48.
+01:43:50: Peer 1008 received the 'have' message from 1007 for the piece 124.
+01:43:50: Peer 1008 received the 'interested' message from 1009
+01:43:50: Peer 1008 received the 'not interested' message from 1001
+01:43:50: Peer 1008 received the 'have' message from 1003 for the piece 57.
+01:43:50: Peer 1008 received the 'have' message from 1004 for the piece 62.
+01:43:50: Peer 1008 is choked by 1006
+01:43:50: Peer 1008 received the 'have' message from 1007 for the piece 18.
+01:43:50: Peer 1008 received the 'have' message from 1009 for the piece 19.
+01:43:50: Peer 1008 has downloaded the piece 93 from 1001. Now the number of pieces it has is 76.
+01:43:50: Peer 1008 received the 'not interested' message from 1002
+01:43:50: Peer 1008 is choked by 1003
+01:43:50: Peer 1008 received the 'not interested' message from 1004
+01:43:50: Peer 1008 received the 'have' message from 1005 for the piece 126.
+01:43:50: Peer 1008 has downloaded the piece 76 from 1006. Now the number of pieces it has is 77.
+01:43:50: Peer 1008 received the 'not interested' message from 1007
+01:43:50: Peer 1008 received the 'have' message from 1009 for the piece 131.
+01:43:51: Peer 1008 received the 'not interested' message from 1001
+01:43:51: Peer 1008 received the 'not interested' message from 1002
+01:43:51: Peer 1008 is unchoked by 1003
+01:43:51: Peer 1008 received the 'have' message from 1004 for the piece 112.
+01:43:51: Peer 1008 received the 'have' message from 1005 for the piece 4.
+01:43:51: Peer 1008 received the 'not interested' message from 1006
+01:43:51: Peer 1008 received the 'have' message from 1007 for the piece 105.
+01:43:51: Peer 1008 received the 'have' message from 1009 for the piece 6.
+01:43:51: Peer 1008 is unchoked by 1001
+01:43:52: Peer 1008 received the 'not interested' message from 1003
+01:43:52: Peer 1008 is choked by 1004
+01:43:52: Peer 1008 received the 'interested' message from 1005
+01:43:52: Peer 1008 received the 'not interested' message from 1006
+01:43:52: Peer 1008 received the 'interested' message from 1007
+01:43:52: Peer 1008 is unchoked by 1009
+01:43:52: Peer 1008 received the 'not interested' message from 1001
+01:43:52: Peer 1008 received the 'not interested' message from 1002
+01:43:52: Peer 1008 is unchoked by 1004
+01:43:52: Peer 1008 received the 'have' message from 1005 for the piece 101.
+01:43:52: Peer 1008 received the 'not interested' message from 1006
+01:43:52: Peer 1008 received the 'not interested' message from 1007
+01:43:52: Peer 1008 received the 'interested' message from 1009
+01:43:53: Peer 1008 received the 'not interested' message from 1001
+01:43:53: Peer 1008 received the 'have' message from 1004 for the piece 86.
+01:43:53: Peer 1008 received the 'not interested' message from 1005
+01:43:54: Peer 1008 received the 'have' message from 1007 for the piece 22.
+01:43:54: Peer 1008 has the preferred neighbors 1005,1009,1001.
+01:43:54: Peer 1008 has the optimistically unchoked neighbor 1001.
+01:43:54: Peer 1008 received the 'interested' message from 1009
+01:43:54: Peer 1008 received the 'not interested' message from 1002
+01:43:54: Peer 1008 received the 'have' message from 1003 for the piece 62.
+01:43:54: Peer 1008 received the 'have' message from 1007 for the piece 126.
+01:43:54: Peer 1008 received the 'have' message from 1009 for the piece 118.
+01:43:55: Peer 1008 received the 'not interested' message from 1001
+01:43:55: Peer 1008 is choked by 1002
+01:43:55: Peer 1008 received the 'have' message from 1003 for the piece 3.
+01:43:55: Peer 1008 received the 'have' message from 1004 for the piece 96.
+01:43:55: Peer 1008 received the 'have' message from 1005 for the piece 85.
+01:43:55: Peer 1008 has downloaded the piece 95 from 1006. Now the number of pieces it has is 78.
+01:43:55: Peer 1008 is choked by 1007
+01:43:55: Peer 1008 is unchoked by 1002
+01:43:55: Peer 1008 received the 'have' message from 1003 for the piece 71.
+01:43:55: Peer 1008 received the 'have' message from 1004 for the piece 121.
+01:43:55: Peer 1008 received the 'have' message from 1005 for the piece 13.
+01:43:55: Peer 1008 received the 'not interested' message from 1006
+01:43:55: Peer 1008 received the 'interested' message from 1007
+01:43:55: Peer 1008 received the 'have' message from 1009 for the piece 111.
+01:43:55: Peer 1008 received the 'not interested' message from 1001
+01:43:55: Peer 1008 received the 'not interested' message from 1002
+01:43:55: Peer 1008 has downloaded the piece 42 from 1003. Now the number of pieces it has is 79.
+01:43:55: Peer 1008 received the 'not interested' message from 1004
+01:43:55: Peer 1008 received the 'have' message from 1005 for the piece 82.
+01:43:56: Peer 1008 received the 'have' message from 1007 for the piece 42.
+01:43:56: Peer 1008 received the 'have' message from 1009 for the piece 7.
+01:43:56: Peer 1008 is choked by 1001
+01:43:56: Peer 1008 has downloaded the piece 47 from 1002. Now the number of pieces it has is 80.
+01:43:56: Peer 1008 received the 'not interested' message from 1003
+01:43:56: Peer 1008 received the 'have' message from 1004 for the piece 53.
+01:43:56: Peer 1008 received the 'have' message from 1005 for the piece 43.
+01:43:56: Peer 1008 received the 'not interested' message from 1006
+01:43:56: Peer 1008 received the 'have' message from 1007 for the piece 73.
+01:43:56: Peer 1008 received the 'have' message from 1009 for the piece 110.
+01:43:56: Peer 1008 received the 'not interested' message from 1001
+01:43:56: Peer 1008 received the 'not interested' message from 1002
+01:43:56: Peer 1008 received the 'have' message from 1003 for the piece 43.
+01:43:56: Peer 1008 received the 'interested' message from 1004
+01:43:56: Peer 1008 received the 'not interested' message from 1005
+01:43:57: Peer 1008 received the 'have' message from 1009 for the piece 67.
+01:43:57: Peer 1008 is choked by 1001
+01:43:57: Peer 1008 received the 'not interested' message from 1003
+01:43:57: Peer 1008 received the 'have' message from 1004 for the piece 0.
+01:43:57: Peer 1008 received the 'have' message from 1005 for the piece 52.
+01:43:57: Peer 1008 received the 'not interested' message from 1006
+01:43:57: Peer 1008 received the 'have' message from 1007 for the piece 130.
+01:43:57: Peer 1008 received the 'interested' message from 1009
+01:43:57: Peer 1008 has downloaded the piece 44 from 1001. Now the number of pieces it has is 81.
+01:43:57: Peer 1008 received the 'not interested' message from 1002
+01:43:57: Peer 1008 received the 'have' message from 1003 for the piece 73.
+01:43:57: Peer 1008 received the 'interested' message from 1004
+01:43:58: Peer 1008 received the 'interested' message from 1007
+01:43:58: Peer 1008 has the preferred neighbors 1005,1003,1001.
+01:43:58: Peer 1008 received the 'not interested' message from 1009
+01:43:58: Peer 1008 received the 'not interested' message from 1001
+01:43:58: Peer 1008 is choked by 1002
+01:43:58: Peer 1008 received the 'have' message from 1003 for the piece 47.
+01:43:58: Peer 1008 received the 'have' message from 1004 for the piece 110.
+01:43:58: Peer 1008 received the 'not interested' message from 1005
+01:43:58: Peer 1008 has downloaded the piece 78 from 1006. Now the number of pieces it has is 82.
+01:43:58: Peer 1008 received the 'have' message from 1007 for the piece 116.
+01:43:58: Peer 1008 received the 'not interested' message from 1009
+01:43:58: Peer 1008 has downloaded the piece 0 from 1001. Now the number of pieces it has is 83.
+01:43:58: Peer 1008 received the 'not interested' message from 1002
+01:43:58: Peer 1008 received the 'not interested' message from 1003
+01:43:58: Peer 1008 received the 'have' message from 1004 for the piece 31.
+01:43:58: Peer 1008 received the 'have' message from 1005 for the piece 91.
+01:43:59: Peer 1008 is unchoked by 1007
+01:43:59: Peer 1008 is choked by 1009
+01:43:59: Peer 1008 is choked by 1002
+01:43:59: Peer 1008 received the 'not interested' message from 1003
+01:43:59: Peer 1008 is choked by 1004
+01:43:59: Peer 1008 received the 'not interested' message from 1006
+01:43:59: Peer 1008 received the 'have' message from 1007 for the piece 88.
+01:43:59: Peer 1008 received the 'have' message from 1009 for the piece 76.
+01:43:59: Peer 1008 received the 'not interested' message from 1001
+01:43:59: Peer 1008 received the 'not interested' message from 1002
+01:43:59: Peer 1008 received the 'have' message from 1003 for the piece 37.
+01:43:59: Peer 1008 received the 'have' message from 1004 for the piece 9.
+01:43:59: Peer 1008 received the 'have' message from 1005 for the piece 68.
+01:44:00: Peer 1008 received the 'interested' message from 1007
+01:44:00: Peer 1008 received the 'interested' message from 1009
+01:44:00: Peer 1008 received the 'not interested' message from 1001
+01:44:00: Peer 1008 received the 'have' message from 1003 for the piece 61.
+01:44:00: Peer 1008 received the 'not interested' message from 1005
+01:44:00: Peer 1008 received the 'have' message from 1007 for the piece 4.
+01:44:00: Peer 1008 received the 'have' message from 1009 for the piece 42.
+01:44:01: Peer 1008 received the 'not interested' message from 1001
+01:44:01: Peer 1008 received the 'not interested' message from 1002
+01:44:01: Peer 1008 received the 'have' message from 1003 for the piece 44.
+01:44:01: Peer 1008 received the 'have' message from 1004 for the piece 75.
+01:44:01: Peer 1008 received the 'have' message from 1005 for the piece 30.
+01:44:01: Peer 1008 received the 'not interested' message from 1006
+01:44:01: Peer 1008 received the 'interested' message from 1007
+01:44:01: Peer 1008 received the 'have' message from 1009 for the piece 115.
+01:44:01: Peer 1008 received the 'not interested' message from 1002
+01:44:01: Peer 1008 received the 'interested' message from 1003
+01:44:01: Peer 1008 received the 'not interested' message from 1004
+01:44:01: Peer 1008 received the 'have' message from 1005 for the piece 14.
+01:44:02: Peer 1008 received the 'not interested' message from 1007
+01:44:02: Peer 1008 received the 'have' message from 1009 for the piece 102.
+01:44:02: Peer 1008 received the 'not interested' message from 1001
+01:44:02: Peer 1008 received the 'not interested' message from 1004
+01:44:02: Peer 1008 received the 'have' message from 1005 for the piece 55.
+01:44:03: Peer 1008 received the 'have' message from 1007 for the piece 44.
+01:44:03: Peer 1008 has the preferred neighbors 1005,1009,1007.
+01:44:03: Peer 1008 has the optimistically unchoked neighbor 1002.
+01:44:03: Peer 1008 received the 'not interested' message from 1009
+01:44:03: Peer 1008 received the 'not interested' message from 1001
+01:44:03: Peer 1008 received the 'not interested' message from 1002
+01:44:03: Peer 1008 received the 'interested' message from 1003
+01:44:03: Peer 1008 received the 'have' message from 1004 for the piece 8.
+01:44:03: Peer 1008 is unchoked by 1005
+01:44:03: Peer 1008 received the 'not interested' message from 1006
+01:44:03: Peer 1008 is choked by 1007
+01:44:03: Peer 1008 received the 'have' message from 1009 for the piece 13.
+01:44:03: Peer 1008 received the 'not interested' message from 1002
+01:44:03: Peer 1008 received the 'not interested' message from 1003
+01:44:03: Peer 1008 received the 'not interested' message from 1004
+01:44:03: Peer 1008 received the 'not interested' message from 1005
+01:44:03: Peer 1008 received the 'not interested' message from 1006
+01:44:03: Peer 1008 is unchoked by 1007
+01:44:03: Peer 1008 received the 'interested' message from 1009
+01:44:04: Peer 1008 received the 'not interested' message from 1002
+01:44:04: Peer 1008 is unchoked by 1003
+01:44:04: Peer 1008 received the 'have' message from 1004 for the piece 127.
+01:44:04: Peer 1008 received the 'interested' message from 1005
+01:44:05: Peer 1008 received the 'not interested' message from 1006
+01:44:05: Peer 1008 is unchoked by 1009
+01:44:05: Peer 1008 received the 'not interested' message from 1001
+01:44:05: Peer 1008 has downloaded the piece 13 from 1002. Now the number of pieces it has is 84.
+01:44:05: Peer 1008 received the 'not interested' message from 1003
+01:44:05: Peer 1008 received the 'not interested' message from 1004
+01:44:05: Peer 1008 received the 'have' message from 1005 for the piece 125.
+01:44:05: Peer 1008 received the 'have' message from 1007 for the piece 123.
+01:44:05: Peer 1008 is unchoked by 1009
+01:44:06: Peer 1008 received the 'not interested' message from 1001
+01:44:06: Peer 1008 has downloaded the piece 103 from 1003. Now the number of pieces it has is 85.
+01:44:06: Peer 1008 has downloaded the piece 129 from 1006. Now the number of pieces it has is 86.
+01:44:06: Peer 1008 received the 'not interested' message from 1007
+01:44:06: Peer 1008 received the 'have' message from 1009 for the piece 41.
+01:44:07: Peer 1008 has downloaded the piece 59 from 1001. Now the number of pieces it has is 87.
+01:44:07: Peer 1008 received the 'not interested' message from 1002
+01:44:07: Peer 1008 received the 'have' message from 1003 for the piece 98.
+01:44:07: Peer 1008 received the 'interested' message from 1005
+01:44:07: Peer 1008 received the 'not interested' message from 1006
+01:44:07: Peer 1008 received the 'have' message from 1007 for the piece 87.
+01:44:07: Peer 1008 received the 'not interested' message from 1009
+01:44:08: Peer 1008 received the 'not interested' message from 1003
+01:44:08: Peer 1008 received the 'have' message from 1004 for the piece 2.
+01:44:08: Peer 1008 received the 'have' message from 1005 for the piece 94.
+01:44:08: Peer 1008 received the 'not interested' message from 1006
+01:44:08: Peer 1008 received the 'not interested' message from 1007
+01:44:08: Peer 1008 has the preferred neighbors 1006,1007,1003.
+01:44:08: Peer 1008 received the 'have' message from 1009 for the piece 104.
+01:44:08: Peer 1008 received the 'not interested' message from 1001
+01:44:08: Peer 1008 received the 'not interested' message from 1002
+01:44:08: Peer 1008 received the 'have' message from 1003 for the piece 77.
+01:44:08: Peer 1008 received the 'have' message from 1004 for the piece 10.
+01:44:08: Peer 1008 is choked by 1005
+01:44:09: Peer 1008 received the 'interested' message from 1007
+01:44:09: Peer 1008 received the 'have' message from 1009 for the piece 59.
+01:44:09: Peer 1008 received the 'not interested' message from 1003
+01:44:09: Peer 1008 received the 'not interested' message from 1004
+01:44:09: Peer 1008 is unchoked by 1005
+01:44:09: Peer 1008 received the 'not interested' message from 1006
+01:44:09: Peer 1008 received the 'interested' message from 1007
+01:44:10: Peer 1008 received the 'not interested' message from 1001
+01:44:10: Peer 1008 received the 'not interested' message from 1002
+01:44:10: Peer 1008 is choked by 1003
+01:44:10: Peer 1008 received the 'interested' message from 1004
+01:44:10: Peer 1008 received the 'have' message from 1005 for the piece 56.
+01:44:10: Peer 1008 is choked by 1007
+01:44:10: Peer 1008 received the 'have' message from 1009 for the piece 73.
+01:44:10: Peer 1008 received the 'not interested' message from 1001
+01:44:11: Peer 1008 received the 'have' message from 1003 for the piece 125.
+01:44:11: Peer 1008 received the 'not interested' message from 1004
+01:44:11: Peer 1008 received the 'not interested' message from 1005
+01:44:11: Peer 1008 received the 'not interested' message from 1006
+01:44:11: Peer 1008 is unchoked by 1007
+01:44:11: Peer 1008 received the 'not interested' message from 1009
+01:44:11: Peer 1008 has downloaded the piece 124 from 1002. Now the number of pieces it has is 88.
+01:44:11: Peer 1008 received the 'not interested' message from 1003
+01:44:11: Peer 1008 received the 'have' message from 1004 for the piece 105.
+01:44:11: Peer 1008 received the 'interested' message from 1005
+01:44:11: Peer 1008 has downloaded the piece 5 from 1006. Now the number of pieces it has is 89.
+01:44:11: Peer 1008 received the 'have' message from 1007 for the piece 12.
+01:44:11: Peer 1008 received the 'interested' message from 1009
+01:44:11: Peer 1008 has downloaded the piece 132 from 1001. Now the number of pieces it has is 90.
+01:44:11: Peer 1008 received the 'not interested' message from 1002
+01:44:11: Peer 1008 received the 'not interested' message from 1003
+01:44:11: Peer 1008 has downloaded the piece 55 from 1004. Now the number of pieces it has is 91.
+01:44:11: Peer 1008 received the 'not interested' message from 1005
+01:44:12: Peer 1008 received the 'have' message from 1007 for the piece 56.
+01:44:12: Peer 1008 received the 'interested' message from 1009
+01:44:12: Peer 1008 received the 'not interested' message from 1001
+01:44:12: Peer 1008 has downloaded the piece 20 from 1002. Now the number of pieces it has is 92.
+01:44:12: Peer 1008 has downloaded the piece 117 from 1003. Now the number of pieces it has is 93.
+01:44:12: Peer 1008 received the 'not interested' message from 1004
+01:44:12: Peer 1008 is choked by 1005
+01:44:12: Peer 1008 received the 'not interested' message from 1006
+01:44:12: Peer 1008 received the 'have' message from 1007 for the piece 41.
+01:44:12: Peer 1008 received the 'interested' message from 1009
+01:44:13: Peer 1008 received the 'not interested' message from 1002
+01:44:13: Peer 1008 received the 'have' message from 1003 for the piece 111.
+01:44:13: Peer 1008 received the 'have' message from 1004 for the piece 47.
+01:44:13: Peer 1008 is unchoked by 1005
+01:44:13: Peer 1008 received the 'not interested' message from 1006
+01:44:13: Peer 1008 received the 'not interested' message from 1007
+01:44:13: Peer 1008 has the preferred neighbors 1005,1007,1003.
+01:44:13: Peer 1008 has the optimistically unchoked neighbor 1006.
+01:44:13: Peer 1008 is choked by 1009
+01:44:13: Peer 1008 received the 'not interested' message from 1001
+01:44:14: Peer 1008 is unchoked by 1002
+01:44:14: Peer 1008 received the 'not interested' message from 1003
+01:44:14: Peer 1008 received the 'not interested' message from 1004
+01:44:14: Peer 1008 received the 'interested' message from 1005
+01:44:14: Peer 1008 received the 'not interested' message from 1006
+01:44:14: Peer 1008 received the 'interested' message from 1007
+01:44:14: Peer 1008 is unchoked by 1009
+01:44:14: Peer 1008 has downloaded the piece 96 from 1001. Now the number of pieces it has is 94.
+01:44:14: Peer 1008 received the 'not interested' message from 1002
+01:44:14: Peer 1008 received the 'have' message from 1003 for the piece 46.
+01:44:14: Peer 1008 received the 'not interested' message from 1004
+01:44:14: Peer 1008 received the 'interested' message from 1005
+01:44:14: Peer 1008 received the 'not interested' message from 1006
+01:44:14: Peer 1008 received the 'interested' message from 1007
+01:44:14: Peer 1008 received the 'have' message from 1009 for the piece 26.
+01:44:15: Peer 1008 received the 'have' message from 1004 for the piece 123.
+01:44:15: Peer 1008 is unchoked by 1006
+01:44:15: Peer 1008 has downloaded the piece 46 from 1007. Now the number of pieces it has is 95.
+01:44:15: Peer 1008 received the 'interested' message from 1009
+01:44:16: Peer 1008 received the 'not interested' message from 1002
+01:44:16: Peer 1008 received the 'have' message from 1003 for the piece 124.
+01:44:16: Peer 1008 received the 'not interested' message from 1004
+01:44:16: Peer 1008 received the 'have' message from 1005 for the piece 109.
+01:44:16: Peer 1008 has downloaded the piece 60 from 1006. Now the number of pieces it has is 96.
+01:44:16: Peer 1008 received the 'not interested' message from 1007
+01:44:16: Peer 1008 received the 'have' message from 1009 for the piece 116.
+01:44:16: Peer 1008 received the 'not interested' message from 1001
+01:44:16: Peer 1008 received the 'not interested' message from 1002
+01:44:16: Peer 1008 received the 'interested' message from 1003
+01:44:16: Peer 1008 received the 'not interested' message from 1004
+01:44:16: Peer 1008 received the 'not interested' message from 1005
+01:44:16: Peer 1008 received the 'not interested' message from 1006
+01:44:16: Peer 1008 received the 'have' message from 1007 for the piece 15.
+01:44:17: Peer 1008 received the 'not interested' message from 1003
+01:44:17: Peer 1008 received the 'not interested' message from 1004
+01:44:17: Peer 1008 received the 'not interested' message from 1005
+01:44:17: Peer 1008 has downloaded the piece 30 from 1006. Now the number of pieces it has is 97.
+01:44:17: Peer 1008 is choked by 1007
+01:44:17: Peer 1008 received the 'have' message from 1009 for the piece 24.
+01:44:17: Peer 1008 received the 'not interested' message from 1001
+01:44:18: Peer 1008 is choked by 1002
+01:44:18: Peer 1008 received the 'have' message from 1003 for the piece 86.
+01:44:18: Peer 1008 received the 'have' message from 1004 for the piece 65.
+01:44:18: Peer 1008 received the 'have' message from 1005 for the piece 128.
+01:44:18: Peer 1008 received the 'not interested' message from 1006
+01:44:18: Peer 1008 received the 'have' message from 1007 for the piece 75.
+01:44:18: Peer 1008 has the preferred neighbors 1004,1007,1001.
+01:44:18: Peer 1008 received the 'have' message from 1009 for the piece 56.
+01:44:18: Peer 1008 received the 'not interested' message from 1001
+01:44:18: Peer 1008 is unchoked by 1002
+01:44:18: Peer 1008 received the 'have' message from 1003 for the piece 9.
+01:44:18: Peer 1008 received the 'interested' message from 1004
+01:44:18: Peer 1008 received the 'not interested' message from 1005
+01:44:19: Peer 1008 received the 'not interested' message from 1006
+01:44:19: Peer 1008 received the 'interested' message from 1007
+01:44:19: Peer 1008 received the 'have' message from 1009 for the piece 86.
+01:44:19: Peer 1008 is unchoked by 1002
+01:44:19: Peer 1008 received the 'not interested' message from 1003
+01:44:19: Peer 1008 received the 'interested' message from 1004
+01:44:19: Peer 1008 is choked by 1005
+01:44:20: Peer 1008 received the 'interested' message from 1007
+01:44:20: Peer 1008 has downloaded the piece 32 from 1001. Now the number of pieces it has is 98.
+01:44:20: Peer 1008 has downloaded the piece 115 from 1002. Now the number of pieces it has is 99.
+01:44:20: Peer 1008 received the 'not interested' message from 1003
+01:44:20: Peer 1008 is unchoked by 1004
+01:44:20: Peer 1008 received the 'interested' message from 1005
+01:44:20: Peer 1008 is choked by 1006
+01:44:20: Peer 1008 received the 'interested' message from 1007
+01:44:20: Peer 1008 received the 'not interested' message from 1001
+01:44:20: Peer 1008 received the 'not interested' message from 1002
+01:44:20: Peer 1008 is unchoked by 1003
+01:44:20: Peer 1008 has downloaded the piece 54 from 1004. Now the number of pieces it has is 100.
+01:44:20: Peer 1008 received the 'not interested' message from 1005
+01:44:20: Peer 1008 is unchoked by 1006
+01:44:20: Peer 1008 received the 'not interested' message from 1007
+01:44:20: Peer 1008 is choked by 1009
+01:44:20: Peer 1008 received the 'not interested' message from 1002
+01:44:20: Peer 1008 received the 'not interested' message from 1003
+01:44:20: Peer 1008 received the 'not interested' message from 1004
+01:44:20: Peer 1008 received the 'have' message from 1005 for the piece 66.
+01:44:20: Peer 1008 received the 'not interested' message from 1006
+01:44:20: Peer 1008 received the 'have' message from 1007 for the piece 36.
+01:44:20: Peer 1008 received the 'have' message from 1009 for the piece 21.
+01:44:21: Peer 1008 is unchoked by 1001
+01:44:21: Peer 1008 received the 'have' message from 1003 for the piece 131.
+01:44:21: Peer 1008 received the 'not interested' message from 1004
+01:44:21: Peer 1008 received the 'have' message from 1005 for the piece 122.
+01:44:21: Peer 1008 received the 'not interested' message from 1006
+01:44:21: Peer 1008 received the 'have' message from 1007 for the piece 20.
+01:44:21: Peer 1008 received the 'not interested' message from 1009
+01:44:22: Peer 1008 received the 'not interested' message from 1002
+01:44:22: Peer 1008 received the 'not interested' message from 1003
+01:44:22: Peer 1008 received the 'not interested' message from 1004
+01:44:22: Peer 1008 received the 'not interested' message from 1005
+01:44:22: Peer 1008 has downloaded the piece 12 from 1006. Now the number of pieces it has is 101.
+01:44:22: Peer 1008 is unchoked by 1007
+01:44:22: Peer 1008 is choked by 1009
+01:44:23: Peer 1008 received the 'not interested' message from 1002
+01:44:23: Peer 1008 received the 'not interested' message from 1003
+01:44:23: Peer 1008 received the 'not interested' message from 1005
+01:44:23: Peer 1008 received the 'not interested' message from 1006
+01:44:23: Peer 1008 received the 'interested' message from 1007
+01:44:23: Peer 1008 received the 'have' message from 1009 for the piece 9.
+01:44:23: Peer 1008 received the 'not interested' message from 1001
+01:44:23: Peer 1008 is choked by 1002
+01:44:23: Peer 1008 received the 'interested' message from 1003
+01:44:23: Peer 1008 received the 'not interested' message from 1004
+01:44:23: Peer 1008 is unchoked by 1005
+01:44:24: Peer 1008 received the 'have' message from 1007 for the piece 35.
+01:44:24: Peer 1008 has the preferred neighbors 1005,1007,1002.
+01:44:24: Peer 1008 has the optimistically unchoked neighbor 1005.
+01:44:24: Peer 1008 has downloaded the piece 19 from 1001. Now the number of pieces it has is 102.
+01:44:24: Peer 1008 is unchoked by 1002
+01:44:24: Peer 1008 received the 'not interested' message from 1003
+01:44:24: Peer 1008 is choked by 1004
+01:44:24: Peer 1008 received the 'not interested' message from 1005
+01:44:24: Peer 1008 received the 'not interested' message from 1006
+01:44:24: Peer 1008 received the 'have' message from 1007 for the piece 10.
+01:44:24: Peer 1008 received the 'interested' message from 1009
+01:44:24: Peer 1008 is choked by 1003
+01:44:24: Peer 1008 received the 'have' message from 1004 for the piece 17.
+01:44:24: Peer 1008 received the 'have' message from 1005 for the piece 104.
+01:44:25: Peer 1008 received the 'interested' message from 1009
+01:44:25: Peer 1008 received the 'not interested' message from 1001
+01:44:25: Peer 1008 received the 'not interested' message from 1002
+01:44:25: Peer 1008 is unchoked by 1003
+01:44:25: Peer 1008 received the 'not interested' message from 1004
+01:44:25: Peer 1008 received the 'not interested' message from 1005
+01:44:25: Peer 1008 is choked by 1006
+01:44:25: Peer 1008 received the 'have' message from 1007 for the piece 103.
+01:44:25: Peer 1008 received the 'have' message from 1009 for the piece 101.
+01:44:25: Peer 1008 received the 'not interested' message from 1002
+01:44:25: Peer 1008 received the 'not interested' message from 1003
+01:44:25: Peer 1008 received the 'not interested' message from 1004
+01:44:25: Peer 1008 received the 'have' message from 1005 for the piece 54.
+01:44:25: Peer 1008 received the 'not interested' message from 1006
+01:44:25: Peer 1008 received the 'have' message from 1007 for the piece 30.
+01:44:25: Peer 1008 received the 'have' message from 1009 for the piece 5.
+01:44:26: Peer 1008 received the 'not interested' message from 1002
+01:44:26: Peer 1008 received the 'not interested' message from 1003
+01:44:26: Peer 1008 received the 'not interested' message from 1005
+01:44:26: Peer 1008 received the 'not interested' message from 1006
+01:44:26: Peer 1008 received the 'not interested' message from 1007
+01:44:26: Peer 1008 received the 'have' message from 1009 for the piece 98.
+01:44:26: Peer 1008 received the 'not interested' message from 1001
+01:44:27: Peer 1008 received the 'not interested' message from 1002
+01:44:27: Peer 1008 received the 'not interested' message from 1003
+01:44:27: Peer 1008 received the 'have' message from 1004 for the piece 78.
+01:44:27: Peer 1008 received the 'not interested' message from 1005
+01:44:27: Peer 1008 received the 'interested' message from 1007
+01:44:27: Peer 1008 received the 'not interested' message from 1009
+01:44:27: Peer 1008 is choked by 1001
+01:44:28: Peer 1008 received the 'have' message from 1004 for the piece 76.
+01:44:28: Peer 1008 is choked by 1005
+01:44:28: Peer 1008 has downloaded the piece 14 from 1006. Now the number of pieces it has is 103.
+01:44:28: Peer 1008 received the 'have' message from 1007 for the piece 25.
+01:44:28: Peer 1008 has the preferred neighbors 1004,1009,1002.
+01:44:28: Peer 1008 is unchoked by 1009
+01:44:28: Peer 1008 is unchoked by 1001
+01:44:28: Peer 1008 has downloaded the piece 49 from 1002. Now the number of pieces it has is 104.
+01:44:28: Peer 1008 received the 'interested' message from 1003
+01:44:28: Peer 1008 received the 'not interested' message from 1004
+01:44:28: Peer 1008 received the 'interested' message from 1005
+01:44:28: Peer 1008 received the 'have' message from 1009 for the piece 57.
+01:44:28: Peer 1008 received the 'not interested' message from 1001
+01:44:28: Peer 1008 is choked by 1002
+01:44:28: Peer 1008 received the 'have' message from 1003 for the piece 10.
+01:44:28: Peer 1008 received the 'have' message from 1004 for the piece 103.
+01:44:28: Peer 1008 received the 'not interested' message from 1005
+01:44:29: Peer 1008 received the 'not interested' message from 1006
+01:44:29: Peer 1008 received the 'not interested' message from 1007
+01:44:29: Peer 1008 received the 'interested' message from 1009
+01:44:29: Peer 1008 received the 'not interested' message from 1001
+01:44:29: Peer 1008 received the 'not interested' message from 1002
+01:44:29: Peer 1008 is choked by 1003
+01:44:29: Peer 1008 has downloaded the piece 114 from 1004. Now the number of pieces it has is 105.
+01:44:29: Peer 1008 received the 'have' message from 1005 for the piece 97.
+01:44:29: Peer 1008 received the 'interested' message from 1007
+01:44:29: Peer 1008 has downloaded the piece 10 from 1009. Now the number of pieces it has is 106.
+01:44:29: Peer 1008 has downloaded the piece 40 from 1001. Now the number of pieces it has is 107.
+01:44:30: Peer 1008 received the 'not interested' message from 1002
+01:44:30: Peer 1008 is unchoked by 1003
+01:44:30: Peer 1008 received the 'not interested' message from 1004
+01:44:30: Peer 1008 received the 'have' message from 1005 for the piece 35.
+01:44:30: Peer 1008 is unchoked by 1006
+01:44:30: Peer 1008 received the 'have' message from 1007 for the piece 17.
+01:44:30: Peer 1008 received the 'not interested' message from 1009
+01:44:30: Peer 1008 received the 'not interested' message from 1001
+01:44:30: Peer 1008 received the 'not interested' message from 1003
+01:44:30: Peer 1008 received the 'have' message from 1004 for the piece 83.
+01:44:30: Peer 1008 received the 'have' message from 1005 for the piece 102.
+01:44:30: Peer 1008 received the 'not interested' message from 1006
+01:44:30: Peer 1008 received the 'not interested' message from 1009
+01:44:31: Peer 1008 received the 'not interested' message from 1001
+01:44:31: Peer 1008 has downloaded the piece 112 from 1002. Now the number of pieces it has is 108.
+01:44:31: Peer 1008 received the 'not interested' message from 1003
+01:44:31: Peer 1008 received the 'have' message from 1004 for the piece 35.
+01:44:31: Peer 1008 received the 'interested' message from 1005
+01:44:31: Peer 1008 received the 'not interested' message from 1007
+01:44:31: Peer 1008 received the 'have' message from 1009 for the piece 14.
+01:44:31: Peer 1008 is choked by 1001
+01:44:32: Peer 1008 received the 'have' message from 1003 for the piece 16.
+01:44:32: Peer 1008 received the 'have' message from 1005 for the piece 76.
+01:44:32: Peer 1008 received the 'not interested' message from 1006
+01:44:32: Peer 1008 received the 'have' message from 1007 for the piece 38.
+01:44:32: Peer 1008 received the 'not interested' message from 1001
+01:44:32: Peer 1008 received the 'not interested' message from 1002
+01:44:32: Peer 1008 received the 'not interested' message from 1004
+01:44:32: Peer 1008 received the 'have' message from 1005 for the piece 5.
+01:44:33: Peer 1008 received the 'have' message from 1007 for the piece 70.
+01:44:33: Peer 1008 has the preferred neighbors 1004,1006,1002.
+01:44:33: Peer 1008 has the optimistically unchoked neighbor 1002.
+01:44:33: Peer 1008 received the 'have' message from 1009 for the piece 53.
+01:44:33: Peer 1008 has downloaded the piece 66 from 1001. Now the number of pieces it has is 109.
+01:44:33: Peer 1008 received the 'have' message from 1003 for the piece 91.
+01:44:33: Peer 1008 received the 'not interested' message from 1004
+01:44:33: Peer 1008 received the 'not interested' message from 1005
+01:44:33: Peer 1008 is unchoked by 1007
+01:44:33: Peer 1008 received the 'not interested' message from 1009
+01:44:34: Peer 1008 received the 'not interested' message from 1001
+01:44:34: Peer 1008 received the 'not interested' message from 1002
+01:44:34: Peer 1008 received the 'not interested' message from 1003
+01:44:34: Peer 1008 received the 'have' message from 1004 for the piece 116.
+01:44:34: Peer 1008 received the 'have' message from 1005 for the piece 105.
+01:44:34: Peer 1008 received the 'have' message from 1007 for the piece 62.
+01:44:34: Peer 1008 is choked by 1009
+01:44:35: Peer 1008 received the 'not interested' message from 1001
+01:44:35: Peer 1008 received the 'not interested' message from 1003
+01:44:35: Peer 1008 is choked by 1006
+01:44:35: Peer 1008 is unchoked by 1009
+01:44:36: Peer 1008 received the 'not interested' message from 1001
+01:44:36: Peer 1008 received the 'not interested' message from 1002
+01:44:36: Peer 1008 is choked by 1003
+01:44:36: Peer 1008 received the 'not interested' message from 1004
+01:44:36: Peer 1008 received the 'have' message from 1005 for the piece 22.
+01:44:36: Peer 1008 received the 'not interested' message from 1006
+01:44:36: Peer 1008 received the 'not interested' message from 1007
+01:44:36: Peer 1008 is unchoked by 1009
+01:44:36: Peer 1008 is unchoked by 1001
+01:44:36: Peer 1008 received the 'have' message from 1003 for the piece 122.
+01:44:36: Peer 1008 received the 'not interested' message from 1004
+01:44:36: Peer 1008 received the 'not interested' message from 1006
+01:44:36: Peer 1008 received the 'interested' message from 1007
+01:44:36: Peer 1008 received the 'have' message from 1009 for the piece 11.
+01:44:37: Peer 1008 received the 'not interested' message from 1001
+01:44:37: Peer 1008 received the 'not interested' message from 1002
+01:44:37: Peer 1008 has downloaded the piece 88 from 1003. Now the number of pieces it has is 110.
+01:44:37: Peer 1008 received the 'not interested' message from 1004
+01:44:37: Peer 1008 received the 'have' message from 1005 for the piece 3.
+01:44:37: Peer 1008 received the 'have' message from 1007 for the piece 13.
+01:44:37: Peer 1008 received the 'interested' message from 1009
+01:44:38: Peer 1008 has downloaded the piece 83 from 1001. Now the number of pieces it has is 111.
+01:44:38: Peer 1008 received the 'have' message from 1003 for the piece 18.
+01:44:38: Peer 1008 received the 'interested' message from 1004
+01:44:38: Peer 1008 received the 'have' message from 1005 for the piece 108.
+01:44:38: Peer 1008 received the 'not interested' message from 1006
+01:44:38: Peer 1008 received the 'interested' message from 1007
+01:44:38: Peer 1008 has the preferred neighbors 1004,1009,1006.
+01:44:38: Peer 1008 received the 'not interested' message from 1009
+01:44:38: Peer 1008 is unchoked by 1002
+01:44:38: Peer 1008 received the 'have' message from 1003 for the piece 15.
+01:44:38: Peer 1008 received the 'not interested' message from 1004
+01:44:38: Peer 1008 received the 'not interested' message from 1005
+01:44:39: Peer 1008 received the 'have' message from 1007 for the piece 43.
+01:44:39: Peer 1008 received the 'have' message from 1009 for the piece 70.
+01:44:39: Peer 1008 received the 'not interested' message from 1001
+01:44:39: Peer 1008 is unchoked by 1003
+01:44:39: Peer 1008 received the 'have' message from 1004 for the piece 44.
+01:44:39: Peer 1008 received the 'have' message from 1005 for the piece 21.
+01:44:39: Peer 1008 received the 'not interested' message from 1006
+01:44:39: Peer 1008 received the 'have' message from 1007 for the piece 93.
+01:44:39: Peer 1008 received the 'have' message from 1009 for the piece 22.
+01:44:40: Peer 1008 received the 'not interested' message from 1001
+01:44:40: Peer 1008 has downloaded the piece 48 from 1002. Now the number of pieces it has is 112.
+01:44:40: Peer 1008 received the 'not interested' message from 1003
+01:44:40: Peer 1008 received the 'have' message from 1004 for the piece 106.
+01:44:40: Peer 1008 is unchoked by 1005
+01:44:40: Peer 1008 is choked by 1007
+01:44:40: Peer 1008 received the 'interested' message from 1009
+01:44:40: Peer 1008 received the 'not interested' message from 1001
+01:44:40: Peer 1008 received the 'not interested' message from 1002
+01:44:40: Peer 1008 received the 'not interested' message from 1004
+01:44:40: Peer 1008 received the 'not interested' message from 1005
+01:44:40: Peer 1008 received the 'not interested' message from 1006
+01:44:40: Peer 1008 is unchoked by 1007
+01:44:40: Peer 1008 received the 'not interested' message from 1009
+01:44:40: Peer 1008 is choked by 1001
+01:44:41: Peer 1008 has downloaded the piece 25 from 1002. Now the number of pieces it has is 113.
+01:44:41: Peer 1008 received the 'not interested' message from 1003
+01:44:41: Peer 1008 received the 'not interested' message from 1004
+01:44:41: Peer 1008 received the 'interested' message from 1005
+01:44:41: Peer 1008 received the 'not interested' message from 1007
+01:44:41: Peer 1008 received the 'have' message from 1009 for the piece 4.
+01:44:42: Peer 1008 received the 'not interested' message from 1001
+01:44:42: Peer 1008 received the 'not interested' message from 1002
+01:44:42: Peer 1008 received the 'not interested' message from 1003
+01:44:42: Peer 1008 received the 'not interested' message from 1004
+01:44:42: Peer 1008 received the 'not interested' message from 1005
+01:44:42: Peer 1008 received the 'have' message from 1007 for the piece 66.
+01:44:42: Peer 1008 is choked by 1009
+01:44:43: Peer 1008 received the 'not interested' message from 1002
+01:44:43: Peer 1008 received the 'not interested' message from 1003
+01:44:43: Peer 1008 received the 'not interested' message from 1004
+01:44:43: Peer 1008 is choked by 1005
+01:44:43: Peer 1008 received the 'not interested' message from 1007
+01:44:43: Peer 1008 has the preferred neighbors 1004,1009,1001.
+01:44:43: Peer 1008 has the optimistically unchoked neighbor 1009.
+01:44:44: Peer 1008 is choked by 1002
+01:44:44: Peer 1008 is choked by 1003
+01:44:44: Peer 1008 is unchoked by 1004
+01:44:44: Peer 1008 is unchoked by 1005
+01:44:44: Peer 1008 has downloaded the piece 50 from 1007. Now the number of pieces it has is 114.
+01:44:45: Peer 1008 is unchoked by 1002
+01:44:45: Peer 1008 received the 'not interested' message from 1003
+01:44:45: Peer 1008 received the 'not interested' message from 1004
+01:44:45: Peer 1008 received the 'not interested' message from 1006
+01:44:45: Peer 1008 received the 'have' message from 1007 for the piece 65.
+01:44:45: Peer 1008 received the 'not interested' message from 1009
+01:44:45: Peer 1008 received the 'not interested' message from 1002
+01:44:45: Peer 1008 received the 'not interested' message from 1003
+01:44:45: Peer 1008 received the 'have' message from 1004 for the piece 33.
+01:44:45: Peer 1008 received the 'not interested' message from 1005
+01:44:46: Peer 1008 received the 'have' message from 1007 for the piece 19.
+01:44:46: Peer 1008 received the 'have' message from 1009 for the piece 117.
+01:44:46: Peer 1008 received the 'not interested' message from 1001
+01:44:46: Peer 1008 received the 'not interested' message from 1002
+01:44:46: Peer 1008 received the 'not interested' message from 1004
+01:44:46: Peer 1008 received the 'not interested' message from 1005
+01:44:46: Peer 1008 received the 'not interested' message from 1007
+01:44:46: Peer 1008 is unchoked by 1001
+01:44:47: Peer 1008 received the 'not interested' message from 1003
+01:44:47: Peer 1008 received the 'not interested' message from 1004
+01:44:47: Peer 1008 received the 'have' message from 1005 for the piece 79.
+01:44:47: Peer 1008 received the 'have' message from 1007 for the piece 40.
+01:44:47: Peer 1008 received the 'have' message from 1009 for the piece 64.
+01:44:47: Peer 1008 received the 'not interested' message from 1001
+01:44:47: Peer 1008 has downloaded the piece 127 from 1002. Now the number of pieces it has is 115.
+01:44:47: Peer 1008 is unchoked by 1003
+01:44:47: Peer 1008 is choked by 1004
+01:44:47: Peer 1008 received the 'have' message from 1005 for the piece 67.
+01:44:47: Peer 1008 received the 'not interested' message from 1006
+01:44:47: Peer 1008 received the 'interested' message from 1007
+01:44:47: Peer 1008 received the 'have' message from 1009 for the piece 88.
+01:44:49: Peer 1008 has downloaded the piece 52 from 1003. Now the number of pieces it has is 116.
+01:44:49: Peer 1008 is unchoked by 1004
+01:44:49: Peer 1008 received the 'have' message from 1005 for the piece 131.
+01:44:49: Peer 1008 has downloaded the piece 86 from 1006. Now the number of pieces it has is 117.
+01:44:49: Peer 1008 is choked by 1007
+01:44:49: Peer 1008 has the preferred neighbors 1006,1003,1001.
+01:44:49: Peer 1008 received the 'not interested' message from 1009
+01:44:49: Peer 1008 received the 'not interested' message from 1001
+01:44:49: Peer 1008 received the 'not interested' message from 1002
+01:44:49: Peer 1008 received the 'not interested' message from 1003
+01:44:49: Peer 1008 received the 'have' message from 1004 for the piece 128.
+01:44:49: Peer 1008 received the 'have' message from 1005 for the piece 46.
+01:44:50: Peer 1008 is unchoked by 1007
+01:44:50: Peer 1008 received the 'not interested' message from 1009
+01:44:50: Peer 1008 is choked by 1002
+01:44:50: Peer 1008 received the 'not interested' message from 1003
+01:44:50: Peer 1008 received the 'not interested' message from 1004
+01:44:50: Peer 1008 is choked by 1005
+01:44:50: Peer 1008 is unchoked by 1006
+01:44:50: Peer 1008 received the 'not interested' message from 1007
+01:44:50: Peer 1008 received the 'have' message from 1009 for the piece 12.
+01:44:50: Peer 1008 has downloaded the piece 84 from 1001. Now the number of pieces it has is 118.
+01:44:51: Peer 1008 received the 'not interested' message from 1003
+01:44:51: Peer 1008 received the 'not interested' message from 1004
+01:44:51: Peer 1008 is unchoked by 1005
+01:44:51: Peer 1008 received the 'not interested' message from 1006
+01:44:51: Peer 1008 received the 'have' message from 1007 for the piece 132.
+01:44:51: Peer 1008 received the 'have' message from 1009 for the piece 58.
+01:44:51: Peer 1008 received the 'not interested' message from 1001
+01:44:52: Peer 1008 is choked by 1003
+01:44:52: Peer 1008 received the 'have' message from 1005 for the piece 38.
+01:44:52: Peer 1008 received the 'not interested' message from 1007
+01:44:52: Peer 1008 received the 'have' message from 1009 for the piece 68.
+01:44:52: Peer 1008 is choked by 1001
+01:44:52: Peer 1008 is unchoked by 1003
+01:44:52: Peer 1008 received the 'not interested' message from 1004
+01:44:53: Peer 1008 received the 'have' message from 1007 for the piece 117.
+01:44:53: Peer 1008 received the 'interested' message from 1009
+01:44:53: Peer 1008 is unchoked by 1001
+01:44:53: Peer 1008 received the 'not interested' message from 1003
+01:44:53: Peer 1008 received the 'not interested' message from 1004
+01:44:53: Peer 1008 has downloaded the piece 87 from 1005. Now the number of pieces it has is 119.
+01:44:53: Peer 1008 received the 'not interested' message from 1006
+01:44:53: Peer 1008 received the 'have' message from 1007 for the piece 67.
+01:44:53: Peer 1008 has the preferred neighbors 1009,1006,1001.
+01:44:53: Peer 1008 has the optimistically unchoked neighbor 1006.
+01:44:53: Peer 1008 received the 'have' message from 1009 for the piece 128.
+01:44:54: Peer 1008 received the 'not interested' message from 1002
+01:44:54: Peer 1008 received the 'not interested' message from 1003
+01:44:54: Peer 1008 is choked by 1004
+01:44:54: Peer 1008 received the 'not interested' message from 1005
+01:44:54: Peer 1008 received the 'interested' message from 1007
+01:44:54: Peer 1008 received the 'have' message from 1009 for the piece 39.
+01:44:54: Peer 1008 has downloaded the piece 126 from 1001. Now the number of pieces it has is 120.
+01:44:54: Peer 1008 is unchoked by 1002
+01:44:54: Peer 1008 received the 'not interested' message from 1003
+01:44:54: Peer 1008 received the 'not interested' message from 1004
+01:44:54: Peer 1008 received the 'not interested' message from 1005
+01:44:55: Peer 1008 is choked by 1006
+01:44:55: Peer 1008 is choked by 1007
+01:44:55: Peer 1008 received the 'have' message from 1009 for the piece 108.
+01:44:55: Peer 1008 received the 'not interested' message from 1001
+01:44:55: Peer 1008 received the 'not interested' message from 1002
+01:44:55: Peer 1008 received the 'not interested' message from 1003
+01:44:55: Peer 1008 received the 'have' message from 1004 for the piece 66.
+01:44:55: Peer 1008 is choked by 1005
+01:44:55: Peer 1008 is unchoked by 1006
+01:44:55: Peer 1008 received the 'have' message from 1007 for the piece 104.
+01:44:55: Peer 1008 received the 'interested' message from 1009
+01:44:56: Peer 1008 received the 'not interested' message from 1002
+01:44:56: Peer 1008 is choked by 1003
+01:44:56: Peer 1008 received the 'not interested' message from 1004
+01:44:56: Peer 1008 is unchoked by 1005
+01:44:56: Peer 1008 received the 'not interested' message from 1006
+01:44:56: Peer 1008 received the 'have' message from 1007 for the piece 63.
+01:44:56: Peer 1008 received the 'interested' message from 1009
+01:44:56: Peer 1008 received the 'not interested' message from 1002
+01:44:56: Peer 1008 received the 'not interested' message from 1003
+01:44:56: Peer 1008 received the 'not interested' message from 1004
+01:44:56: Peer 1008 received the 'not interested' message from 1005
+01:44:56: Peer 1008 received the 'not interested' message from 1006
+01:44:56: Peer 1008 received the 'have' message from 1007 for the piece 37.
+01:44:56: Peer 1008 received the 'have' message from 1009 for the piece 25.
+01:44:57: Peer 1008 received the 'not interested' message from 1001
+01:44:57: Peer 1008 is unchoked by 1004
+01:44:57: Peer 1008 received the 'have' message from 1005 for the piece 70.
+01:44:58: Peer 1008 received the 'not interested' message from 1007
+01:44:58: Peer 1008 received the 'have' message from 1009 for the piece 71.
+01:44:58: Peer 1008 is choked by 1001
+01:44:58: Peer 1008 received the 'not interested' message from 1003
+01:44:58: Peer 1008 received the 'not interested' message from 1004
+01:44:58: Peer 1008 received the 'not interested' message from 1005
+01:44:58: Peer 1008 received the 'not interested' message from 1006
+01:44:58: Peer 1008 received the 'have' message from 1007 for the piece 128.
+01:44:58: Peer 1008 received the 'have' message from 1009 for the piece 106.
+01:44:59: Peer 1008 received the 'not interested' message from 1002
+01:44:59: Peer 1008 received the 'not interested' message from 1003
+01:44:59: Peer 1008 received the 'not interested' message from 1004
+01:44:59: Peer 1008 received the 'have' message from 1005 for the piece 10.
+01:44:59: Peer 1008 received the 'not interested' message from 1007
+01:44:59: Peer 1008 has the preferred neighbors 1004,1003,1001.
+01:45:00: Peer 1008 received the 'not interested' message from 1001
+01:45:00: Peer 1008 is choked by 1002
+01:45:00: Peer 1008 received the 'not interested' message from 1004
+01:45:00: Peer 1008 has downloaded the piece 94 from 1005. Now the number of pieces it has is 121.
+01:45:00: Peer 1008 is choked by 1006
+01:45:00: Peer 1008 received the 'have' message from 1007 for the piece 76.
+01:45:00: Peer 1008 received the 'not interested' message from 1001
+01:45:00: Peer 1008 is unchoked by 1002
+01:45:01: Peer 1008 is choked by 1004
+01:45:01: Peer 1008 is choked by 1005
+01:45:01: Peer 1008 received the 'have' message from 1007 for the piece 39.
+01:45:01: Peer 1008 received the 'have' message from 1009 for the piece 80.
+01:45:01: Peer 1008 received the 'not interested' message from 1001
+01:45:02: Peer 1008 received the 'not interested' message from 1004
+01:45:02: Peer 1008 received the 'not interested' message from 1005
+01:45:02: Peer 1008 received the 'interested' message from 1007
+01:45:02: Peer 1008 received the 'not interested' message from 1009
+01:45:02: Peer 1008 is unchoked by 1001
+01:45:02: Peer 1008 received the 'not interested' message from 1003
+01:45:02: Peer 1008 received the 'not interested' message from 1005
+01:45:03: Peer 1008 received the 'have' message from 1007 for the piece 60.
+01:45:03: Peer 1008 has the preferred neighbors 1004,1009,1006.
+01:45:03: Peer 1008 has the optimistically unchoked neighbor 1007.
+01:45:03: Peer 1008 received the 'have' message from 1009 for the piece 28.
+01:45:03: Peer 1008 has downloaded the piece 80 from 1001. Now the number of pieces it has is 122.
+01:45:03: Peer 1008 received the 'not interested' message from 1002
+01:45:04: Peer 1008 has downloaded the piece 131 from 1004. Now the number of pieces it has is 123.
+01:45:04: Peer 1008 received the 'not interested' message from 1005
+01:45:04: Peer 1008 received the 'not interested' message from 1006
+01:45:04: Peer 1008 received the 'not interested' message from 1001
+01:45:04: Peer 1008 is choked by 1002
+01:45:04: Peer 1008 received the 'not interested' message from 1004
+01:45:04: Peer 1008 received the 'have' message from 1005 for the piece 17.
+01:45:05: Peer 1008 is unchoked by 1007
+01:45:05: Peer 1008 received the 'interested' message from 1009
+01:45:05: Peer 1008 received the 'not interested' message from 1001
+01:45:05: Peer 1008 received the 'not interested' message from 1002
+01:45:05: Peer 1008 is unchoked by 1003
+01:45:05: Peer 1008 received the 'not interested' message from 1004
+01:45:05: Peer 1008 received the 'not interested' message from 1005
+01:45:05: Peer 1008 received the 'not interested' message from 1006
+01:45:05: Peer 1008 received the 'have' message from 1009 for the piece 121.
+01:45:06: Peer 1008 received the 'not interested' message from 1002
+01:45:06: Peer 1008 received the 'not interested' message from 1003
+01:45:06: Peer 1008 received the 'not interested' message from 1004
+01:45:06: Peer 1008 received the 'not interested' message from 1005
+01:45:06: Peer 1008 received the 'have' message from 1007 for the piece 118.
+01:45:06: Peer 1008 received the 'interested' message from 1009
+01:45:06: Peer 1008 has downloaded the piece 28 from 1001. Now the number of pieces it has is 124.
+01:45:07: Peer 1008 received the 'not interested' message from 1003
+01:45:07: Peer 1008 is unchoked by 1004
+01:45:07: Peer 1008 received the 'not interested' message from 1005
+01:45:07: Peer 1008 received the 'have' message from 1009 for the piece 0.
+01:45:07: Peer 1008 is choked by 1001
+01:45:08: Peer 1008 received the 'not interested' message from 1004
+01:45:09: Peer 1008 received the 'have' message from 1007 for the piece 108.
+01:45:09: Peer 1008 has the preferred neighbors 1006,1003,1002.
+01:45:09: Peer 1008 received the 'not interested' message from 1009
+01:45:09: Peer 1008 received the 'not interested' message from 1001
+01:45:09: Peer 1008 is choked by 1003
+01:45:09: Peer 1008 received the 'not interested' message from 1004
+01:45:09: Peer 1008 received the 'not interested' message from 1006
+01:45:09: Peer 1008 has downloaded the piece 104 from 1001. Now the number of pieces it has is 125.
+01:45:09: Peer 1008 has downloaded the piece 128 from 1002. Now the number of pieces it has is 126.
+01:45:10: Peer 1008 is choked by 1004
+01:45:10: Peer 1008 received the 'not interested' message from 1005
+01:45:10: Peer 1008 received the 'have' message from 1007 for the piece 81.
+01:45:10: Peer 1008 received the 'have' message from 1009 for the piece 82.
+01:45:10: Peer 1008 received the 'not interested' message from 1001
+01:45:11: Peer 1008 received the 'not interested' message from 1002
+01:45:11: Peer 1008 is choked by 1003
+01:45:11: Peer 1008 is unchoked by 1004
+01:45:11: Peer 1008 received the 'not interested' message from 1005
+01:45:11: Peer 1008 is unchoked by 1006
+01:45:11: Peer 1008 received the 'not interested' message from 1007
+01:45:11: Peer 1008 received the 'not interested' message from 1009
+01:45:11: Peer 1008 is unchoked by 1003
+01:45:11: Peer 1008 has downloaded the piece 92 from 1004. Now the number of pieces it has is 127.
+01:45:11: Peer 1008 received the 'not interested' message from 1005
+01:45:11: Peer 1008 received the 'not interested' message from 1006
+01:45:11: Peer 1008 received the 'have' message from 1007 for the piece 21.
+01:45:11: Peer 1008 received the 'not interested' message from 1009
+01:45:11: Peer 1008 is unchoked by 1001
+01:45:12: Peer 1008 received the 'not interested' message from 1003
+01:45:12: Peer 1008 received the 'not interested' message from 1004
+01:45:12: Peer 1008 received the 'not interested' message from 1005
+01:45:12: Peer 1008 received the 'not interested' message from 1006
+01:45:12: Peer 1008 received the 'have' message from 1007 for the piece 28.
+01:45:12: Peer 1008 is unchoked by 1009
+01:45:12: Peer 1008 received the 'not interested' message from 1001
+01:45:12: Peer 1008 received the 'not interested' message from 1003
+01:45:12: Peer 1008 received the 'not interested' message from 1004
+01:45:12: Peer 1008 is unchoked by 1005
+01:45:13: Peer 1008 received the 'have' message from 1007 for the piece 127.
+01:45:13: Peer 1008 has the preferred neighbors 1004,1009,1001.
+01:45:13: Peer 1008 has the optimistically unchoked neighbor 1007.
+01:45:13: Peer 1008 received the 'not interested' message from 1009
+01:45:13: Peer 1008 received the 'not interested' message from 1001
+01:45:13: Peer 1008 received the 'not interested' message from 1004
+01:45:13: Peer 1008 received the 'have' message from 1005 for the piece 86.
+01:45:14: Peer 1008 received the 'not interested' message from 1007
+01:45:14: Peer 1008 received the 'not interested' message from 1009
+01:45:14: Peer 1008 received the 'not interested' message from 1002
+01:45:14: Peer 1008 is choked by 1003
+01:45:14: Peer 1008 is choked by 1004
+01:45:14: Peer 1008 received the 'not interested' message from 1005
+01:45:14: Peer 1008 received the 'not interested' message from 1006
+01:45:14: Peer 1008 received the 'not interested' message from 1007
+01:45:14: Peer 1008 received the 'interested' message from 1009
+01:45:15: Peer 1008 received the 'not interested' message from 1001
+01:45:15: Peer 1008 is unchoked by 1002
+01:45:15: Peer 1008 received the 'not interested' message from 1003
+01:45:15: Peer 1008 received the 'not interested' message from 1004
+01:45:15: Peer 1008 received the 'interested' message from 1005
+01:45:15: Peer 1008 received the 'not interested' message from 1006
+01:45:15: Peer 1008 is choked by 1007
+01:45:15: Peer 1008 received the 'not interested' message from 1009
+01:45:16: Peer 1008 received the 'not interested' message from 1002
+01:45:16: Peer 1008 received the 'not interested' message from 1004
+01:45:16: Peer 1008 received the 'not interested' message from 1005
+01:45:17: Peer 1008 is unchoked by 1007
+01:45:17: Peer 1008 is choked by 1001
+01:45:17: Peer 1008 received the 'not interested' message from 1003
+01:45:18: Peer 1008 received the 'have' message from 1005 for the piece 93.
+01:45:18: Peer 1008 received the 'not interested' message from 1007
+01:45:18: Peer 1008 received the 'have' message from 1009 for the piece 74.
+01:45:18: Peer 1008 received the 'not interested' message from 1001
+01:45:18: Peer 1008 received the 'not interested' message from 1003
+01:45:19: Peer 1008 is choked by 1005
+01:45:19: Peer 1008 received the 'not interested' message from 1006
+01:45:19: Peer 1008 received the 'have' message from 1007 for the piece 61.
+01:45:19: Peer 1008 has the preferred neighbors 1005,1006,1003.
+01:45:19: Peer 1008 received the 'not interested' message from 1009
+01:45:19: Peer 1008 is choked by 1002
+01:45:19: Peer 1008 is unchoked by 1004
+01:45:19: Peer 1008 received the 'not interested' message from 1005
+01:45:20: Peer 1008 received the 'not interested' message from 1009
+01:45:20: Peer 1008 received the 'not interested' message from 1002
+01:45:20: Peer 1008 is unchoked by 1003
+01:45:20: Peer 1008 received the 'not interested' message from 1004
+01:45:21: Peer 1008 received the 'have' message from 1009 for the piece 62.
+01:45:21: Peer 1008 received the 'not interested' message from 1001
+01:45:21: Peer 1008 received the 'not interested' message from 1002
+01:45:21: Peer 1008 received the 'not interested' message from 1003
+01:45:21: Peer 1008 received the 'not interested' message from 1004
+01:45:22: Peer 1008 received the 'not interested' message from 1007
+01:45:22: Peer 1008 received the 'not interested' message from 1009
+01:45:23: Peer 1008 received the 'not interested' message from 1002
+01:45:23: Peer 1008 received the 'not interested' message from 1003
+01:45:23: Peer 1008 received the 'not interested' message from 1006
+01:45:23: Peer 1008 is choked by 1007
+01:45:23: Peer 1008 has the preferred neighbors 1005,1003,1001.
+01:45:23: Peer 1008 has the optimistically unchoked neighbor 1001.
+01:45:23: Peer 1008 received the 'not interested' message from 1001
+01:45:23: Peer 1008 is unchoked by 1002
+01:45:24: Peer 1008 is choked by 1004
+01:45:24: Peer 1008 received the 'not interested' message from 1005
+01:45:24: Peer 1008 received the 'not interested' message from 1006
+01:45:24: Peer 1008 received the 'not interested' message from 1007
+01:45:24: Peer 1008 received the 'have' message from 1009 for the piece 29.
+01:45:24: Peer 1008 received the 'not interested' message from 1001
+01:45:25: Peer 1008 received the 'not interested' message from 1003
+01:45:25: Peer 1008 is unchoked by 1004
+01:45:25: Peer 1008 received the 'have' message from 1005 for the piece 115.
+01:45:25: Peer 1008 is choked by 1007
+01:45:25: Peer 1008 received the 'not interested' message from 1009
+01:45:26: Peer 1008 received the 'not interested' message from 1002
+01:45:26: Peer 1008 is choked by 1003
+01:45:26: Peer 1008 received the 'not interested' message from 1004
+01:45:26: Peer 1008 received the 'not interested' message from 1005
+01:45:26: Peer 1008 is unchoked by 1006
+01:45:26: Peer 1008 received the 'not interested' message from 1007
+01:45:26: Peer 1008 received the 'have' message from 1009 for the piece 27.
+01:45:27: Peer 1008 received the 'not interested' message from 1002
+01:45:27: Peer 1008 is unchoked by 1003
+01:45:27: Peer 1008 received the 'have' message from 1005 for the piece 74.
+01:45:27: Peer 1008 received the 'not interested' message from 1006
+01:45:27: Peer 1008 received the 'not interested' message from 1007
+01:45:27: Peer 1008 received the 'have' message from 1009 for the piece 15.
+01:45:28: Peer 1008 received the 'not interested' message from 1003
+01:45:28: Peer 1008 received the 'not interested' message from 1004
+01:45:28: Peer 1008 received the 'not interested' message from 1005
+01:45:29: Peer 1008 received the 'not interested' message from 1007
+01:45:29: Peer 1008 has the preferred neighbors 1005,1006,1007.
+01:45:29: Peer 1008 is unchoked by 1009
+01:45:29: Peer 1008 received the 'not interested' message from 1002
+01:45:29: Peer 1008 received the 'not interested' message from 1003
+01:45:29: Peer 1008 is choked by 1004
+01:45:29: Peer 1008 received the 'not interested' message from 1005
+01:45:30: Peer 1008 received the 'have' message from 1007 for the piece 53.
+01:45:30: Peer 1008 is unchoked by 1009
+01:45:30: Peer 1008 is choked by 1002
+01:45:30: Peer 1008 received the 'not interested' message from 1005
+01:45:30: Peer 1008 is choked by 1006
+01:45:30: Peer 1008 received the 'have' message from 1007 for the piece 47.
+01:45:31: Peer 1008 is unchoked by 1002
+01:45:31: Peer 1008 received the 'not interested' message from 1003
+01:45:31: Peer 1008 received the 'not interested' message from 1005
+01:45:31: Peer 1008 received the 'not interested' message from 1006
+01:45:31: Peer 1008 received the 'not interested' message from 1007
+01:45:31: Peer 1008 received the 'have' message from 1009 for the piece 97.
+01:45:31: Peer 1008 received the 'not interested' message from 1001
+01:45:31: Peer 1008 is choked by 1003
+01:45:32: Peer 1008 received the 'not interested' message from 1005
+01:45:32: Peer 1008 received the 'not interested' message from 1006
+01:45:32: Peer 1008 is unchoked by 1007
+01:45:32: Peer 1008 received the 'have' message from 1009 for the piece 103.
+01:45:33: Peer 1008 received the 'not interested' message from 1002
+01:45:33: Peer 1008 is unchoked by 1003
+01:45:33: Peer 1008 received the 'not interested' message from 1004
+01:45:33: Peer 1008 is unchoked by 1005
+01:45:33: Peer 1008 received the 'have' message from 1007 for the piece 69.
+01:45:33: Peer 1008 has the preferred neighbors 1005,1009,1003.
+01:45:33: Peer 1008 has the optimistically unchoked neighbor 1004.
+01:45:33: Peer 1008 received the 'not interested' message from 1009
+01:45:34: Peer 1008 has downloaded the piece 108 from 1001. Now the number of pieces it has is 128.
+01:45:34: Peer 1008 is choked by 1002
+01:45:34: Peer 1008 received the 'not interested' message from 1003
+01:45:34: Peer 1008 received the 'not interested' message from 1005
+01:45:35: Peer 1008 received the 'not interested' message from 1009
+01:45:35: Peer 1008 has downloaded the piece 11 from 1002. Now the number of pieces it has is 129.
+01:45:35: Peer 1008 is choked by 1003
+01:45:35: Peer 1008 received the 'not interested' message from 1004
+01:45:35: Peer 1008 received the 'have' message from 1005 for the piece 47.
+01:45:35: Peer 1008 received the 'not interested' message from 1006
+01:45:35: Peer 1008 received the 'not interested' message from 1007
+01:45:35: Peer 1008 received the 'not interested' message from 1009
+01:45:35: Peer 1008 received the 'not interested' message from 1001
+01:45:36: Peer 1008 received the 'not interested' message from 1004
+01:45:36: Peer 1008 is choked by 1005
+01:45:36: Peer 1008 received the 'not interested' message from 1006
+01:45:36: Peer 1008 is choked by 1009
+01:45:37: Peer 1008 received the 'not interested' message from 1002
+01:45:38: Peer 1008 has downloaded the piece 27 from 1004. Now the number of pieces it has is 130.
+01:45:38: Peer 1008 is unchoked by 1005
+01:45:38: Peer 1008 received the 'not interested' message from 1006
+01:45:38: Peer 1008 received the 'have' message from 1007 for the piece 3.
+01:45:38: Peer 1008 has the preferred neighbors 1007,1003,1002.
+01:45:38: Peer 1008 received the 'not interested' message from 1009
+01:45:39: Peer 1008 received the 'not interested' message from 1003
+01:45:39: Peer 1008 is unchoked by 1004
+01:45:39: Peer 1008 received the 'not interested' message from 1005
+01:45:39: Peer 1008 received the 'not interested' message from 1007
+01:45:39: Peer 1008 received the 'not interested' message from 1009
+01:45:40: Peer 1008 received the 'not interested' message from 1002
+01:45:40: Peer 1008 received the 'not interested' message from 1003
+01:45:40: Peer 1008 received the 'not interested' message from 1004
+01:45:40: Peer 1008 received the 'not interested' message from 1005
+01:45:40: Peer 1008 received the 'not interested' message from 1007
+01:45:40: Peer 1008 received the 'have' message from 1009 for the piece 123.
+01:45:41: Peer 1008 received the 'not interested' message from 1002
+01:45:42: Peer 1008 is choked by 1005
+01:45:42: Peer 1008 received the 'not interested' message from 1006
+01:45:42: Peer 1008 is choked by 1007
+01:45:42: Peer 1008 received the 'have' message from 1009 for the piece 78.
+01:45:43: Peer 1008 received the 'not interested' message from 1005
+01:45:44: Peer 1008 received the 'not interested' message from 1007
+01:45:44: Peer 1008 has the preferred neighbors 1009,1003,1001.
+01:45:44: Peer 1008 has the optimistically unchoked neighbor 1007.
+01:45:44: Peer 1008 received the 'not interested' message from 1009
+01:45:44: Peer 1008 received the 'not interested' message from 1001
+01:45:44: Peer 1008 received the 'not interested' message from 1004
+01:45:44: Peer 1008 received the 'have' message from 1007 for the piece 27.
+01:45:44: Peer 1008 is unchoked by 1009
+01:45:45: Peer 1008 received the 'not interested' message from 1002
+01:45:45: Peer 1008 is unchoked by 1003
+01:45:45: Peer 1008 is choked by 1004
+01:45:45: Peer 1008 received the 'not interested' message from 1005
+01:45:46: Peer 1008 received the 'have' message from 1007 for the piece 107.
+01:45:46: Peer 1008 received the 'have' message from 1009 for the piece 65.
+01:45:46: Peer 1008 is unchoked by 1001
+01:45:46: Peer 1008 has downloaded the piece 63 from 1002. Now the number of pieces it has is 131.
+01:45:46: Peer 1008 received the 'not interested' message from 1003
+01:45:46: Peer 1008 received the 'not interested' message from 1004
+01:45:46: Peer 1008 received the 'not interested' message from 1006
+01:45:46: Peer 1008 received the 'have' message from 1007 for the piece 2.
+01:45:47: Peer 1008 received the 'not interested' message from 1003
+01:45:47: Peer 1008 received the 'not interested' message from 1004
+01:45:47: Peer 1008 received the 'not interested' message from 1005
+01:45:48: Peer 1008 received the 'not interested' message from 1006
+01:45:48: Peer 1008 has the preferred neighbors 1005,1009,1007.
+01:45:48: Peer 1008 received the 'have' message from 1009 for the piece 23.
+01:45:49: Peer 1008 received the 'not interested' message from 1003
+01:45:49: Peer 1008 received the 'not interested' message from 1005
+01:45:50: Peer 1008 received the 'not interested' message from 1007
+01:45:50: Peer 1008 received the 'not interested' message from 1001
+01:45:50: Peer 1008 received the 'not interested' message from 1002
+01:45:50: Peer 1008 is choked by 1003
+01:45:50: Peer 1008 is unchoked by 1004
+01:45:50: Peer 1008 is unchoked by 1005
+01:45:50: Peer 1008 is unchoked by 1006
+01:45:50: Peer 1008 received the 'interested' message from 1007
+01:45:50: Peer 1008 received the 'not interested' message from 1009
+01:45:51: Peer 1008 received the 'not interested' message from 1002
+01:45:51: Peer 1008 is unchoked by 1003
+01:45:51: Peer 1008 received the 'not interested' message from 1005
+01:45:51: Peer 1008 is unchoked by 1007
+01:45:51: Peer 1008 received the 'not interested' message from 1009
+01:45:51: Peer 1008 has downloaded the piece 22 from 1001. Now the number of pieces it has is 132.
+01:45:52: Peer 1008 received the 'not interested' message from 1003
+01:45:52: Peer 1008 received the 'not interested' message from 1005
+01:45:53: Peer 1008 received the 'not interested' message from 1007
+01:45:53: Peer 1008 has the preferred neighbors 1009,1006,1003.
+01:45:53: Peer 1008 has the optimistically unchoked neighbor 1006.
+01:45:53: Peer 1008 is choked by 1001
+01:45:53: Peer 1008 is choked by 1003
+01:45:53: Peer 1008 received the 'not interested' message from 1004
+01:45:53: Peer 1008 is choked by 1005
+01:45:54: Peer 1008 received the 'have' message from 1007 for the piece 72.
+01:45:54: Peer 1008 is choked by 1009
+01:45:54: Peer 1008 is unchoked by 1001
+01:45:54: Peer 1008 is unchoked by 1002
+01:45:54: Peer 1008 is unchoked by 1003
+01:45:54: Peer 1008 is choked by 1004
+01:45:54: Peer 1008 is unchoked by 1005
+01:45:54: Peer 1008 received the 'not interested' message from 1006
+01:45:54: Peer 1008 received the 'not interested' message from 1007
+01:45:54: Peer 1008 is unchoked by 1009
+01:45:56: Peer 1008 received the 'not interested' message from 1005
+01:45:56: Peer 1008 is choked by 1006
+01:45:56: Peer 1008 received the 'not interested' message from 1009
+01:45:56: Peer 1008 has downloaded the piece 109 from 1002. Now the number of pieces it has is 133.
+01:45:59: Peer 1008 has downloaded the complete file.
+01:45:59: Peer 1008 received the 'not interested' message from 1004
+01:45:59: Peer 1008 is unchoked by 1006
+01:45:59: Peer 1008 is choked by 1007
+01:45:59: Peer 1008 has the preferred neighbors 1004,1009,1003.
+01:45:59: Peer 1008 received the 'not interested' message from 1009
+01:45:59: Peer 1008 received the 'not interested' message from 1001
+01:45:59: Peer 1008 received the 'not interested' message from 1003
+01:45:59: Peer 1008 is choked by 1005
+01:45:59: Peer 1008 received the 'have' message from 1009 for the piece 129.
+01:45:59: Peer 1008 is choked by 1001
+01:45:59: Peer 1008 is choked by 1002
+01:45:59: Peer 1008 is choked by 1003
+01:46:00: Peer 1008 received the 'not interested' message from 1006
+01:46:00: Peer 1008 received the 'not interested' message from 1007
+01:46:00: Peer 1008 received the 'not interested' message from 1009
+01:46:00: Peer 1008 received the 'not interested' message from 1001
+01:46:00: Peer 1008 is unchoked by 1003
+01:46:01: Peer 1008 received the 'not interested' message from 1004
+01:46:01: Peer 1008 received the 'not interested' message from 1005
+01:46:01: Peer 1008 is choked by 1006
+01:46:01: Peer 1008 is unchoked by 1007
+01:46:01: Peer 1008 is choked by 1009
+01:46:02: Peer 1008 received the 'not interested' message from 1003
+01:46:02: Peer 1008 received the 'not interested' message from 1004
+01:46:02: Peer 1008 is unchoked by 1005
+01:46:02: Peer 1008 received the 'not interested' message from 1006
+01:46:02: Peer 1008 received the 'not interested' message from 1007
+01:46:02: Peer 1008 is unchoked by 1009
+01:46:02: Peer 1008 received the 'not interested' message from 1002
+01:46:02: Peer 1008 received the 'not interested' message from 1003
+01:46:03: Peer 1008 received the 'not interested' message from 1005
+01:46:03: Peer 1008 received the 'have' message from 1007 for the piece 82.
+01:46:03: Peer 1008 has the preferred neighbors 1005,1006,1007.
+01:46:03: Peer 1008 has the optimistically unchoked neighbor 1005.
+01:46:03: Peer 1008 received the 'have' message from 1009 for the piece 93.
+01:46:03: Peer 1008 is unchoked by 1001
+01:46:04: Peer 1008 received the 'not interested' message from 1006
+01:46:04: Peer 1008 received the 'have' message from 1007 for the piece 58.
+01:46:04: Peer 1008 received the 'have' message from 1009 for the piece 44.
+01:46:04: Peer 1008 received the 'not interested' message from 1001
+01:46:04: Peer 1008 is unchoked by 1002
+01:46:04: Peer 1008 is choked by 1003
+01:46:05: Peer 1008 is choked by 1005
+01:46:05: Peer 1008 is choked by 1007
+01:46:05: Peer 1008 received the 'interested' message from 1009
+01:46:06: Peer 1008 received the 'not interested' message from 1002
+01:46:06: Peer 1008 received the 'not interested' message from 1003
+01:46:06: Peer 1008 is unchoked by 1006
+01:46:06: Peer 1008 received the 'not interested' message from 1007
+01:46:07: Peer 1008 received the 'not interested' message from 1003
+01:46:07: Peer 1008 received the 'not interested' message from 1004
+01:46:07: Peer 1008 received the 'not interested' message from 1005
+01:46:07: Peer 1008 received the 'not interested' message from 1006
+01:46:07: Peer 1008 received the 'have' message from 1007 for the piece 16.
+01:46:07: Peer 1008 received the 'have' message from 1009 for the piece 50.
+01:46:07: Peer 1008 is choked by 1001
+01:46:07: Peer 1008 received the 'not interested' message from 1003
+01:46:07: Peer 1008 received the 'not interested' message from 1004
+01:46:07: Peer 1008 received the 'not interested' message from 1005
+01:46:08: Peer 1008 received the 'not interested' message from 1007
+01:46:08: Peer 1008 received the 'have' message from 1009 for the piece 79.
+01:46:08: Peer 1008 received the 'not interested' message from 1001
+01:46:08: Peer 1008 received the 'not interested' message from 1002
+01:46:09: Peer 1008 received the 'not interested' message from 1003
+01:46:09: Peer 1008 received the 'not interested' message from 1005
+01:46:10: Peer 1008 received the 'not interested' message from 1007
+01:46:10: Peer 1008 has the preferred neighbors 1004,1003,1001.
+01:46:10: Peer 1008 is choked by 1002
+01:46:10: Peer 1008 received the 'not interested' message from 1003
+01:46:10: Peer 1008 received the 'not interested' message from 1005
+01:46:10: Peer 1008 is choked by 1006
+01:46:10: Peer 1008 received the 'not interested' message from 1007
+01:46:10: Peer 1008 is choked by 1009
+01:46:10: Peer 1008 received the 'not interested' message from 1001
+01:46:10: Peer 1008 is unchoked by 1002
+01:46:11: Peer 1008 received the 'not interested' message from 1005
+01:46:11: Peer 1008 received the 'have' message from 1007 for the piece 33.
+01:46:11: Peer 1008 received the 'not interested' message from 1009
+01:46:11: Peer 1008 received the 'not interested' message from 1001
+01:46:12: Peer 1008 received the 'not interested' message from 1004
+01:46:12: Peer 1008 received the 'not interested' message from 1005
+01:46:12: Peer 1008 received the 'not interested' message from 1006
+01:46:12: Peer 1008 received the 'not interested' message from 1007
+01:46:12: Peer 1008 received the 'have' message from 1009 for the piece 91.
+01:46:13: Peer 1008 received the 'not interested' message from 1003
+01:46:13: Peer 1008 received the 'not interested' message from 1005
+01:46:14: Peer 1008 received the 'have' message from 1007 for the piece 8.
+01:46:14: Peer 1008 has the preferred neighbors 1009,1006,1003.
+01:46:14: Peer 1008 has the optimistically unchoked neighbor 1007.
+01:46:14: Peer 1008 received the 'not interested' message from 1009
+01:46:14: Peer 1008 is choked by 1002
+01:46:15: Peer 1008 received the 'not interested' message from 1006
+01:46:15: Peer 1008 received the 'not interested' message from 1007
+01:46:15: Peer 1008 received the 'not interested' message from 1002
+01:46:15: Peer 1008 received the 'not interested' message from 1003
+01:46:16: Peer 1008 is unchoked by 1005
+01:46:16: Peer 1008 received the 'have' message from 1007 for the piece 122.
+01:46:16: Peer 1008 is unchoked by 1009
+01:46:16: Peer 1008 received the 'not interested' message from 1002
+01:46:16: Peer 1008 received the 'not interested' message from 1003
+01:46:17: Peer 1008 is choked by 1005
+01:46:17: Peer 1008 received the 'have' message from 1007 for the piece 29.
+01:46:17: Peer 1008 received the 'have' message from 1009 for the piece 1.
+01:46:17: Peer 1008 is unchoked by 1001
+01:46:18: Peer 1008 is unchoked by 1005
+01:46:18: Peer 1008 received the 'not interested' message from 1006
+01:46:18: Peer 1008 has the preferred neighbors 1004,1006,1003.
+01:46:18: Peer 1008 received the 'not interested' message from 1009
+01:46:18: Peer 1008 is unchoked by 1001
+01:46:18: Peer 1008 is unchoked by 1002
+01:46:19: Peer 1008 received the 'not interested' message from 1003
+01:46:19: Peer 1008 is unchoked by 1004
+01:46:19: Peer 1008 is choked by 1005
+01:46:20: Peer 1008 is unchoked by 1006
+01:46:20: Peer 1008 received the 'not interested' message from 1007
+01:46:20: Peer 1008 received the 'not interested' message from 1009
+01:46:20: Peer 1008 received the 'not interested' message from 1002
+01:46:20: Peer 1008 is unchoked by 1003
+01:46:21: Peer 1008 is unchoked by 1005
+01:46:21: Peer 1008 is unchoked by 1006
+01:46:21: Peer 1008 received the 'have' message from 1007 for the piece 115.
+01:46:21: Peer 1008 is choked by 1001
+01:46:22: Peer 1008 received the 'not interested' message from 1004
+01:46:22: Peer 1008 is choked by 1005
+01:46:22: Peer 1008 received the 'not interested' message from 1007
+01:46:22: Peer 1008 is unchoked by 1001
+01:46:23: Peer 1008 received the 'not interested' message from 1004
+01:46:23: Peer 1008 is unchoked by 1005
+01:46:24: Peer 1008 received the 'have' message from 1007 for the piece 0.
+01:46:24: Peer 1008 has the preferred neighbors 1005,1006,1003.
+01:46:24: Peer 1008 has the optimistically unchoked neighbor 1001.
+01:46:24: Peer 1008 received the 'not interested' message from 1009
+01:46:25: Peer 1008 is choked by 1004
+01:46:25: Peer 1008 is choked by 1006
+01:46:25: Peer 1008 received the 'interested' message from 1007
+01:46:25: Peer 1008 is unchoked by 1009
+01:46:25: Peer 1008 is choked by 1002
+01:46:25: Peer 1008 is choked by 1003
+01:46:25: Peer 1008 is choked by 1005
+01:46:25: Peer 1008 received the 'have' message from 1009 for the piece 20.
+01:46:26: Peer 1008 is unchoked by 1002
+01:46:26: Peer 1008 is unchoked by 1003
+01:46:26: Peer 1008 received the 'not interested' message from 1004
+01:46:26: Peer 1008 is unchoked by 1005
+01:46:27: Peer 1008 received the 'not interested' message from 1007
+01:46:27: Peer 1008 received the 'have' message from 1009 for the piece 61.
+01:46:27: Peer 1008 received the 'not interested' message from 1001
+01:46:27: Peer 1008 received the 'not interested' message from 1005
+01:46:28: Peer 1008 received the 'have' message from 1007 for the piece 48.
+01:46:28: Peer 1008 has the preferred neighbors 1003,1001,1002.
+01:46:28: Peer 1008 received the 'not interested' message from 1009
+01:46:28: Peer 1008 is choked by 1001
+01:46:29: Peer 1008 received the 'not interested' message from 1004
+01:46:29: Peer 1008 received the 'not interested' message from 1005
+01:46:29: Peer 1008 is choked by 1009
+01:46:29: Peer 1008 received the 'not interested' message from 1001
+01:46:29: Peer 1008 is choked by 1002
+01:46:30: Peer 1008 is choked by 1005
+01:46:30: Peer 1008 is unchoked by 1006
+01:46:30: Peer 1008 is unchoked by 1007
+01:46:30: Peer 1008 is unchoked by 1009
+01:46:30: Peer 1008 received the 'not interested' message from 1001
+01:46:30: Peer 1008 is unchoked by 1002
+01:46:31: Peer 1008 is choked by 1003
+01:46:31: Peer 1008 received the 'not interested' message from 1005
+01:46:31: Peer 1008 received the 'not interested' message from 1006
+01:46:31: Peer 1008 received the 'not interested' message from 1007
+01:46:31: Peer 1008 received the 'not interested' message from 1009
+01:46:32: Peer 1008 is unchoked by 1003
+01:46:32: Peer 1008 received the 'not interested' message from 1004
+01:46:32: Peer 1008 received the 'not interested' message from 1006
+01:46:32: Peer 1008 received the 'have' message from 1007 for the piece 131.
+01:46:32: Peer 1008 received the 'not interested' message from 1009
+01:46:32: Peer 1008 is unchoked by 1001
+01:46:33: Peer 1008 received the 'not interested' message from 1003
+01:46:34: Peer 1008 received the 'not interested' message from 1006
+01:46:34: Peer 1008 received the 'not interested' message from 1007
+01:46:34: Peer 1008 has the preferred neighbors 1004,1007,1002.
+01:46:34: Peer 1008 has the optimistically unchoked neighbor 1001.
+01:46:34: Peer 1008 is choked by 1009
+01:46:35: Peer 1008 received the 'not interested' message from 1004
+01:46:35: Peer 1008 received the 'not interested' message from 1005
+01:46:35: Peer 1008 is choked by 1006
+01:46:35: Peer 1008 is choked by 1007
+01:46:35: Peer 1008 is unchoked by 1009
+01:46:36: Peer 1008 is choked by 1002
+01:46:36: Peer 1008 received the 'not interested' message from 1003
+01:46:37: Peer 1008 received the 'not interested' message from 1006
+01:46:37: Peer 1008 received the 'not interested' message from 1007
+01:46:37: Peer 1008 received the 'not interested' message from 1009
+01:46:37: Peer 1008 received the 'not interested' message from 1001
+01:46:37: Peer 1008 is unchoked by 1002
+01:46:37: Peer 1008 is choked by 1003
+01:46:38: Peer 1008 received the 'not interested' message from 1007
+01:46:38: Peer 1008 has the preferred neighbors 1004,1007,1001.
+01:46:38: Peer 1008 received the 'not interested' message from 1009
+01:46:38: Peer 1008 is choked by 1001
+01:46:38: Peer 1008 received the 'not interested' message from 1003
+01:46:39: Peer 1008 received the 'not interested' message from 1006
+01:46:40: Peer 1008 is choked by 1002
+01:46:41: Peer 1008 received the 'not interested' message from 1005
+01:46:41: Peer 1008 received the 'not interested' message from 1007
+01:46:41: Peer 1008 is choked by 1009
+01:46:43: Peer 1008 is unchoked by 1005
+01:46:43: Peer 1008 received the 'not interested' message from 1006
+01:46:43: Peer 1008 is unchoked by 1007
+01:46:43: Peer 1008 has the preferred neighbors 1005,1009,1001.
+01:46:43: Peer 1008 has the optimistically unchoked neighbor 1007.
+01:46:43: Peer 1008 received the 'not interested' message from 1009
+01:46:43: Peer 1008 received the 'not interested' message from 1001
+01:46:45: Peer 1008 is unchoked by 1004
+01:46:45: Peer 1008 is unchoked by 1006
+01:46:45: Peer 1008 received the 'not interested' message from 1007
+01:46:45: Peer 1008 received the 'have' message from 1009 for the piece 66.
+01:46:46: Peer 1008 received the 'not interested' message from 1005
+01:46:46: Peer 1008 received the 'not interested' message from 1007
+01:46:46: Peer 1008 is unchoked by 1009
+01:46:46: Peer 1008 received the 'not interested' message from 1001
+01:46:47: Peer 1008 received the 'not interested' message from 1003
+01:46:48: Peer 1008 is unchoked by 1007
+01:46:48: Peer 1008 has the preferred neighbors 1007,1003,1001.
+01:46:48: Peer 1008 received the 'not interested' message from 1009
+01:46:48: Peer 1008 is unchoked by 1001
+01:46:49: Peer 1008 is choked by 1004
+01:46:49: Peer 1008 received the 'have' message from 1007 for the piece 106.
+01:46:49: Peer 1008 is choked by 1009
+01:46:50: Peer 1008 is unchoked by 1003
+01:46:51: Peer 1008 is unchoked by 1005
+01:46:51: Peer 1008 is choked by 1007
+01:46:51: Peer 1008 is choked by 1001
+01:46:52: Peer 1008 received the 'not interested' message from 1007
+01:46:52: Peer 1008 received the 'not interested' message from 1009
+01:46:52: Peer 1008 is unchoked by 1003
+01:46:53: Peer 1008 received the 'not interested' message from 1009
+01:46:53: Peer 1008 received the 'not interested' message from 1003
+01:46:53: Peer 1008 received the 'not interested' message from 1007
+01:46:53: Peer 1008 has the preferred neighbors 1009,1007,1001.
+01:46:53: Peer 1008 has the optimistically unchoked neighbor 1002.
+01:46:53: Peer 1008 is unchoked by 1009
+01:46:54: Peer 1008 received the 'not interested' message from 1007
+01:46:54: Peer 1008 received the 'not interested' message from 1009
+01:46:54: Peer 1008 received the 'not interested' message from 1003
+01:46:54: Peer 1008 is choked by 1009
+01:46:55: Peer 1008 is unchoked by 1007
+01:46:55: Peer 1008 received the 'not interested' message from 1009
+01:46:55: Peer 1008 received the 'not interested' message from 1007
+01:46:55: Peer 1008 received the 'not interested' message from 1009
+01:46:56: Peer 1008 received the 'have' message from 1007 for the piece 100.
+01:46:56: Peer 1008 received the 'not interested' message from 1009
+01:46:56: Peer 1008 received the 'not interested' message from 1007
+01:46:57: Peer 1008 received the 'not interested' message from 1007
+01:46:57: Peer 1008 received the 'have' message from 1009 for the piece 37.
+01:46:58: Peer 1008 is choked by 1007
+01:46:58: Peer 1008 received the 'not interested' message from 1007
+01:46:58: Peer 1008 has the preferred neighbors 1005,1006,1001.
+01:46:58: Peer 1008 received the 'have' message from 1009 for the piece 51.
+01:46:59: Peer 1008 received the 'not interested' message from 1007
+01:46:59: Peer 1008 received the 'have' message from 1009 for the piece 85.
