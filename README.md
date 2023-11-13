@@ -1,7 +1,22 @@
 # Peer-to-Peer BitTorrent Protocol for File Distribution
-_Nikolas Praschma(nikolas.praschma@ufl.edu)_ 
-_David Skripnikov(dskripnikov@ufl.edu)_
-_Renee Kaynor(m.kaynor@ufl.edu)_
+_Group #33:_
+_**Nikolas Praschma**(nikolas.praschma@ufl.edu)</i>_,
+_**David Skripnikov**(dskripnikov@ufl.edu)</i>_,
+_**Renee Kaynor**(m.kaynor@ufl.edu)_</i>
+
+## Contents
+ - [Team Collaboration](#team-collaboration)
+    - [Nick](#nick)
+    - [David](#david)
+    - [Renee](#renee)
+ - [Demo of Project](#demo-of-project)
+ - [What We Accomplished](#what-we-were-able-to-accomplish)
+    - [Handshake Message](#handshake-message)
+    - [Actual Messaging](#actual-messaging)
+    - [Choke and Unchoke](#choke-and-unchoke)
+    - [Interested and Not Interested](#interested-and-not=interested)
+    - [Have and Bitfield](#have-and-bitfield)
+ - [How to Run](#how-to-run-the-project)
 
 ## Team Collaboration
 All team members collaborated effectively to establish the initial peer-to-peer socket and client connections.
@@ -53,7 +68,6 @@ An example of interested and not interested messages being received by Peer 1004
 01:42:10: Peer 1004 received the 'not interested' message from 1001`
 
 ### Have and Bitfield
-Peers send have messages when they receive a piece. They 
-
+Peers send have messages to all connected neighbors when they receive a piece. They 
 
 ## How to run the project
