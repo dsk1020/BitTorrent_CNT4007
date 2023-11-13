@@ -36,8 +36,7 @@ All team members collaborated effectively to establish the initial peer-to-peer 
 - Utilized configuration file information to construct each Peer Process.
 - Implemented handling for Bitfield messages.
 
-## Demo of Project
-[_Include link_](https://youtu.be/gZTXk1JYO94)
+## [Demo of Project](https://youtu.be/gZTXk1JYO94)
 
 ## What we were able to accomplish
 Our project successfully implemented the establishment of a Peer-to-Peer network to share a file using TCP. This process involves the sending of handshake choke, unchoke, interested, not interested, have, bitfield, request, and piece messages.
