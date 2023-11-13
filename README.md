@@ -1,8 +1,8 @@
 # Peer-to-Peer BitTorrent Protocol for File Distribution
-_Group #33:_
-_**Nikolas Praschma**(nikolas.praschma@ufl.edu)</i>_,
-_**David Skripnikov**(dskripnikov@ufl.edu)</i>_,
-_**Renee Kaynor**(m.kaynor@ufl.edu)_</i>
+_Group #33:_ <br>
+_**Nikolas Praschma**(nikolas.praschma@ufl.edu)</i>_ <br>
+_**David Skripnikov**(dskripnikov@ufl.edu)</i>_ <br>
+_**Renee Kaynor**(m.kaynor@ufl.edu)_</i> <br>
 
 ## Contents
  - [Team Collaboration](#team-collaboration)
