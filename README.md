@@ -68,6 +68,23 @@ An example of interested and not interested messages being received by Peer 1004
 01:42:10: Peer 1004 received the 'not interested' message from 1001`
 
 ### Have and Bitfield
-Peers send have messages to all connected neighbors when they receive a piece. They 
+Peers send have messages to all connected neighbors when they receive a piece. Bitfield messages are only sent as the first message right after handshaking is done when a connection is established. Each bit in the bitfield payload represents whether the peer has the corresponding piece or not. 
+
+An example of have message logging in **log_peer_1004.log**:
+`01:41:51: Peer 1004 received the 'have' message from 1003 for the piece 55.`
+
+### Request and Piece
+When a connection is unchoked by a neighbor, a peer sends a ‘request’ message for requesting a piece that it does not have and has not requested from other neighbors. On receiving peer A’s ‘request’ message, peer B sends a ‘piece’ message that contains the actual piece. After completely downloading the piece, peer A sends another ‘request’ message to peer B. 
+
+An example of piece message logging in **log_peer_1003.log**:
+`01:43:21: Peer 1003 has downloaded the piece 128 from 1002. Now the number of pieces it has is 103.`
+
+### Exporting the downloaded file
+When a peer finishes downloading all file pieces, it exports the file into it's own directory with the name 'downloaded' + fileName. (tree.jpg is exported as downloadtree.jpg, for example.) A peer terminates when it finds out that allthe peers, not just itself, have downloaded the complete file.
+
+An example of Peer 1003 finishing the download of the file in **log_peer_1003.log**:
+`01:44:15: Peer 1003 has downloaded the piece 15 from 1008. Now the number of pieces it has is 133.
+01:44:18: Peer 1003 has downloaded the complete file.`
 
 ## How to run the project
+TODO
