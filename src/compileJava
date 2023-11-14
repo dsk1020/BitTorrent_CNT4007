@@ -1,0 +1,20 @@
+#!/bin/bash
+cd ./BitTorrent
+cd ./_1001
+./compileJava
+cd ../_1002
+./compileJava
+cd ../_1003
+./compileJava
+cd ../_1004
+./compileJava
+cd ../_1005
+./compileJava
+cd ../_1006
+./compileJava
+cd ../_1007
+./compileJava
+cd ../_1008
+./compileJava
+cd ../_1009
+./compileJava
