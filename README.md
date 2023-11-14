@@ -31,6 +31,7 @@ All team members collaborated effectively to establish the initial peer-to-peer 
 
 ### David
 - Developed functionality for parsing, sending, reading, and interpreting various types of messages.
+- Implemented message objects
 
 ### Renee
 - Utilized configuration file information to construct each Peer Process.
@@ -96,4 +97,13 @@ Despite our implementation being functional, there were a few smaller nuances to
 In a typical P2P program, a peer would factor in the fastest download rates of its neighbors when determining what neighbors to choke and unchoke. Due to difficulties with timing functions, our program does not consider these rates in the choking processes.
 
 ## How to run the project
-TODO
+To run the project start by compiling it, run the bash script `./compileJava` in the `src` folder. The bash script will enter each peers folder and execute a compile command.
+
+Or you can also compile each peer individually by navigating to their folder and running: <br>
+`javac -cp ../../ PeerProcess1001.java`
+
+Next, run each peer in a new shell. From the `src` folder start each peer using: <br>
+`java BitTorrent._1001.PeerProcess1001  1001` <br>
+Change the 1001 in the command to each peers number to start it.
+
+The peers will terminate when all peers have received the file.

@@ -167,7 +167,7 @@ public class PeerProcess {
             for(Socket socket:allConnections)
             {
                 try{
-                    socket.setSoTimeout(500); //TODO - set to unchoke time
+                    socket.setSoTimeout(500);
 
                     inputStream = new ObjectInputStream(socket.getInputStream());
                     Object inMsg = inputStream.readObject();

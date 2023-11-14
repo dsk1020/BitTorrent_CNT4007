@@ -1,20 +1,19 @@
 #!/bin/bash
-cd ./BitTorrent
-cd ./_1001
-./compileJava
+cd ./BitTorrent/_1001
+javac -cp ../../ PeerProcess1001.java
 cd ../_1002
-./compileJava
+javac -cp ../../ PeerProcess1002.java
 cd ../_1003
-./compileJava
+javac -cp ../../ PeerProcess1003.java
 cd ../_1004
-./compileJava
+javac -cp ../../ PeerProcess1004.java
 cd ../_1005
-./compileJava
+javac -cp ../../ PeerProcess1005.java
 cd ../_1006
-./compileJava
+javac -cp ../../ PeerProcess1006.java
 cd ../_1007
-./compileJava
+javac -cp ../../ PeerProcess1007.java
 cd ../_1008
-./compileJava
+javac -cp ../../ PeerProcess1008.java
 cd ../_1009
-./compileJava
+javac -cp ../../ PeerProcess1009.java
